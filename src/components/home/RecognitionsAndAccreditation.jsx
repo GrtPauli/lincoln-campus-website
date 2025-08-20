@@ -117,7 +117,7 @@ export default function RecognitionsAndAccreditation() {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-6">
-        {/* Main Slider */}
+        {/* Slider Container */}
         <div
           className="overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}

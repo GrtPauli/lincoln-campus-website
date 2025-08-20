@@ -19,7 +19,8 @@ const Dropdown = ({ title, items, isOpen, onToggle }) => {
         </svg>
       </button>
       {isOpen && (
-        <div className="absolute bg-white shadow-lg rounded-md mt-2 w-48 z-10">
+        // The key change is here: add 'right-0' to align the dropdown to the right
+        <div className="absolute bg-white shadow-lg rounded-md mt-2 w-48 z-10 right-0">
           {items.map((item, index) => (
             <a key={index} href={item.link} className="block px-4 py-2 hover:bg-gray-100">
               {item.label}

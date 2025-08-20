@@ -60,14 +60,14 @@ export default function RecognitionsAndAccreditation() {
   const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef(null);
 
-  // Gets slides per view based on screen size
+  // Get slides per view based on screen size
   const getSlidesPerView = () => {
-    if (typeof window === "undefined") return 3; 
+    if (typeof window === "undefined") return 2;
     const width = window.innerWidth;
-    if (width >= 1024) return 6;
-    if (width >= 768) return 5;
-    if (width >= 640) return 4;
-    return 3;
+    if (width >= 1024) return 5;
+    if (width >= 768) return 4;
+    if (width >= 640) return 3;
+    return 2;
   };
 
   const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView);
@@ -137,7 +137,7 @@ export default function RecognitionsAndAccreditation() {
                 className="flex-shrink-0"
                 style={{ width: `${100 / slidesPerView}%` }}
               >
-                <div className="bg-secondary border border-border rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 mx-2 h-28 flex items-center justify-center group">
+                <div className="border border-border rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 mx-2 P-1 h-20 flex items-center justify-center group">
                   <img
                     src={logo.image}
                     alt={logo.alt}

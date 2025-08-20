@@ -181,7 +181,7 @@ export default function HeroSection() {
 
                   {/* Description */}
                   <div className="relative">
-                    <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed bg-gradient-to-r from-primary to-primary/90 text-secondary p-4 sm:p-5 md:p-6 rounded-2xl mx-2 sm:mx-0">
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed bg-gradient-to-r from-primary to-primary/90 text-secondary p-4 sm:p-5 md:p-6 rounded-xl mx-2 sm:mx-0">
                       {slide.description}
                     </p>
                     {/* Decorative element */}

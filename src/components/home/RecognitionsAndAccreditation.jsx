@@ -60,14 +60,14 @@ export default function RecognitionsAndAccreditation() {
   const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef(null);
 
-  // Get slides per view based on screen size
+  // Gets slides per view based on screen size
   const getSlidesPerView = () => {
-    if (typeof window === "undefined") return 2;
+    if (typeof window === "undefined") return 3; 
     const width = window.innerWidth;
-    if (width >= 1024) return 5;
-    if (width >= 768) return 4;
-    if (width >= 640) return 3;
-    return 2;
+    if (width >= 1024) return 6;
+    if (width >= 768) return 5;
+    if (width >= 640) return 4;
+    return 3;
   };
 
   const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView);
@@ -117,7 +117,6 @@ export default function RecognitionsAndAccreditation() {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-6">
-        {/* Slider Container */}
         <div
           className="overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
@@ -150,7 +149,6 @@ export default function RecognitionsAndAccreditation() {
           </div>
         </div>
 
-        {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
           className="absolute left-0 top-1/2 -translate-y-1/2 bg-secondary shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors z-10"
@@ -191,7 +189,6 @@ export default function RecognitionsAndAccreditation() {
           </svg>
         </button>
 
-        {/* Pagination Dots */}
         <div className="flex justify-center mt-6 space-x-2">
           {Array.from({
             length: Math.max(1, logos.length - slidesPerView + 1),

@@ -10,7 +10,7 @@ function AboutHero() {
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <h1 className="relative text-white text-4xl font-bold z-10 text-center px-4">
-        About Us WELP
+        About Us 
       </h1>
     </div>
   );

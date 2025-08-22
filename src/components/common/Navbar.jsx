@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Menu, Drawer, Button, ConfigProvider } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
+import { CgChevronDown } from "react-icons/cg";
+import Header from "./Header";
+import { Link } from "react-router-dom";
+import { MENU_LINKS } from "../../constants";
 
+<<<<<<< HEAD
 // Define the Dropdown component inside Navbar.jsx
 const Dropdown = ({ title, items, isOpen, onToggle }) => {
   return (
@@ -137,85 +144,104 @@ const Navbar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+=======
+const { SubMenu, Item } = Menu;
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const renderMenuItems = (items, mode = "horizontal") =>
+    items.map((item) =>
+      item.children ? (
+        <SubMenu
+          key={item.key}
+          className="!h-full !flex !items-center -mt-2"
+          title={
+            <span className="flex items-center h-full gap-2 hover:text-primary duration-100 ease-in">
+              {item.label}{" "}
+              {item?.isParent && mode === "horizontal" && (
+                <CgChevronDown className="ml-1" />
+>>>>>>> bcfd62a794594990e2e5a8efc82529f8202ada54
               )}
-            </svg>
-          </button>
+            </span>
+          }
+        >
+          {renderMenuItems(item.children, mode)}
+        </SubMenu>
+      ) : (
+        <Item className="!h-full !flex !items-center" key={item.key}>
+          {item?.to ? (
+            <Link
+              to={item?.to}
+              className="hover:text-primary duration-100 ease-in"
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <p className="hover:text-primary duration-100 ease-in">
+              {item.label}
+            </p>
+          )}
+        </Item>
+      )
+    );
 
-          {/* Main nav links for desktop */}
-          <ul className="hidden md:flex space-x-9 text-lg font-semibold">
-            <Dropdown 
-              title="Welcome To LUC" 
-              items={lucItems} 
-              isOpen={openDropdown === 'luc'} 
-              onToggle={() => handleDropdownToggle('luc')} 
-            />
-            <Dropdown 
-              title="Schools & Programmes" 
-              items={schoolsItems} 
-              isOpen={openDropdown === 'schools'} 
-              onToggle={() => handleDropdownToggle('schools')} 
-            />
-            <Dropdown 
-              title="Student Corner" 
-              items={studentCornerItems} 
-              isOpen={openDropdown === 'studentCorner'} 
-              onToggle={() => handleDropdownToggle('studentCorner')} 
-            />
-            <Dropdown 
-              title="Research & Conferences" 
-              items={researchAndConferencesItems} 
-              isOpen={openDropdown === 'research'} 
-              onToggle={() => handleDropdownToggle('research')} 
-            />
-            <Dropdown 
-              title="Contact Us" 
-              items={contactUsItems} 
-              isOpen={openDropdown === 'contact'} 
-              onToggle={() => handleDropdownToggle('contact')} 
-            />
-          </ul>
-        </div>
-      </nav>
+  return (
+    <div className="fixed top-0 w-full z-50">
+      <Header />
+      <ConfigProvider
+        theme={{
+          token: {
+            fontFamily: "",
+            colorPrimary: "#fb2c36",
+          },
+        }}
+      >
+        <nav className="w-full bg-white shadow-md">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items- gap-5 px-5">
+            <a href="/" className="my-2">
+              <img
+                src="/src/assets/lincolnlogo.png"
+                alt="Lincoln University College Logo"
+                className="w-36"
+              />
+            </a>
 
-      {/* Mobile Menu Sidebar */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg py-4 transition-transform duration-300 ease-in-out">
-          <ul className="flex flex-col space-y-4 px-4 font-semibold">
-            <Dropdown 
-              title="Welcome To LUC" 
-              items={lucItems} 
-              isOpen={openDropdown === 'luc'} 
-              onToggle={() => handleDropdownToggle('luc')} 
+            <Menu mode="horizontal" className="bg-white shadow-md w-full">
+              {renderMenuItems(MENU_LINKS, "horizontal")}
+            </Menu>
+          </div>
+
+          {/* Mobile Toggle */}
+          <div className="md:hidden flex items-center justify-between px-3 py-3">
+            <a href="/" className="">
+              <img
+                src="/src/assets/lincolnlogo.png"
+                alt="Lincoln University College Logo"
+                className="w-28"
+              />
+            </a>
+            <Button
+              type="text"
+              icon={<MenuOutlined />}
+              onClick={() => setOpen(true)}
             />
-            <Dropdown 
-              title="Schools & Programmes" 
-              items={schoolsItems} 
-              isOpen={openDropdown === 'schools'} 
-              onToggle={() => handleDropdownToggle('schools')} 
-            />
-            <Dropdown 
-              title="Student Corner" 
-              items={studentCornerItems} 
-              isOpen={openDropdown === 'studentCorner'} 
-              onToggle={() => handleDropdownToggle('studentCorner')} 
-            />
-            <Dropdown 
-              title="Research & Conferences" 
-              items={researchAndConferencesItems} 
-              isOpen={openDropdown === 'research'} 
-              onToggle={() => handleDropdownToggle('research')} 
-            />
-            <Dropdown 
-              title="Contact Us" 
-              items={contactUsItems} 
-              isOpen={openDropdown === 'contact'} 
-              onToggle={() => handleDropdownToggle('contact')} 
-            />
-          </ul>
-        </div>
-      )}
-    </>
+          </div>
+
+          {/* Mobile Drawer */}
+          <Drawer
+            title="Menu"
+            placement="right"
+            onClose={() => setOpen(false)}
+            open={open}
+          >
+            <Menu mode="inline" className="border-none">
+              {renderMenuItems(MENU_LINKS, "inline")}
+            </Menu>
+          </Drawer>
+        </nav>
+      </ConfigProvider>
+    </div>
   );
-};
-
-export default Navbar;
+}

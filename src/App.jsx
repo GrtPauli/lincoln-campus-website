@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NotFoundPage from "./pages/NotFound";
-import Navbar from "./components/common/Navbar";
-import Footer from "./components/common/Footer";
 import HomePage from "./pages/Home";
 
 // Welcome to LUC Pages
@@ -10,8 +8,8 @@ import About from "./pages/About";
 import FacilitesAndServices from "./pages/FacilitesAndServices";
 
 // Research and Conferences Pages
-import Introduction from "./pages/researchandconferences/Introduction";
-import ResearchProject from "./pages/researchandconferences/ResearchProject";
+import Introduction from "./pages/research-and-conferences/Introduction";
+import ResearchProject from "./pages/research-and-conferences/ResearchProject";
 
 // Contact Pages
 import Contact from "./pages/Contact";
@@ -20,7 +18,6 @@ function App() {
   return (
     <Router>
       <main>
-        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact-us" element={<Contact />} />
@@ -45,7 +42,6 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
-      <Footer />
     </Router>
   );
 }

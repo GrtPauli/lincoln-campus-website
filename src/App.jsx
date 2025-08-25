@@ -6,6 +6,8 @@ import HomePage from "./pages/Home";
 // Welcome to LUC Pages
 import About from "./pages/About";
 import FacilitesAndServices from "./pages/FacilitesAndServices";
+import RecognitionsAndAccreditation
+ from "./components/home/RecognitionsAndAccreditation";
 
 // Research and Conferences Pages
 import Introduction from "./pages/research-and-conferences/Introduction";
@@ -28,7 +30,7 @@ function App() {
             path="/facilities-and-services"
             element={<FacilitesAndServices />}
           />
-
+         <Route path="/recognitions" element={<RecognitionsAndAccreditation/>}/>
           {/* Research and Development Pages */}
           <Route
             path="/research-and-conferences/introduction"

@@ -50,6 +50,13 @@ export const MENU_LINKS = [
     key: "faculties-and-programmes",
     label: "Faculties & Programmes",
     isParent: true,
+  children: [
+    {
+      key: "school-of-medicine",
+      label: "School of Medicine",
+      to: "/faculties-and-programmes/school-of-medicine",
+    }
+  ],
   },
   {
     key: "student-corner",

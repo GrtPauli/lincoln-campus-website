@@ -12,6 +12,9 @@ import RecognitionsAndAccreditation from "./components/recognitions-and-accreadi
 import Introduction from "./pages/research-and-conferences/Introduction";
 import ResearchProject from "./pages/research-and-conferences/ResearchProject";
 
+// Faculties and Programmes Pages
+import SchoolOfMedicine from "./pages/faculties-and-programmes/school-of-medicine/SchoolOfMedicine";
+
 // Contact Pages
 import Contact from "./pages/Contact";
 
@@ -39,6 +42,11 @@ function App() {
             path="/research-and-conferences/research-project"
             element={<ResearchProject />}
           />
+
+          {/* Faculties and Programmes Pages */}
+          <Route
+            path="/faculties-and-programmes/school-of-medicine"
+            element={<SchoolOfMedicine />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

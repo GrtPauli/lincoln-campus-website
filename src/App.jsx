@@ -6,8 +6,7 @@ import HomePage from "./pages/Home";
 // Welcome to LUC Pages
 import About from "./pages/About";
 import FacilitesAndServices from "./pages/FacilitesAndServices";
-import RecognitionsAndAccreditation
- from "./components/home/RecognitionsAndAccreditation";
+import RecognitionsAndAccreditation from "./components/recognitions-and-accreaditations/RecognitionsAndAccreditation";
 
 // Research and Conferences Pages
 import Introduction from "./pages/research-and-conferences/Introduction";

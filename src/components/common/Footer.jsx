@@ -1,11 +1,11 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-
         {/* Column 1: QUICK LINKS */}
         <div>
           <h4 className="text-xl font-bold mb-4">QUICK LINKS</h4>
@@ -72,16 +72,13 @@ export default function Footer() {
           <h4 className="text-xl font-bold mb-4">ADDITIONAL INFO</h4>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="flex items-center hover:text-red-600 transition-colors">
+              <Link
+                to="/examinations-and-regulations"
+                className="flex items-center hover:text-red-600 transition-colors"
+              >
                 <span className="text-red-600 mr-2">&#x2022;</span>
                 Examination Rules and Regulations
-              </a>
-            </li>
-            <li>
-              <a href="#" className="flex items-center hover:text-red-600 transition-colors">
-                <span className="text-red-600 mr-2">&#x2022;</span>
-                Examination Schedule
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="flex items-center hover:text-red-600 transition-colors">

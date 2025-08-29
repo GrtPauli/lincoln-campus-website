@@ -5,7 +5,7 @@ import HomePage from "./pages/Home";
 
 // Welcome to LUC Pages
 import About from "./pages/About";
-import FacilitesAndServices from "./pages/FacilitesAndServices";
+import FacilitiesAndServices from "./pages/FacilitiesAndServices"; // Fixed import
 import RecognitionsAndAccreditation from "./pages/RecognitionsAndAccreditation";
 
 // Research and Conferences Pages
@@ -17,6 +17,8 @@ import SchoolOfMedicine from "./pages/faculties-and-programmes/school-of-medicin
 
 // Contact Pages
 import Contact from "./pages/Contact";
+// Examination link for the footer
+import ExaminationsAndRegulations from "./pages/ExaminationsAndRegulations";
 
 function App() {
   return (
@@ -30,9 +32,18 @@ function App() {
           <Route path="/about-us" element={<About />} />
           <Route
             path="/facilities-and-services"
-            element={<FacilitesAndServices />}
+            element={<FacilitiesAndServices />}
           />
-         <Route path="/recognitions-and-accreditations" element={<RecognitionsAndAccreditation/>}/>
+          <Route
+            path="/recognitions-and-accreditations"
+            element={<RecognitionsAndAccreditation />}
+          />
+          {/* Examination page */}
+          <Route
+            path="/examinations-and-regulations"
+            element={<ExaminationsAndRegulations />}
+          />
+
           {/* Research and Development Pages */}
           <Route
             path="/research-and-conferences/introduction"
@@ -46,7 +57,8 @@ function App() {
           {/* Faculties and Programmes Pages */}
           <Route
             path="/faculties-and-programmes/school-of-medicine"
-            element={<SchoolOfMedicine />} />
+            element={<SchoolOfMedicine />}
+          />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -38,8 +38,8 @@ export const MENU_LINKS = [
         key: "posts",
         label: "Posts",
         children: [
-          { key: "all-events", label: "All Events" },
-          { key: "news", label: "News" },
+          { key: "all-events", label: "All Events", to: "/posts/events" },
+          { key: "news", label: "News", to: "/posts/news" },
           { key: "blog", label: "Blog" },
           { key: "staff-activity", label: "Staff Activity" },
         ],

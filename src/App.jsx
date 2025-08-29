@@ -7,6 +7,8 @@ import HomePage from "./pages/Home";
 import About from "./pages/About";
 import FacilitesAndServices from "./pages/FacilitesAndServices";
 import RecognitionsAndAccreditation from "./pages/RecognitionsAndAccreditation";
+import AllEvents from "./pages/posts/AllEvents";
+import News from "./pages/posts/News";
 
 // Research and Conferences Pages
 import Introduction from "./pages/research-and-conferences/Introduction";
@@ -32,7 +34,16 @@ function App() {
             path="/facilities-and-services"
             element={<FacilitesAndServices />}
           />
-         <Route path="/recognitions-and-accreditations" element={<RecognitionsAndAccreditation/>}/>
+          <Route
+            path="/recognitions-and-accreditations"
+            element={<RecognitionsAndAccreditation />}
+          />
+
+
+          <Route path="/posts/events" element={<AllEvents />} />
+          <Route path="/posts/news" element={<News />} />
+
+
           {/* Research and Development Pages */}
           <Route
             path="/research-and-conferences/introduction"
@@ -46,7 +57,8 @@ function App() {
           {/* Faculties and Programmes Pages */}
           <Route
             path="/faculties-and-programmes/school-of-medicine"
-            element={<SchoolOfMedicine />} />
+            element={<SchoolOfMedicine />}
+          />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

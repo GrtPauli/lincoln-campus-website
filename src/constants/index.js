@@ -50,13 +50,109 @@ export const MENU_LINKS = [
     key: "faculties-and-programmes",
     label: "Faculties & Programmes",
     isParent: true,
-  children: [
-    {
-      key: "school-of-medicine",
-      label: "School of Medicine",
-      to: "/faculties-and-programmes/school-of-medicine",
-    }
-  ],
+    children: [
+      {
+        key: "Faculty of Medicine & Allied Health Sciences",
+        label: "Faculty of Medicine & Allied Health Sciences",
+        to: "/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences",
+        children: [
+          {
+            key: "Medicine & Surgery (MBBS)",
+            label: "Medicine & Surgery (MBBS)",
+            to: "/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences/medicine-and-surgery-mbbs",
+          },
+          {
+            key: "B.N.Sc Nursing",
+            label: "B.N.Sc Nursing",
+            to: "/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences/bnsc-nursing",
+          },
+          {
+            key: "B. Environmental Health",
+            label: "B. Environmental Health",
+            to: "/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences/b-environmental-health",
+          },
+          {
+            key: "B. Health Information Management",
+            label: "B. Health Information Management",
+            to: "/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences/b-health-information-management",
+          },
+          {
+            key: "Bachelor of Radiography & Medical Imaging (B.R.A.D)",
+            label: "Bachelor of Radiography & Medical Imaging (B.R.A.D)",
+            to: "/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences/bachelor-of-radiography-and-medical-imaging-brad",
+          },
+          {
+            key: "B.Sc. Public Health",
+            label: "B.Sc. Public Health",
+            to: "/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences/bsc-public-health",
+          },
+          {
+            key: "B. Community Health Science",
+            label: "B. Community Health Science",
+            to: "/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences/b-community-health-science",
+          },
+        ],
+      },
+      {
+        key: "Faculty of Sciences & Computing",
+        label: "Faculty of Sciences & Computing",
+        to: "/faculties-and-programmes/faculty-of-sciences-and-computing",
+        children: [
+          {
+            key: "B.Sc. Microbiology",
+            label: "B.Sc. Microbiology",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-microbiology",
+          },
+          {
+            key: "B.Sc. BioChemistry",
+            label: "B.Sc. BioChemistry",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-biochemistry",
+          },
+          {
+            key: "B.Sc. Biomedical Sciences",
+            label: "B.Sc. Biomedical Sciences",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-biomedical-sciences",
+          },
+          {
+            key: "B.Sc. Information Technology",
+            label: "B.Sc. Information Technology",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-information-technology",
+          },
+          {
+            key: "B.Sc. Cyber Security",
+            label: "B.Sc. Cyber Security",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-cyber-security",
+          },
+        ],
+      },
+      {
+        key: "Faculty of Management & Social Sciences",
+        label: "Faculty of Management & Social Sciences",
+        to: "/faculties-and-programmes/faculty-of-management-and-social-sciences",
+         children: [
+          {
+            key: "B.Sc. Accounting",
+            label: "B.Sc. Accounting",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-accounting",
+          },
+          {
+            key: "B.Sc. Business Administration",
+            label: "B.Sc. Business Administration",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-business-administration",
+          },
+          {
+            key: "B.Sc. Management (Oil & Gas)",
+            label: "B.Sc. Management (Oil & Gas)",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-management-oil-and-gas",
+          },
+          {
+            key: "B.Sc. Mass Communication",
+            label: "B.Sc. Mass Communication",
+            to: "/faculties-and-programmes/faculty-of-sciences-and-computing/bsc-mass-communication",
+          },
+        ],
+      },
+    ],
   },
   {
     key: "student-corner",
@@ -67,10 +163,11 @@ export const MENU_LINKS = [
         key: "current-students",
         label: "Current Students",
         children: [
-          { key: "lls", label: "Lincoln Learning System (LLS)" },
-          { key: "odl", label: "Lincoln Open Distance Learning" },
+          { key: "lls", label: "Lincoln Learning System (LLS)", to: "https://lls.lincoln.edu.ng/login" },
+          { key: "odl", label: "Lincoln Open Distance Learning", to: "/current-students/odl" },
           { key: "phd-student-login", label: "PhD Student Login" },
           { key: "examination-schedule", label: "Examination Schedule" },
+          { key: "examination-rules-and-regulations", label: "Examination Rules & Regulations", to: "/current-students/examination-rules-and-regulations" },
         ],
       },
       {

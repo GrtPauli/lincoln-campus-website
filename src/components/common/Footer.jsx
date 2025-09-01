@@ -11,13 +11,13 @@ export default function Footer() {
           <h4 className="text-xl font-bold mb-4">QUICK LINKS</h4>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="flex items-center hover:text-red-600 transition-colors">
+              <a href="/" className="flex items-center hover:text-red-600 transition-colors">
                 <span className="text-red-600 mr-2">&#x2022;</span>
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center hover:text-red-600 transition-colors">
+              <a href="/about-us" className="flex items-center hover:text-red-600 transition-colors">
                 <span className="text-red-600 mr-2">&#x2022;</span>
                 About Us
               </a>

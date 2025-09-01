@@ -1,13 +1,14 @@
 import React from "react";
 import AboutSection from "../components/about/AboutSection";
-import AboutHero from "../components/about/AboutHero";
+import AboutUsImage from "../assets/about.png"
 import MainLayout from "../layouts/MainLayout";
+import Hero from "../components/common/ui/Hero";
 
 function About() {
   return (
     <MainLayout>
       <div>
-        <AboutHero />
+        <Hero title="About Us" backgroundImage={AboutUsImage} />
         <AboutSection />
       </div>
     </MainLayout>

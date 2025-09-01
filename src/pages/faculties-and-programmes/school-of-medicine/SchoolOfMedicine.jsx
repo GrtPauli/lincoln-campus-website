@@ -199,7 +199,7 @@ export default function SchoolOfMedicine() {
   return (
     <MainLayout>
       <Hero
-        title="School of Medicine"
+        title="School of Medicine & Surgery"
         backgroundImage="https://plus.unsplash.com/premium_photo-1733317306663-3c202d428d65?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U2Nob29sJTIwb2YlMjBNZWRpY2luZXxlbnwwfDB8MHx8fDA%3D"
         height="h-[200px] md:h-[200px] lg:h-[400px]"
         overlayOpacity="bg-black/10"
@@ -210,8 +210,8 @@ export default function SchoolOfMedicine() {
         id="overview"
         title="Overview"
         paragraphs={[
-          "Lincoln University College’s School of Medicine is ranked among one of the world’s top universities providing clinical, pre-clinical and health-related research ranges...",
-          "We educate competent candidates for the health sector, as well as health-related research...",
+          "The School of Medicine & Surgery at Lincoln University College is dedicated to excellence in medical education, research, and clinical practice. Our mission is to train competent, compassionate, and ethical medical professionals who will make significant contributions to healthcare locally and globally...",
+          "We offer a comprehensive curriculum that integrates basic sciences with clinical experiences, ensuring our students are well-prepared for the challenges of modern medicine...",
         ]}
       />
 

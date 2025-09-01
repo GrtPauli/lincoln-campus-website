@@ -3,7 +3,7 @@ import FacilitiesAndServicesContent from "../components/facilities-and-services/
 import Hero from "../components/common/ui/Hero";
 import MainLayout from "../layouts/MainLayout";
 
-export default function FacilitesAndServices() {
+export default function FacilitiesAndServices() { // Fixed component name
   return (
     <MainLayout>
       <div>

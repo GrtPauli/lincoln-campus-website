@@ -7,6 +7,8 @@ import HomePage from "./pages/Home";
 import About from "./pages/About";
 import FacilitiesAndServices from "./pages/FacilitiesAndServices"; // Fixed import
 import RecognitionsAndAccreditation from "./pages/RecognitionsAndAccreditation";
+import AllEvents from "./pages/posts/AllEvents";
+import News from "./pages/posts/News";
 
 // Research and Conferences Pages
 import Introduction from "./pages/research-and-conferences/Introduction";
@@ -43,6 +45,11 @@ function App() {
             path="/examinations-and-regulations"
             element={<ExaminationsAndRegulations />}
           />
+
+
+          <Route path="/posts/events" element={<AllEvents />} />
+          <Route path="/posts/news" element={<News />} />
+
 
           {/* Research and Development Pages */}
           <Route

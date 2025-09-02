@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
-export default function Accordion({ data }) {
-  const [activeIndex, setActiveIndex] = useState(null);
+export default function Accordion({ defaultActiveIndex, data }) {
+  const [activeIndex, setActiveIndex] = useState(defaultActiveIndex || 0);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -35,7 +35,7 @@ export default function Accordion({ data }) {
             <div
               id={`accordion-content-${index}`}
               className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-                isActive ? "max-h-[500px] px-4 py-3 bg-border/50" : "max-h-0"
+                isActive ? " px-4 py-3 bg-border/50" : "max-h-0"
               }`}
             >
               {isActive && item.content}

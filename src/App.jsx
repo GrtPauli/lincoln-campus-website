@@ -17,9 +17,6 @@ import ResearchProject from "./pages/research-and-conferences/ResearchProject";
 // Faculties and Programmes Pages
 import SchoolOfMedicine from "./pages/faculties-and-programmes/school-of-medicine/SchoolOfMedicine";
 
-// Student Corner Pages
-import ExaminationRulesAndRegulations from "./pages/students-corner/current-students/ExaminationRulesAndRegulations";
-
 // Contact Pages
 import Contact from "./pages/Contact";
 // Examination link for the footer
@@ -66,14 +63,8 @@ function App() {
 
           {/* Faculties and Programmes Pages */}
           <Route
-            path="/faculties-and-programmes/faculty-of-medicine-and-allied-health-sciences/medicine-and-surgery-mbbs"
+            path="/faculties-and-programmes/school-of-medicine"
             element={<SchoolOfMedicine />}
-          />
-
-          {/* Student Corner Pages */}
-          <Route
-            path="/current-students/examination-rules-and-regulations"
-            element={<ExaminationRulesAndRegulations />}
           />
 
           <Route path="*" element={<NotFoundPage />} />

@@ -18,6 +18,10 @@ const MENU_LINKS = [
         to: "/about-us",
       },
       {
+        key: "policy-and-objectives",
+        label: "Policy and Objectives",
+      },
+      {
         key: "recognitions-and-accreditations",
         label: "Recognitions & Accreditations",
         to: "/recognitions-and-accreditations",

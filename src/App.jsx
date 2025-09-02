@@ -15,12 +15,13 @@ import Introduction from "./pages/research-and-conferences/Introduction";
 import ResearchProject from "./pages/research-and-conferences/ResearchProject";
 
 // Faculties and Programmes Pages
-import SchoolOfMedicine from "./pages/faculties-and-programmes/school-of-medicine/SchoolOfMedicine";
+import FacultyDetails from "./pages/faculties-and-programmes/FacultyDetails";
 
 // Contact Pages
 import Contact from "./pages/Contact";
 // Examination link for the footer
 import ExaminationsAndRegulations from "./pages/ExaminationsAndRegulations";
+import ManagementPage from "./pages/collaborators/Management";
 
 function App() {
   return (
@@ -46,10 +47,8 @@ function App() {
             element={<ExaminationsAndRegulations />}
           />
 
-
           <Route path="/posts/events" element={<AllEvents />} />
           <Route path="/posts/news" element={<News />} />
-
 
           {/* Research and Development Pages */}
           <Route
@@ -63,8 +62,13 @@ function App() {
 
           {/* Faculties and Programmes Pages */}
           <Route
-            path="/faculties-and-programmes/school-of-medicine"
-            element={<SchoolOfMedicine />}
+            path="/faculties-and-programmes/:slug"
+            element={<FacultyDetails />}
+          />
+
+          <Route
+            path="/collaborators/management"
+            element={<ManagementPage />}
           />
 
           <Route path="*" element={<NotFoundPage />} />

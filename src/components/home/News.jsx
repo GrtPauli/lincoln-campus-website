@@ -1,29 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import { Image } from "antd";
+import { Link } from "react-router-dom";
+import { BASE_API_URL } from "../../constants";
+import { AppModal } from "../common/Modal";
 import StyledUnderline from "../common/ui/StyledUnderline";
 
-const news = [
-  {
-    id: 1,
-    image: "https://posts.lincoln.edu.my/wp-content/uploads/2025/06/image-1.png",
-    title: "Lincoln University College Shines in Times Higher Education’s 2025 Impact Rankings",
-    href: "/news/limc-2025",
-  },
-  {
-    id: 2,
-    image: "https://posts.lincoln.edu.my/wp-content/uploads/2025/04/ca883404-3688-4c79-b7a6-c2eda6de8e79-1024x768.jpg",
-    title:
-      "5th International Conference on “Transformational Impact of AI on Business Competitiveness”",
-    href: "/news/zyvia-launch",
-  },
-  {
-    id: 3,
-    image: "https://posts.lincoln.edu.my/wp-content/uploads/2025/04/VASKAR.jpg",
-    title: "MoU Signing between ITM University Gwalior, India and Lincoln University College, Malaysia",
-    href: "/news/este-2025",
-  },
-];
+export const NewsItemCard = ({ img, title, onReadMore, post_date, tag }) => {
+  return (
+    <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col">
+      <div className="relative w-full h-52 overflow-hidden">
+        <Image
+          src={img}
+          width="100%"
+          height="100%"
+          className="object-center object-cover hover:scale-105 transition-transform duration-500"
+          preview={false}
+        />
+        <span className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+          {tag || "News"}
+        </span>
+        <span className="absolute bottom-3 right-3 bg-text/70 text-white text-xs px-2 py-1 rounded-md">
+          {post_date}
+        </span>
+      </div>
+      <div className="p-4 flex flex-col justify-between flex-grow">
+        <h3 className="text-base font-semibold text-text mb-3">
+          {title || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at itaque distinctio!"}
+        </h3>
+        <div className="flex justify-end mt-2">
+          <button
+            onClick={onReadMore}
+            className="text-primary font-medium hover:underline"
+          >
+            Read More →
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default function News() {
+export default function News({ news }) {
+  const [modal, setModal] = useState({ data: null, open: false });
+
   return (
     <section className="w-full p-12 py-14">
       <div className="mb-8 inline-block">
@@ -32,42 +51,45 @@ export default function News() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {news.map((event) => (
-          <div
-            key={event.id}
-            className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
-          >
-            <div className="relative w-full h-52 overflow-hidden">
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-
-            <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-lg font-semibold text-text mb-3">
-                {event.title}
-              </h3>
-              <a
-                href={event.href}
-                className="mt-auto text-primary font-medium hover:underline"
-              >
-                Read More →
-              </a>
-            </div>
-          </div>
+        {news?.map((item, index) => (
+          <NewsItemCard
+            key={item.id || index}
+            img={`${BASE_API_URL}/images/news/${item.post_image_url}`}
+            title={item.post_title}
+            onReadMore={() => setModal({ data: item, open: true })}
+            post_date={item.post_date}
+            tag={item.tag}
+          />
         ))}
       </div>
 
-      {/* <div className="flex justify-center items-center mt-10 gap-4">
-        <button className="px-4 py-2 rounded-xl border border-gray-300 text-gray-600 hover:bg-gray-100 transition cursor-pointer">
-          Previous
-        </button>
-        <button className="px-4 py-2 rounded-xl bg-primary text-white font-medium hover:bg-red-700 transition cursor-pointer">
-          Next
-        </button>
-      </div> */}
+      <Link
+        to="/posts/news"
+        className="text-sm text-gray-600 font-light underline mt-5 text-right block"
+      >
+        View all News
+      </Link>
+
+      <AppModal
+        open={modal.open}
+        onDismiss={() => setModal({ open: false })}
+        width={600}
+        destroyOnClose
+      >
+        <div className="w-[100%] h-[400px]">
+          <Image
+            preview={false}
+            src={`${BASE_API_URL}/images/news/${modal?.data?.post_image_url}`}
+            width="100%"
+            height="100%"
+            className="object-center object-cover"
+          />
+        </div>
+
+        <div className="mt-5">
+          <p className="leading-loose">{modal?.data?.post_content}</p>
+        </div>
+      </AppModal>
     </section>
   );
 }

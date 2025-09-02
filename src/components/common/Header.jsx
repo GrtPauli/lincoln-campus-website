@@ -1,4 +1,6 @@
+// src/components/common/Header.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -7,24 +9,29 @@ export default function Header() {
         <div className="container mx-auto px-4 flex justify-between items-center py-2">
           <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm justify-center md:justify-start">
             <li>
-              <a href="#" className="hover:underline">
+              <Link to="/scholarships" className="hover:underline">
                 Scholarships
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="http://apply.lincoln.edu.ng" className="hover:underline">
+              <a
+                href="http://apply.lincoln.edu.ng"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
                 Online Application
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link to="/lincoln-online-system" className="hover:underline">
                 Lincoln Online System
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link to="/faqs" className="hover:underline">
                 FAQs
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

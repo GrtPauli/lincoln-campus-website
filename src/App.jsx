@@ -23,10 +23,14 @@ import Contact from "./pages/Contact";
 import ExaminationsAndRegulations from "./pages/ExaminationsAndRegulations";
 import ManagementPage from "./pages/collaborators/Management";
 
+import PracticalSkillApplication from "./pages/practical-skill-application/PracticalSkillApplication";
+import ScrollToTop from "./components/common/ScrollToTop";
+
 function App() {
   return (
     <Router>
       <main>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact-us" element={<Contact />} />
@@ -70,6 +74,8 @@ function App() {
             path="/collaborators/management"
             element={<ManagementPage />}
           />
+
+          <Route path="/psa" element={<PracticalSkillApplication />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

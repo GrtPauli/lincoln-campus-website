@@ -1,6 +1,7 @@
 import React from "react";
 import VisionImage from "../../assets/vision1.jpg";
 import MissionImage from "../../assets/mission1.jpg";
+import StyledUnderline from "../common/ui/StyledUnderline";
 
 const AboutUs = () => {
   return (
@@ -10,9 +11,12 @@ const AboutUs = () => {
       <div className="container mx-auto px-4 py-6">
         {/* About Lincoln University College Section */}
         <section className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center md:text-left">
-            About Lincoln University College
-          </h2>
+          <div className="inline-block mb-6">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center md:text-left">
+              About Lincoln University College
+            </h2>
+            <StyledUnderline />
+          </div>
           <p className="text-gray-600 leading-relaxed text-center md:text-left">
             Lincoln University is a private institution approved by the Federal
             Ministry of Education and accredited by the National Universities
@@ -36,7 +40,12 @@ const AboutUs = () => {
         <section className="mb-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Vision</h2>
+              <div className="inline-block mb-6">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                  Vision
+                </h2>
+                <StyledUnderline />
+              </div>
               <p className="text-gray-600 leading-relaxed">
                 Lincoln University envisions becoming a distinguished
                 institution that sets the benchmark for quality education,
@@ -69,7 +78,12 @@ const AboutUs = () => {
               />
             </div>
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Mission</h2>
+              <div className="inline-block mb-6">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                  Mission
+                </h2>
+                <StyledUnderline />
+              </div>
               <p className="text-gray-600 leading-relaxed">
                 At Lincoln University, our mission is to democratize quality
                 education, ensuring it is accessible to everyone, regardless of

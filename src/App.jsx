@@ -27,12 +27,15 @@ import PolicyAndObjectives from "./pages/policy-and-objectives";
 
 // Header Import
 import Header from "./components/common/Header"; // Corrected path
+import PracticalSkillApplication from "./pages/practical-skill-application/PracticalSkillApplication";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <main>
         <Header /> {/* Include Header */}
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contact-us" element={<Contact />} />
@@ -56,6 +59,8 @@ function App() {
           <Route path="/collaborators/management" element={<ManagementPage />} />
 
           <Route path="/policy-and-objectives" element={<PolicyAndObjectives />} />
+
+          <Route path="/psa" element={<PracticalSkillApplication />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

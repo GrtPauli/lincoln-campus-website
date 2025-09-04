@@ -149,6 +149,7 @@ const MENU_LINKS = [
   {
     key: "psa",
     label: "Practical Skill Application",
+    to: "/psa",
     isParent: true,
   },
   { key: "contact-us", label: "Contact Us", isParent: true, to: "/contact-us" },

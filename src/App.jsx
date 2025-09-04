@@ -25,6 +25,9 @@ import ManagementPage from "./pages/collaborators/Management";
 
 import PracticalSkillApplication from "./pages/practical-skill-application/PracticalSkillApplication";
 import ScrollToTop from "./components/common/ScrollToTop";
+import ProgrammesEnquiry from "./pages/faculties-and-programmes/ProgrammesEnquiry";
+import ProgrammeEligibility from "./pages/faculties-and-programmes/ProgrammeEligibility";
+import Faculties from "./pages/faculties-and-programmes/Faculties";
 
 function App() {
   return (
@@ -69,6 +72,10 @@ function App() {
             path="/faculties-and-programmes/:slug"
             element={<FacultyDetails />}
           />
+
+          <Route path="/enquiry" element={<ProgrammesEnquiry />} />
+          <Route path="/eligibility" element={<ProgrammeEligibility />} />
+          <Route path="/faculties" element={<Faculties />} />
 
           <Route
             path="/collaborators/management"

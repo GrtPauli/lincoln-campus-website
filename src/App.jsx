@@ -22,18 +22,20 @@ import Contact from "./pages/Contact";
 import ExaminationsAndRegulations from "./pages/ExaminationsAndRegulations";
 import ManagementPage from "./pages/collaborators/Management";
 
+import PracticalSkillApplication from "./pages/practical-skill-application/PracticalSkillApplication";
+import ScrollToTop from "./components/common/ScrollToTop";
+
 // New Import for Policy and Objectives
 import PolicyAndObjectives from "./pages/policy-and-objectives";
 
 // Header Import
 import Header from "./components/common/Header"; // Corrected path
-import PracticalSkillApplication from "./pages/practical-skill-application/PracticalSkillApplication";
-import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <main>
+        <ScrollToTop />
         <Header /> {/* Include Header */}
         <ScrollToTop />
         <Routes>

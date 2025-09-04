@@ -77,7 +77,8 @@ export default function HomePage() {
         <HomeHeroSection slides={data?.sliders?.data} />
         <Events events={data?.events?.data} />
         <News news={data?.news?.data} />
-        {/* <Programmes /> */}
+        <Programmes />
+        <SchoolsSection />
         <Videos videos={data?.videos?.data} />
         <Achievements />
         <SchoolsSection />

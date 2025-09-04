@@ -22,9 +22,9 @@ const programmes = [
     id: 3,
     image:
       "https://plus.unsplash.com/premium_photo-1691844987860-b9efa12844dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D",
-    title: "Faculty & School",
+    title: "Faculties",
     cta: "Click to Learn More",
-    href: "/faculty",
+    href: "/faculties",
   },
 ];
 
@@ -32,7 +32,6 @@ function Programmes() {
   return (
     <section className="w-full p-12 py-14">
       <div className="max-w-7xl mx-auto">
-
         <div className="mb-8 inline-block">
           <h2 className="text-2xl md:text-3xl font-bold text-text">
             Explore Our Programmes
@@ -61,6 +60,8 @@ function Programmes() {
 
                 <a
                   href={programme.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-auto inline-block px-6 py-3 rounded-full bg-gradient-to-r from-primary/90 to-primary text-secondary font-medium hover:from-primary hover:to-primary/95 transition-all duration-300"
                 >
                   {programme.cta}

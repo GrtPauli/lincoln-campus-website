@@ -74,7 +74,7 @@ const MENU_LINKS = [
       { key: "international-student", label: "International Student" },
       { key: "admission-intakes", label: "Admission Intakes" },
       { key: "scholarship", label: "Scholarship" },
-      { key: "fees-structure", label: "Fees Structure" },
+      { key: "fees-structure", label: "Fees Structure", to: "/admission/fees-structure" },
       {
         key: "apply-now",
         label: (

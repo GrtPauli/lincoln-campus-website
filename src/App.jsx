@@ -29,10 +29,11 @@ import ProgrammeEligibility from "./pages/faculties-and-programmes/ProgrammeElig
 import Faculties from "./pages/faculties-and-programmes/Faculties";
 
 // New Import for Policy and Objectives
-import PolicyAndObjectives from "./pages/policy-and-objectives";
+import PolicyAndObjectives from "./pages/PolicyAndObjectives";
 
 // Header Import
 import Header from "./components/common/Header"; // Corrected path
+import FeesStructure from "./pages/admission/FeesStructure";
 
 function App() {
   return (
@@ -69,6 +70,11 @@ function App() {
           <Route
             path="/collaborators/management"
             element={<ManagementPage />}
+          />
+
+          <Route
+            path="/admission/fees-structure"
+            element={<FeesStructure />}
           />
 
           <Route path="/psa" element={<PracticalSkillApplication />} />

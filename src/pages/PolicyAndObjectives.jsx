@@ -1,30 +1,16 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
+import Hero from "../components/common/ui/Hero";
+
 function PolicyAndObjectives() {
   return (
     <MainLayout>
-      {/* Policy & Objectives Section with Image */}
-      <section className="mb-8">
-        <div className="relative">
-          <img
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
-            alt="Policy Objectives"
-            className="w-full h-64 object-cover"
-          />
-          <div className="absolute bottom-0 left-0 m-6">
-            <div className="bg-red-600 text-white p-6 rounded-lg max-w-lg">
-              <h2 className="text-2xl font-bold">Our Policy & Objectives</h2>
-              <p className="text-sm mt-2">
-                The Lincoln University College mission drives our focus on
-                quality education for individual development and it's vital
-                foundation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Our Policy & Objectives"
+        backgroundImage="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+      />
 
-      <div className="container mx-auto p-6">
+      <div className="container mx-auto p-10">
         {/* Quality Policy Section */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Quality Policy</h2>

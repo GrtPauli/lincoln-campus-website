@@ -146,7 +146,7 @@ export default function FacultyDetails() {
   //       "Earning our MD is just the beginning—we aspire to further our careers in the UK, specialize, and contribute to medical literature, leaving a lasting impact on Lincoln's medical education. Our mission is to serve humanity with dedication and passion. Earning our MD is just the beginning—we aspire to further our careers in the UK, specialize, and contribute to medical literature, leaving a lasting impact on Lincoln's medical education. Our mission is to serve humanity with dedication and passion.",
   //   },
   // ];
-  
+
   const { slug } = useParams();
   const faculty = FACULTIES.find((f) => f.slug === slug);
 
@@ -158,20 +158,26 @@ export default function FacultyDetails() {
         height="h-[200px] md:h-[200px] lg:h-[400px]"
         overlayOpacity="bg-black/10"
       />
-      {/* <FacultyNav /> */}
+      <FacultyNav />
 
-      <Overview
-        id="overview"
-        title="Overview"
-        paragraphs={faculty.overview}
+      <Overview id="overview" title="Overview" paragraphs={faculty.overview} />
+
+      <Programmes
+        id="programmes"
+        title="Programmes"
+        programmes={faculty?.programmes}
       />
 
-      <Programmes id="programmes" title="Programmes" programmes={faculty?.programmes} />
-
-      {/* <DeanMessage dean={dean} />
-      <FacultyMembers members={facultyMembers} />
-      <Gallery title="School of Medicine Gallery" images={galleryImages} />
-      <Testimonials testimonials={testimonials} /> */}
+      {faculty?.dean && <DeanMessage dean={faculty.dean} />}
+      {faculty?.facultyMembers && (
+        <FacultyMembers members={faculty.facultyMembers} />
+      )}
+      {faculty?.gallery && (
+        <Gallery title={`${faculty.title} Gallery`} images={faculty.gallery} />
+      )}
+      {faculty?.testimonials && (
+        <Testimonials testimonials={faculty.testimonials} />
+      )}
     </MainLayout>
   );
 }

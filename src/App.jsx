@@ -24,6 +24,9 @@ import ManagementPage from "./pages/collaborators/Management";
 
 import PracticalSkillApplication from "./pages/practical-skill-application/PracticalSkillApplication";
 import ScrollToTop from "./components/common/ScrollToTop";
+import ProgrammesEnquiry from "./pages/faculties-and-programmes/ProgrammesEnquiry";
+import ProgrammeEligibility from "./pages/faculties-and-programmes/ProgrammeEligibility";
+import Faculties from "./pages/faculties-and-programmes/Faculties";
 
 // New Import for Policy and Objectives
 import PolicyAndObjectives from "./pages/policy-and-objectives";
@@ -58,9 +61,15 @@ function App() {
           {/* Faculties and Programmes Pages */}
           <Route path="/faculties-and-programmes/:slug" element={<FacultyDetails />} />
 
-          <Route path="/collaborators/management" element={<ManagementPage />} />
-
           <Route path="/policy-and-objectives" element={<PolicyAndObjectives />} />
+          <Route path="/enquiry" element={<ProgrammesEnquiry />} />
+          <Route path="/eligibility" element={<ProgrammeEligibility />} />
+          <Route path="/faculties" element={<Faculties />} />
+
+          <Route
+            path="/collaborators/management"
+            element={<ManagementPage />}
+          />
 
           <Route path="/psa" element={<PracticalSkillApplication />} />
 

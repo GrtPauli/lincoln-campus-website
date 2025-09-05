@@ -20,6 +20,7 @@ const MENU_LINKS = [
       {
         key: "policy-and-objectives",
         label: "Policy and Objectives",
+        to: "/policy-and-objectives", // Added this line
       },
       {
         key: "recognitions-and-accreditations",
@@ -152,7 +153,7 @@ const MENU_LINKS = [
     isParent: true,
   },
   { key: "contact-us", label: "Contact Us", isParent: true, to: "/contact-us" },
-]
+];
 
 const { SubMenu, Item } = Menu;
 

@@ -6,7 +6,7 @@ export default function MainLayout({ children }) {
   return (
     <div>
         <Navbar/>
-            <div className='pt-24 max-md:pt-32 max-sm:pt-40'>
+            <div className='pt-16 max-md:pt-18 max-sm:pt-16'>
                 {children}
             </div>
         <Footer/>

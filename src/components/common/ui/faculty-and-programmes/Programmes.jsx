@@ -1,7 +1,8 @@
 import React from "react";
 import StyledUnderline from "../StyledUnderline";
+import { Link } from "react-router-dom";
 
-export default function Programmes({ id, title, programmes }) {
+export default function Programmes({ id, title, programmes, facultySlug }) {
   return (
     <div id={id} className="w-full p-12 pb-14">
       <div className="mb-9 inline-block">
@@ -11,8 +12,9 @@ export default function Programmes({ id, title, programmes }) {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
         {programmes.map((programme, index) => (
-          <div
+          <Link
             key={index}
+             to={`/faculties-and-programmes/${facultySlug}/programmes/${programme.slug}`}
             className="flex flex-col items-center text-center group"
           >
             <div className="w-24 h-24 mb-4 overflow-hidden rounded-full bg-gray-50 flex items-center justify-center md:w-28 md:h-28">
@@ -25,7 +27,7 @@ export default function Programmes({ id, title, programmes }) {
             <p className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors duration-300 leading-tight">
               {programme.title}
             </p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

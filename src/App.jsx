@@ -34,6 +34,7 @@ import PolicyAndObjectives from "./pages/PolicyAndObjectives";
 // Header Import
 import Header from "./components/common/Header"; // Corrected path
 import FeesStructure from "./pages/admission/FeesStructure";
+import ProgrammeDetails from "./pages/faculties-and-programmes/ProgrammeDetails";
 
 function App() {
   return (
@@ -48,21 +49,46 @@ function App() {
 
           {/* Welcome to LUC Pages */}
           <Route path="/about-us" element={<About />} />
-          <Route path="/facilities-and-services" element={<FacilitiesAndServices />} />
-          <Route path="/recognitions-and-accreditations" element={<RecognitionsAndAccreditation />} />
-          <Route path="/examinations-and-regulations" element={<ExaminationsAndRegulations />} />
+          <Route
+            path="/facilities-and-services"
+            element={<FacilitiesAndServices />}
+          />
+          <Route
+            path="/recognitions-and-accreditations"
+            element={<RecognitionsAndAccreditation />}
+          />
+          <Route
+            path="/examinations-and-regulations"
+            element={<ExaminationsAndRegulations />}
+          />
 
           <Route path="/posts/events" element={<AllEvents />} />
           <Route path="/posts/news" element={<News />} />
 
           {/* Research and Development Pages */}
-          <Route path="/research-and-conferences/introduction" element={<Introduction />} />
-          <Route path="/research-and-conferences/research-project" element={<ResearchProject />} />
+          <Route
+            path="/research-and-conferences/introduction"
+            element={<Introduction />}
+          />
+          <Route
+            path="/research-and-conferences/research-project"
+            element={<ResearchProject />}
+          />
 
           {/* Faculties and Programmes Pages */}
-          <Route path="/faculties-and-programmes/:slug" element={<FacultyDetails />} />
+          <Route
+            path="/faculties-and-programmes/:slug"
+            element={<FacultyDetails />}
+          />
+          <Route
+            path="/faculties-and-programmes/:facultySlug/programmes/:programmeSlug"
+            element={<ProgrammeDetails />}
+          />
 
-          <Route path="/policy-and-objectives" element={<PolicyAndObjectives />} />
+          <Route
+            path="/policy-and-objectives"
+            element={<PolicyAndObjectives />}
+          />
           <Route path="/enquiry" element={<ProgrammesEnquiry />} />
           <Route path="/eligibility" element={<ProgrammeEligibility />} />
           <Route path="/faculties" element={<Faculties />} />
@@ -72,10 +98,7 @@ function App() {
             element={<ManagementPage />}
           />
 
-          <Route
-            path="/admission/fees-structure"
-            element={<FeesStructure />}
-          />
+          <Route path="/admission/fees-structure" element={<FeesStructure />} />
 
           <Route path="/psa" element={<PracticalSkillApplication />} />
 

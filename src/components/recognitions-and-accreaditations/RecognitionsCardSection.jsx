@@ -1,5 +1,13 @@
 import React from 'react';
 
+// Import the images from your assets folder
+import mqrLogo from '../../assets/mor.png';
+import mqaLogo from '../../assets/mqa.png';
+import setara2022Award from '../../assets//qs.png';
+import isoCertificationLogo from '../../assets/setara.png';
+import qsUniversityRankingsLogo from '../../assets/sgs.png';
+import worldUniversityImpactRankingLogo from '../../assets/worlduni.png';
+
 const RecognitionsCardSection = () => {
   return (
     <div className="container mx-auto px-4 py-8 md:py-16">
@@ -14,8 +22,8 @@ const RecognitionsCardSection = () => {
         
         {/* Card 1: Government Recognized */}
         <div className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center">
-          <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-center text-gray-500 rounded-md mb-4">
-            [MQR Logo Placeholder]
+          <div className="w-full h-48 flex items-center justify-center rounded-md mb-4">
+            <img src={mqrLogo} alt="MQR Logo" className="object-contain h-full w-full" />
           </div>
           <h3 className="text-lg md:text-xl font-bold mb-2">
             LINCOLN UNIVERSITY COLLEGE (LUC), MALAYSIA IS FULLY GOVERNMENT RECOGNIZED
@@ -30,8 +38,8 @@ const RecognitionsCardSection = () => {
 
         {/* Card 2: Malaysian Qualifications Agency */}
         <div className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center">
-          <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-center text-gray-500 rounded-md mb-4">
-            [MQA Logo Placeholder]
+          <div className="w-full h-48 flex items-center justify-center rounded-md mb-4">
+            <img src={mqaLogo} alt="MQA Logo" className="object-contain h-full w-full" />
           </div>
           <h3 className="text-lg md:text-xl font-bold mb-2">
             MALAYSIAN QUALIFICATIONS AGENCY (MQA)
@@ -46,8 +54,8 @@ const RecognitionsCardSection = () => {
 
         {/* Card 3: The Setara 2022 */}
         <div className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center">
-          <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-center text-gray-500 rounded-md mb-4">
-            [Setara 2022 Award Placeholder]
+          <div className="w-full h-48 flex items-center justify-center rounded-md mb-4">
+            <img src={setara2022Award} alt="Setara 2022 Award" className="object-contain h-full w-full" />
           </div>
           <h3 className="text-lg md:text-xl font-bold mb-2">
             THE SETARA – 2022
@@ -64,8 +72,8 @@ const RecognitionsCardSection = () => {
         
         {/* Card 4: ISO Certification */}
         <div className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center">
-          <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-center text-gray-500 rounded-md mb-4">
-            [ISO Certification Logo Placeholder]
+          <div className="w-full h-48 flex items-center justify-center rounded-md mb-4">
+            <img src={isoCertificationLogo} alt="ISO Certification Logo" className="object-contain h-full w-full" />
           </div>
           <h3 className="text-lg md:text-xl font-bold mb-2">
             ISO CERTIFICATION
@@ -80,8 +88,8 @@ const RecognitionsCardSection = () => {
 
         {/* Card 5: QS University Rankings */}
         <div className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center">
-          <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-center text-gray-500 rounded-md mb-4">
-            [QS University Rankings Logo Placeholder]
+          <div className="w-full h-48 flex items-center justify-center rounded-md mb-4">
+            <img src={qsUniversityRankingsLogo} alt="QS University Rankings Logo" className="object-contain h-full w-full" />
           </div>
           <h3 className="text-lg md:text-xl font-bold mb-2">
             QS UNIVERSITY RANKINGS
@@ -96,8 +104,8 @@ const RecognitionsCardSection = () => {
 
         {/* Card 6: The World University Impact Ranking */}
         <div className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center">
-          <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-center text-gray-500 rounded-md mb-4">
-            [The World University Impact Ranking Logo Placeholder]
+          <div className="w-full h-48 flex items-center justify-center rounded-md mb-4">
+            <img src={worldUniversityImpactRankingLogo} alt="World University Impact Ranking Logo" className="object-contain h-full w-full" />
           </div>
           <h3 className="text-lg md:text-xl font-bold mb-2">
             THE WORLD UNIVERSITY IMPACT RANKING

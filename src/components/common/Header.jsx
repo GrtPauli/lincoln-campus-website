@@ -33,7 +33,6 @@ export default function Header() {
                 FAQs
               </Link>
             </li>
-         
             <li>
               <Link to="/psa" className="hover:underline">
                 Practical Skill Application

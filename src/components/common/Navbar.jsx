@@ -6,74 +6,93 @@ import Header from "./Header";
 import { Link } from "react-router-dom";
 import { FACULTIES } from "../../constants/faculties";
 
-// All menu items are now configured in a single, corrected data structure.
 const MENU_LINKS = [
   {
     key: "welcome-to-luc",
     label: "Welcome to LUC",
+    isParent: true,
     children: [
       {
         key: "about-us",
-        label: <Link to="/about-us">About Us</Link>,
+        label: "About Us",
+        to: "/about-us",
+      },
+      {
+        key: "management",
+        label: "Management",
+        to: "/management",
       },
       {
         key: "policy-and-objectives",
-        label: <Link to="/policy-and-objectives">Policy and Objectives</Link>,
+        label: "Policy & Objectives",
+        to: "/policy-and-objectives",
       },
       {
         key: "recognitions-and-accreditations",
-        label: <Link to="/recognitions-and-accreditations">Recognitions & Accreditations</Link>,
+        label: "Recognitions & Accreditations",
+        to: "/recognitions-and-accreditations",
       },
       {
         key: "facilities-and-services",
-        label: <Link to="/facilities-and-services">Facilities & Services</Link>,
+        label: "Facilities & Services",
+        to: "/facilities-and-services",
       },
       {
         key: "collaborators",
         label: "Collaborators",
-        children: [
-          {
-            key: "collaborators-management",
-            label: <Link to="/collaborators/management">Management</Link>,
-          },
-        ],
+        to: "/collaborators",
       },
       {
         key: "posts",
-        label: "Posts",
+        label: "Events & News",
         children: [
-          { key: "posts-events", label: <Link to="/posts/events">Events</Link> },
-          { key: "posts-news", label: <Link to="/posts/news">News</Link> },
+          { key: "events", label: "Events", to: "/posts/events" },
+          { key: "news", label: "News", to: "/posts/news" },
         ],
       },
     ],
   },
   {
     key: "faculties-and-programmes",
-    label: "Faculties",
+    label: "Faculties & Programmes",
+    isParent: true,
     children: [
       ...FACULTIES.map((item) => ({
-        key: `faculty-${item.slug}`,
-        label: <Link to={`/faculties-and-programmes/${item.slug}`}>{item.title}</Link>,
+        key: item.slug,
+        label: item.title,
+        to: `/faculties-and-programmes/${item.slug}`,
       })),
     ],
   },
   {
     key: "admission",
     label: "Admission",
+    isParent: true,
     children: [
-      { key: "admission-nigerian-student", label: "Nigerian Student" },
-      { key: "admission-international-student", label: "International Student" },
-      { key: "admission-intakes", label: "Admission Intakes" },
-      { key: "admission-scholarship", label: "Scholarship" },
-      { key: "admission-fees-structure", label: <Link to="/admission/fees-structure">Fees Structure</Link> },
       {
-        key: "admission-apply-now",
+        key: "admission-process",
+        label: "Admission Process",
+        to: "/admission/admission-process",
+      },
+      { key: "nigerian-student", label: "Nigerian Student" },
+      { key: "international-student", label: "International Student" },
+      { key: "scholarship", label: "Scholarship" },
+      {
+        key: "fees-structure",
+        label: "Fees Structure",
+        to: "/admission/fees-structure",
+      },
+      {
+        key: "apply-now",
         label: (
           <button
             className="cursor-pointer"
             onClick={() =>
-              window.open("https://apply.lincoln.edu.ng", "_blank", "noopener,noreferrer")
+              window.open(
+                "https://apply.lincoln.edu.ng",
+                "_blank",
+                "noopener,noreferrer"
+              )
             }
           >
             Apply Now
@@ -85,62 +104,99 @@ const MENU_LINKS = [
   {
     key: "campuses",
     label: "Campuses",
+    isParent: true,
     children: [
-      { key: "campus-nsuk", label: "Lincoln University Malaysia (NSUK Campus)" },
-      { key: "campus-gombe", label: "Lincoln University Malaysia (Gombe Campus)" },
+      { key: "gombe", label: "Lincoln University Malaysia (Gombe Campus)" },
+      { key: "nsuk", label: "Lincoln University Malaysia (NSUK Campus)" },
     ],
   },
   {
     key: "student-corner",
     label: "Student Corner",
+    isParent: true,
     children: [
       {
-        key: "student-current",
+        key: "current-students",
         label: "Current Students",
         children: [
-          { key: "student-lls", label: "Lincoln Learning System (LLS)" },
-          { key: "student-academic-calendar", label: "Academic Calendar" },
-          { key: "student-e-library", label: "E-Library" },
+          { key: "lls", label: "Lincoln Learning System (LLS)" },
+          { key: "academic-calendar", label: "Academic Calendar" },
+          { key: "e-library", label: "E-Library" },
         ],
       },
-      { key: "student-news", label: "News" }, 
-      { key: "student-events", label: "Events" }, 
+      { key: "news", label: "News" },
+      { key: "events", label: "Events" },
     ],
   },
   {
     key: "research",
     label: "Research",
+    isParent: true,
     children: [
       {
-        key: "research-introduction",
-        label: <Link to="/research-and-conferences/introduction">Introduction</Link>,
+        key: "introduction",
+        label: "Introduction",
+        to: "/research-and-conferences/introduction",
       },
       {
         key: "research-projects",
-        label: <Link to="/research-and-conferences/research-project">Research Projects</Link>,
+        label: "Research Projects",
+        to: "/research-and-conferences/research-project",
       },
       {
-        key: "research-publications-of-faculty-members",
+        key: "publications-of-faculty-members",
         label: "Publications of Faculty Members",
       },
-      { key: "research-staff-edited-books", label: "Staff Edited Books" },
-      { key: "research-other-publications", label: "Other Publications" },
-      { key: "research-book-published", label: "Book Published" },
-      { key: "research-journal-published", label: "Journal Published" },
+      { key: "staff-edited-books", label: "Staff Edited Books" },
+      { key: "other-publications", label: "Other Publications" },
+      { key: "book-published", label: "Book Published" },
+      { key: "journal-published", label: "Journal Published" },
     ],
   },
-  // Added the new menu item for Practical Skill Application
-  {
-    key: "practical-skill-application",
-    label: <Link to="/psa">Practical Skill Application</Link>,
-  },
 ];
+
+const { SubMenu, Item } = Menu;
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const renderMenuItems = (items, mode = "horizontal") =>
+    items.map((item) =>
+      item.children ? (
+        <SubMenu
+          key={item.key}
+          className="!h-full !flex !items-center -mt-2"
+          title={
+            <span className="flex items-center h-full gap-2 hover:text-primary duration-100 ease-in">
+              {item.label}{" "}
+              {item?.isParent && mode === "horizontal" && (
+                <CgChevronDown className="ml-1" />
+              )}
+            </span>
+          }
+        >
+          {renderMenuItems(item.children, mode)}
+        </SubMenu>
+      ) : (
+        <Item className="!h-full !flex !items-center" key={item.key}>
+          {item?.to ? (
+            <Link
+              to={item?.to}
+              className="hover:text-primary duration-100 ease-in"
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <p className="hover:text-primary duration-100 ease-in">
+              {item.label}
+            </p>
+          )}
+        </Item>
+      )
+    );
+
   return (
-    <div className="fixed top-0 w-full z-50">
+    <div className="fixed top-0 w-full z-50 font-medium">
       <Header />
       <ConfigProvider
         theme={{
@@ -152,7 +208,7 @@ export default function Navbar() {
       >
         <nav className="w-full bg-white shadow-md">
           {/* Desktop Menu */}
-          <div className="flex max-[1250px]:hidden items-center gap-5 px-5">
+          <div className="flex max-[1250px]:hidden items- gap-5 px-5">
             <Link to="/" className="my-2">
               <img
                 src="/src/assets/lincolnlogo.png"
@@ -160,24 +216,15 @@ export default function Navbar() {
                 className="w-36"
               />
             </Link>
-            <Menu 
-              mode="horizontal" 
-              className="bg-white shadow-md w-full"
-              items={MENU_LINKS.map(item => ({
-                ...item,
-                // Add the dropdown icon for top-level menu items with children
-                label: item.children ? (
-                  <span className="flex items-center h-full gap-2 hover:text-primary duration-100 ease-in">
-                    {item.label} <CgChevronDown className="ml-1" />
-                  </span>
-                ) : item.label, // Or just the label if there are no children
-              }))}
-            />
+
+            <Menu mode="horizontal" className="bg-white shadow-md w-full">
+              {renderMenuItems(MENU_LINKS, "horizontal")}
+            </Menu>
           </div>
 
           {/* Mobile Toggle */}
           <div className="hidden max-[1250px]:flex items-center justify-between px-3 py-3">
-            <Link to="/">
+            <Link href="/" className="">
               <img
                 src="/src/assets/lincolnlogo.png"
                 alt="Lincoln University College Logo"
@@ -198,11 +245,9 @@ export default function Navbar() {
             onClose={() => setOpen(false)}
             open={open}
           >
-            <Menu 
-              mode="inline" 
-              className="border-none"
-              items={MENU_LINKS}
-            />
+            <Menu mode="inline" className="border-none">
+              {renderMenuItems(MENU_LINKS, "inline")}
+            </Menu>
           </Drawer>
         </nav>
       </ConfigProvider>

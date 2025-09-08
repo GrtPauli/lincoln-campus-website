@@ -18,7 +18,7 @@ export default function Accordion({ defaultActiveIndex, data }) {
               onClick={() => toggleAccordion(index)}
               aria-expanded={isActive}
               aria-controls={`accordion-content-${index}`}
-              className={`w-full flex justify-between items-center px-4 py-3 text-left font-medium transition-colors duration-200 ${
+              className={`w-full cursor-pointer flex justify-between items-center px-4 py-3 text-left font-medium transition-colors duration-200 ${
                 isActive
                   ? "bg-border text-primary"
                   : "text-text hover:bg-border/50"
@@ -35,7 +35,7 @@ export default function Accordion({ defaultActiveIndex, data }) {
             <div
               id={`accordion-content-${index}`}
               className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-                isActive ? " px-4 py-3 bg-border/50" : "max-h-0"
+                isActive ? " px-4 py-3" : "max-h-0"
               }`}
             >
               {isActive && item.content}

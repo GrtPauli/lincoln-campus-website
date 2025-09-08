@@ -5,27 +5,572 @@ export const FACULTIES = [
     image:
       "https://plus.unsplash.com/premium_photo-1733317306663-3c202d428d65?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
     overview: [
-      "The Faculty of Medicine and Allied Health Sciences is ranked among the leading schools providing clinical, pre-clinical and health-related research programmes.",
-      "We educate competent candidates for the health sector, as well as health-related research to improve healthcare delivery and medical innovation.",
-      "Our programmes emphasize both academic excellence and hands-on clinical training, preparing graduates for impactful roles in the healthcare profession.",
+      "The Faculty of Medicine and Health Science at Lincoln University is committed to advancing healthcare education, research, and practice through the preparation of highly competent, motivated, and ethically grounded professionals. The Faculty serves as a center of excellence in medical and allied health training, with a vision to meet the ever-growing national and global health challenges through innovative education, research, and service delivery.",
+      "The Faculty comprises the following core academic programs: Doctor of Medicine (MD/MBBS), Bachelor of Nursing Science (B.N.Sc.), and Bachelor of Science in Community Health Science etc.. Each program is uniquely designed to provide students with a strong theoretical foundation, hands-on clinical and community exposure, and the critical thinking skills necessary to transform healthcare delivery at the individual, community, national, and international levels.",
+      "These are strategically positioned to produce medical doctors, nurses, and health professionals who embody professional excellence, ethical values, innovation, and leadership. By integrating rigorous academic training with practical experience, the Faculty ensures its graduates are well-prepared to contribute significantly to healthcare delivery, research, and policy both in Nigeria and on the global stage.",
     ],
     programmes: [
       {
-        title: "Medicine and Surgery (MBBS)",
+        title: "Doctor of Medicine (MD) (MBBS)",
+        slug: "doctor-of-medicine-md-mbbs",
         image:
           "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+        details: {
+          overview: [
+            "The Doctor of Medicine (MBBS/MD) programme at Lincoln University is designed to produce highly skilled, compassionate, and ethical medical doctors.",
+            "The programme combines rigorous scientific training with clinical practice, preparing students to provide excellent patient care, engage in research, and contribute to advancing healthcare both nationally and globally.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 1,
+                code: "FSE 1112",
+                title: "Interpersonal Communication Skills",
+                credits: 2,
+              },
+              {
+                sn: 2,
+                code: "COMP 107",
+                title: "Fundamental Computer (Principle & Programming)",
+                credits: 2,
+              },
+              { sn: 3, code: "FEN 1113", title: "English 1", credits: 3 },
+              { sn: 4, code: "FBI 1114 I", title: "Basic Biology", credits: 4 },
+              { sn: 5, code: "FCH 11141", title: "Chemistry 1", credits: 4 },
+              { sn: 6, code: "FPH 11141", title: "Physics 1", credits: 4 },
+              { sn: 7, code: "FSE 1222", title: "Thinking Skills", credits: 2 },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Physics, Chemistry, and Biology.",
+            "Results must be obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Medical Doctors (General Practice)",
+            "Specialist Physicians or Surgeons",
+            "Medical Researchers",
+            "Public Health Practitioners",
+            "Healthcare Administrators",
+            "Medical Educators",
+          ],
+          programmeAim:
+            "The MBBS/MD programme aims to equip students with the knowledge, skills, and ethical values required to practice medicine at the highest professional level. It seeks to develop doctors who are lifelong learners, innovators, and leaders in healthcare delivery and research.",
+        },
       },
       {
-        title: "B.N.Sc. Nursing",
+        title: "Bachelor of Nursing Sciences (Hons)",
+        slug: "bachelor-of-nursing-sciences-hons",
         image:
           "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+        details: {
+          overview: [
+            "The Bachelor of Nursing Science programme prepares students to become professional nurses with strong clinical, leadership, and research skills.",
+            "The programme blends classroom instruction with hands-on hospital and community-based training to produce nurses capable of delivering holistic, patient-centered care.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 1,
+                code: "BNBM 6114",
+                title: "Basic Medical Science 1 (Anatomy and Physiology)",
+                credits: 4,
+              },
+              {
+                sn: 2,
+                code: "BNNS 6114",
+                title: "Fundamentals of Nursing",
+                credits: 4,
+              },
+              {
+                sn: 3,
+                code: "BNBS 6124",
+                title: "Communication and Counseling",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "BNRE 6113",
+                title: "Learning Skills",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "MPU 3113",
+                title:
+                  "Tamadun Islam Dan Tamadun Asia (TITAS) – Compulsory (For Local Students Only)",
+                credits: 3,
+              },
+              {
+                sn: 6,
+                code: "MPU 3163",
+                title:
+                  "Bahasa Melayu Komunikasi 3 – Compulsory (For International Students Only)",
+                credits: 3,
+              },
+              {
+                sn: 7,
+                code: "BNNP 6113",
+                title: "Clinical Practice 1",
+                credits: 3,
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and Physics, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Registered Nurses",
+            "Nurse Educators",
+            "Public Health Nurses",
+            "Clinical Nurse Specialists",
+            "Healthcare Administrators",
+          ],
+          programmeAim:
+            "The programme aims to develop competent and compassionate nurses who provide safe, ethical, and evidence-based care, while also contributing to healthcare leadership, education, and policy development.",
+        },
       },
       {
-        title: "Community Health Science",
+        title: "Bachelor of Science in Community Health Science",
+        slug: "bsc-community-health-science",
         image:
           "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+        details: {
+          overview: [
+            "This programme trains students to address health challenges at the community and population levels. It emphasizes preventive healthcare, health promotion, and disease control strategies, equipping graduates with the knowledge and skills to improve health outcomes in diverse communities.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 1,
+                code: "BIO 101",
+                title: "General Biology 1",
+                credits: "3",
+              },
+              {
+                sn: 2,
+                code: "CHM 101",
+                title: "General Chemistry I",
+                credits: "2",
+              },
+              {
+                sn: 3,
+                code: "CSC 101",
+                title: "Introduction to Computer (R)",
+                credits: "2",
+              },
+              {
+                sn: 4,
+                code: "GST 101",
+                title: "Use of English and Communication Skills I",
+                credits: "2",
+              },
+              {
+                sn: 5,
+                code: "GST 105",
+                title: "Use of Library, Study Skills and ICT",
+                credits: "2",
+              },
+              {
+                sn: 6,
+                code: "MTH 101",
+                title: "Elementary Mathematics I (R)",
+                credits: "2",
+              },
+              {
+                sn: 7,
+                code: "PHY 101",
+                title: "General Physics",
+                credits: "2",
+              },
+              {
+                sn: 8,
+                code: "EDU 112",
+                title: "Introduction to Curriculum Studies",
+                credits: "2",
+              },
+              {
+                sn: 9,
+                code: "SOC 102",
+                title: "Community Organization and Development",
+                credits: "2",
+              },
+              {
+                sn: 10,
+                code: "GST 104",
+                title: "Logic, Philosophy and Human Existence",
+                credits: "2",
+              },
+              {
+                sn: 11,
+                code: "CHS 102",
+                title: "Contemporary Health Issues",
+                credits: "2",
+              },
+              {
+                sn: 12,
+                code: "GST 123",
+                title: "Arabic/ French Language (R)",
+                credits: "1",
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and one other science subject, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Community Health Officers",
+            "Health Educators",
+            "Public Health Practitioners",
+            "NGO and International Health Workers",
+            "Health Programme Managers",
+          ],
+          programmeAim: [
+            "The programme aims to produce graduates who are capable of improving community health through preventive and promotive interventions, research, and effective healthcare delivery.",
+          ],
+        },
+      },
+      {
+        title: "Bachelor of Science in Public Health",
+        slug: "bsc-public-health",
+        image:
+          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+        details: {
+          overview: [
+            "The Public Health programme is designed to prepare professionals who can analyze, design, and implement effective health policies and interventions. Students gain skills in epidemiology, biostatistics, environmental health, and health policy, with a focus on solving public health challenges.",
+          ],
+          subjectHighlights: [
+            {
+              sn: 1,
+              code: "GST 111",
+              title: "Communication in English",
+              credits: "2",
+            },
+            {
+              sn: 2,
+              code: "BIO 101",
+              title: "General Biology I",
+              credits: "2",
+            },
+            {
+              sn: 3,
+              code: "BIO 107",
+              title: "General Biology Practical I",
+              credits: "1",
+            },
+            {
+              sn: 4,
+              code: "LNC-MCB 101",
+              title: "Introduction to Microbiology I",
+              credits: "2",
+            },
+            {
+              sn: 5,
+              code: "CHM 101",
+              title: "General Chemistry I",
+              credits: "2",
+            },
+            {
+              sn: 6,
+              code: "CHM 107",
+              title: "General Chemistry Practical I",
+              credits: "1",
+            },
+            {
+              sn: 7,
+              code: "MTH 101",
+              title: "Elementary Mathematics I",
+              credits: "2",
+            },
+            {
+              sn: 8,
+              code: "COS 101",
+              title: "Introduction to Computer Science",
+              credits: "3",
+            },
+            {
+              sn: 9,
+              code: "PHY 101",
+              title: "General Physics I",
+              credits: "2",
+            },
+            {
+              sn: 10,
+              code: "PHY 107",
+              title: "General Physics Practical I",
+              credits: "1",
+            },
+          ],
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and one other science subject, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Public Health Officers",
+            "Epidemiologists",
+            "Health Policy Analysts",
+            "NGO and International Health Practitioners",
+            "Environmental and Occupational Health Specialists",
+          ],
+          programmeAim: [
+            "The programme aims to prepare graduates who can design and implement evidence-based public health solutions, reduce health inequalities, and promote healthier societies.",
+          ],
+        },
+      },
+      {
+        title: "Bachelor of Science in Environmental Health Safety",
+        slug: "bsc-environmental-health-safety",
+        image:
+          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+        details: {
+          overview: [
+            "This programme focuses on safeguarding human health by identifying, assessing, and managing environmental risks. Students gain expertise in occupational health, waste management, pollution control, and safety regulations, preparing them for careers in both public and private sectors.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 1,
+                code: "GST 111",
+                title: "Communication in English",
+                credits: 2,
+              },
+              {
+                sn: 2,
+                code: "BIO 101",
+                title: "General Biology I",
+                credits: 2,
+              },
+              {
+                sn: 3,
+                code: "BIO 107",
+                title: "General Biology Practical I",
+                credits: 1,
+              },
+              {
+                sn: 4,
+                code: "CHM 101",
+                title: "General Chemistry I",
+                credits: 2,
+              },
+              {
+                sn: 5,
+                code: "CHM 107",
+                title: "General Chemistry Practical I",
+                credits: 1,
+              },
+              {
+                sn: 6,
+                code: "COS 101",
+                title: "Introduction to Computing Sciences",
+                credits: 3,
+              },
+              {
+                sn: 7,
+                code: "MTH 101",
+                title: "Elementary Mathematics I",
+                credits: 2,
+              },
+              {
+                sn: 8,
+                code: "PHY 101",
+                title: "General Physics I",
+                credits: 2,
+              },
+              {
+                sn: 9,
+                code: "PHY 107",
+                title: "General Physics Practical I",
+                credits: 1,
+              },
+            ],
+          },
+
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and Physics, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Environmental Health Officers",
+            "Occupational Health & Safety Managers",
+            "Environmental Consultants",
+            "Risk and Compliance Officers",
+            "Public Health Inspectors",
+          ],
+          programmeAim: [
+            "The programme aims to produce professionals who ensure safe, sustainable, and healthy environments for individuals and communities.",
+          ],
+        },
+      },
+      {
+        title: "Bachelor of Science in Health Information Management",
+        slug: "bsc-health-information-management",
+        image:
+          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+        details: {
+          overview: [
+            "This programme integrates healthcare with information technology, preparing students to manage medical records, health data, and hospital information systems. It equips graduates with the skills to ensure accurate, secure, and efficient handling of health information.",
+          ],
+          subjectHighlights: {
+            generalStudies: [
+              {
+                sn: 1,
+                code: "GST 111",
+                title: "Use of English I",
+                credits: 2,
+              },
+              {
+                sn: 2,
+                code: "GST 112",
+                title: "Computer in Modern Society",
+                credits: 2,
+              },
+            ],
+            coreCourses: [
+              {
+                sn: 3,
+                code: "BIO 111",
+                title: "General Biology I",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "CHM 111",
+                title: "General Chemistry I",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "HIM 111",
+                title: "The Health Information User",
+                credits: 2,
+              },
+              {
+                sn: 6,
+                code: "HIM 112",
+                title: "Disease Classification and Clinical Coding I",
+                credits: 2,
+              },
+            ],
+            requiredCourses: [
+              {
+                sn: 7,
+                code: "MTH 111",
+                title: "General Mathematics I",
+                credits: 2,
+              },
+            ],
+            electiveCourses: [
+              {
+                sn: 8,
+                code: "HIM 113",
+                title: "Exercises Behavior, Deity Therapy and Diseases",
+                credits: 2,
+              },
+              {
+                sn: 9,
+                code: "HIM 114",
+                title: "Environmental Information Sources and Systems",
+                credits: 2,
+              },
+              {
+                sn: 10,
+                code: "HIM 115",
+                title: "Behavioral Science /Psychology",
+                credits: 2,
+              },
+            ],
+          },
+
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and Physics or ICT-related subject, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Health Information Managers",
+            "Medical Records Officers",
+            "Clinical Data Analysts",
+            "Health IT Specialists",
+            "Health Policy and Research Officers",
+          ],
+          programmeAim: [
+            "The programme aims to prepare graduates who can apply ICT and data management tools in healthcare delivery, ensuring accuracy, security, and accessibility of health information.",
+          ],
+        },
+      },
+      {
+        title: "Bachelor of Medical Imaging (Hons)",
+        slug: "bachelor-of-medical-imaging-hons",
+        image:
+          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+        details: {
+          overview: [
+            "This programme trains students in diagnostic imaging techniques such as X-ray, ultrasound, CT, and MRI. It equips them with both technical and clinical skills to work alongside physicians in diagnosing and monitoring medical conditions.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 1,
+                code: "BMI 6013",
+                title: "Anatomy & Physiology I",
+                credits: 3,
+              },
+              {
+                sn: 2,
+                code: "BMI 6023",
+                title: "Fundamental Physics",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "BMI 6032",
+                title: "Patient Care",
+                credits: 2,
+              },
+              {
+                sn: 4,
+                code: "BMI 6043",
+                title: "Imaging Technique I",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "BMI 6052",
+                title: "Human Psychology Management",
+                credits: 2,
+              },
+              {
+                sn: 6,
+                code: "MPU 3123",
+                title: "Islamic Civilization and Asian Civilization (TITAS)",
+                credits: 3,
+              },
+              {
+                sn: 7,
+                code: "MPU 3143",
+                title: "Malay Language Communication 2",
+                credits: 0, // fallback for missing/empty credits
+              },
+              {
+                sn: 8,
+                code: "ENG 613",
+                title: "English I",
+                credits: 3,
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and Physics, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Radiographers",
+            "Medical Imaging Specialists",
+            "Sonographers",
+            "MRI/CT Technologists",
+            "Imaging Research Scientists",
+          ],
+          programmeAim: [
+            "The programme aims to produce competent imaging professionals who combine technical expertise with patient-centered care, contributing to accurate diagnosis and effective healthcare delivery.",
+          ],
+        },
       },
     ],
+
     dean: {
       image:
         "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Prof.-Dr-Zarina-Awang.webp",
@@ -114,30 +659,468 @@ export const FACULTIES = [
     image:
       "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
     overview: [
-      "The Faculty of Sciences and Computing offers dynamic programmes that merge fundamental sciences with modern technology.",
-      "Students gain strong foundations in biology, chemistry, and computational fields, preparing them to meet global challenges in science and digital innovation.",
-      "Through research, laboratory practice, and applied computing, graduates are well-prepared for careers in health sciences, biotechnology, IT, and cybersecurity.",
+      "The Faculty of Sciences and Computing at Lincoln University is dedicated to advancing knowledge in science and technology through high-quality teaching, research, and practical skill application (PSA). The Faculty provides a dynamic learning environment where students are equipped with the intellectual foundation, technical skills, and critical thinking abilities needed to solve complex problems in science, technology, and society.",
+      "The Faculty houses 6 degree programs: Bachelor of Science in Microbiology, Bachelor of Science in Biochemistry, Bachelor of Science in Information Technology, Bachelor of Science in Cyber Security et.c. These programs are designed to produce graduates who are not only knowledgeable in their respective disciplines but also innovative, adaptable, and ready to contribute meaningfully to national development and global advancement.",
     ],
     programmes: [
       {
         title: "B.Sc. Microbiology",
+        slug: "bsc-microbiology",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "The Microbiology programme equips students with knowledge of microorganisms and their impact on human health, industry, agriculture, and the environment. Students gain both theoretical and practical laboratory skills to address real-world challenges in healthcare, biotechnology, and food safety.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 1,
+                code: "BIO 101",
+                title: "General Biology I",
+                credits: 2,
+              },
+              {
+                sn: 2,
+                code: "BIO 107",
+                title: "General Biology Practical I",
+                credits: 1,
+              },
+              {
+                sn: 3,
+                code: "CHM 101",
+                title: "General Chemistry I",
+                credits: 2,
+              },
+              {
+                sn: 4,
+                code: "CHM 107",
+                title: "General Chemistry Practical I",
+                credits: 1,
+              },
+              {
+                sn: 5,
+                code: "COS 101",
+                title: "Introduction to Computing Science",
+                credits: 3,
+              },
+              {
+                sn: 6,
+                code: "MTH 101",
+                title: "Elementary Mathematics I",
+                credits: 2,
+              },
+              {
+                sn: 7,
+                code: "GST 111",
+                title: "Communication In English",
+                credits: 2,
+              },
+              {
+                sn: 8,
+                code: "PHY 101",
+                title: "General Physics I",
+                credits: 2,
+              },
+              {
+                sn: 9,
+                code: "PHY 107",
+                title: "General Physics Practical I",
+                credits: 1,
+              },
+              {
+                sn: 10,
+                code: "LNC MCB 101",
+                title: "Introduction to Microbiology I",
+                credits: 2,
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and Physics, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Microbiologists",
+            "Clinical Laboratory Scientists",
+            "Food Safety and Quality Control Officers",
+            "Biotechnologists",
+            "Environmental Health Scientists",
+          ],
+          programmeAim: [
+            "The programme aims to produce professionals with strong laboratory and analytical skills who can apply microbiological knowledge to improve health, industry, and environmental sustainability.",
+          ],
+        },
       },
       {
-        title: "B.Sc. Biochemistry",
+        title: "Bachelor of Science (Hons) Biochemistry",
+        slug: "bsc-hons-biochemistry",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "The Biochemistry programme provides students with an in-depth understanding of the chemical and molecular processes of living organisms.",
+            "Students develop strong laboratory, research, and problem-solving skills for applications in medicine, biotechnology, and pharmaceuticals.",
+          ],
+          subjectHighlights: [
+            {
+              sn: 1,
+              courseCode: "GST 111",
+              courseTitle: "Communication in English",
+              creditsLoad: 2,
+              type: "Core",
+            },
+            {
+              sn: 2,
+              courseCode: "MTH 101",
+              courseTitle: "Elementary Mathematics I",
+              creditsLoad: 2,
+              type: "Core",
+            },
+            {
+              sn: 3,
+              courseCode: "BIO 101",
+              courseTitle: "General Biology I",
+              creditsLoad: 2,
+              type: "Core",
+            },
+            {
+              sn: 4,
+              courseCode: "COS 101",
+              courseTitle: "Introduction to Computing Science",
+              creditsLoad: 3,
+              type: "Core",
+            },
+            {
+              sn: 5,
+              courseCode: "BIO 107",
+              courseTitle: "General Biology Practical I",
+              creditsLoad: 1,
+              type: "Core",
+            },
+            {
+              sn: 6,
+              courseCode: "CHM 101",
+              courseTitle: "General Chemistry I",
+              creditsLoad: 2,
+              type: "Core",
+            },
+            {
+              sn: 7,
+              courseCode: "CHM 107",
+              courseTitle: "General Chemistry Practical I",
+              creditsLoad: 1,
+              type: "Core",
+            },
+            {
+              sn: 8,
+              courseCode: "PHY 101",
+              courseTitle: "General Physics I",
+              creditsLoad: 2,
+              type: "Core",
+            },
+            {
+              sn: 9,
+              courseCode: "PHY 107",
+              courseTitle: "General Physics Practical I",
+              creditsLoad: 1,
+              type: "Core",
+            },
+          ],
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and Physics, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Biochemists",
+            "Pharmaceutical Researchers",
+            "Clinical Biochemists",
+            "Biotechnology Specialists",
+            "Food and Nutrition Scientists",
+          ],
+          programmeAim: [
+            "The programme aims to prepare graduates with scientific knowledge and research capabilities to contribute to medical, pharmaceutical, agricultural, and industrial innovations.",
+          ],
+        },
       },
       {
-        title: "B.Sc. Information Technology",
+        title: "Bachelor of Biomedical Sciences (Hons)",
+        slug: "bachelor-biomedical-sciences-hons",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "This programme trains students to understand the biological basis of human health and disease.",
+            "It combines laboratory sciences with medical knowledge, preparing graduates for careers in diagnostics, medical research, and biotechnology.",
+          ],
+          subjectHighlights: {
+            majorCourses: [
+              {
+                sn: 1,
+                code: "BMS 1113",
+                title: "Human Anatomy and Physiology I",
+                credits: 3,
+              },
+              {
+                sn: 2,
+                code: "BMS 1123",
+                title: "Cell Biochemistry & Genetics",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "BMS 1133",
+                title: "Psychology and Behavioral Science",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "BMS 1143",
+                title: "Laboratory Science and Instrumentation",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "ENG 613",
+                title: "English",
+                credits: 3,
+              },
+            ],
+            electiveCourses: [
+              {
+                sn: 6,
+                code: "MPU 3113",
+                title: "Islamic Civilization and Asian Civilization",
+                credits: 3,
+              },
+              {
+                sn: 7,
+                code: "MPU 3123",
+                title: "Ethnic Relations",
+                credits: 3,
+              },
+              {
+                sn: 8,
+                code: "MPU 3173",
+                title: "Malaysian Studies",
+                credits: 3,
+              },
+              {
+                sn: 9,
+                code: "MPU 3342",
+                title: "Malaysian Government and Public Policy",
+                credits: 2,
+              },
+              {
+                sn: 10,
+                code: "MPU 3163",
+                title: "Malay Communication",
+                credits: 3,
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Biology, Chemistry, and Physics, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Biomedical Scientists",
+            "Clinical Laboratory Scientists",
+            "Medical Researchers",
+            "Pharmaceutical Scientists",
+            "Healthcare Diagnostics Specialists",
+          ],
+          programmeAim: [
+            "The programme aims to produce graduates with the knowledge and skills to apply biomedical science in improving healthcare, diagnostics, and medical research.",
+          ],
+        },
       },
       {
-        title: "B.Sc. Cyber Security",
+        title: "Bachelor of Information Technology (Hons)",
+        slug: "bachelor-information-technology-hons",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "The Information Technology programme provides students with the technical and problem-solving skills to design, manage, and secure information systems.",
+            "It emphasizes practical application in software development, databases, networking, and emerging digital technologies.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 2,
+                code: "BIT 6013",
+                title: "Basic Computer Architecture",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "BIT 6033",
+                title: "Computer Related Mathematics and Statistics",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "BIT 6044",
+                title: "Introduction to C++ Programming",
+                credits: 4,
+              },
+            ],
+            electiveCourses: [
+              {
+                sn: 1,
+                code: "ENG 111",
+                title: "Business English",
+                credits: 3,
+              },
+            ],
+            specializationCourses: [
+              {
+                sn: 5,
+                code: "BIT 6023",
+                title: "Principles of Information Technology",
+                credits: 3,
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Physics, and two other science-related subjects, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "IT Specialists",
+            "Systems Analysts",
+            "Software Developers",
+            "Database Administrators",
+            "IT Project Managers",
+          ],
+          programmeAim: [
+            "The programme aims to develop professionals who can leverage IT to solve organizational challenges, drive innovation, and support digital transformation across industries.",
+          ],
+        },
+      },
+      {
+        title:
+          "Bachelor of Computer Science (Hons) (Networking Technology and Cybersecurity)",
+        slug: "bachelor-computer-science-hons-networking-technology-cybersecurity",
+        image:
+          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "This programme focuses on the principles of computer science with specialization in networking and cybersecurity.",
+            "Students gain practical skills in system security, ethical hacking, network administration, and digital forensics to address modern cyber challenges.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 2,
+                code: "CNW-112",
+                title: "Computer Networks",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "BCSNT 6013",
+                title: "Principles of Programming",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "BCSNT 6033",
+                title: "Computer Systems",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "BCSNT 6043",
+                title: "Applied Statistics",
+                credits: 3,
+              },
+            ],
+            electiveCourses: [
+              {
+                sn: 1,
+                code: "ENG 111",
+                title: "Business English",
+                credits: 3,
+              },
+            ],
+            specializationCourses: [],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Physics, and two other science-related subjects, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Cybersecurity Analysts",
+            "Network Administrators",
+            "Ethical Hackers",
+            "IT Security Consultants",
+            "Digital Forensics Experts",
+          ],
+          programmeAim: [
+            "The programme aims to produce graduates with strong technical and analytical skills to secure digital infrastructure and protect organizational data in an increasingly connected world.",
+          ],
+        },
+      },
+      {
+        title: "Bachelor of Computer Science (Hons) (Artificial Intelligence)",
+        slug: "bachelor-computer-science-hons-artificial-intelligence",
+        image:
+          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "The Artificial Intelligence programme emphasizes computational intelligence, machine learning, robotics, and data-driven technologies.",
+            "Students gain practical skills to design AI-powered systems that solve complex real-world problems.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 2,
+                code: "BCSAI 6013",
+                title: "Principles of Programming",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "BCSAI 6024",
+                title: "Discrete Mathematics and Probability",
+                credits: 4,
+              },
+              {
+                sn: 4,
+                code: "BCSAI 6043",
+                title: "Computer Architecture and Organisation",
+                credits: 3,
+              },
+            ],
+            electiveCourses: [
+              {
+                sn: 1,
+                code: "BCSAI 6033",
+                title: "English",
+                credits: 3,
+              },
+            ],
+            specializationCourses: [],
+            compulsoryCourses: [
+              {
+                sn: 5,
+                code: "MPU 3163",
+                title: "Malay Communication",
+                credits: 3,
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Physics, and two other science-related subjects, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "AI Engineers",
+            "Data Scientists",
+            "Machine Learning Specialists",
+            "Robotics Engineers",
+            "AI Research Scientists",
+          ],
+          programmeAim: [
+            "The programme aims to develop innovative computer scientists with expertise in AI who can advance automation, intelligent systems, and data-driven solutions across industries.",
+          ],
+        },
       },
     ],
     dean: {
@@ -195,32 +1178,309 @@ export const FACULTIES = [
     image:
       "https://plus.unsplash.com/premium_photo-1661511796830-5b3e8d2aada6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
     overview: [
-      "The Faculty of Management and Social Sciences equips students with practical knowledge and leadership skills to excel in business, governance, and society.",
-      "Our programmes combine theory with real-world applications, preparing graduates for careers in accounting, administration, communication, and psychology.",
-      "We nurture professionals who can think critically, communicate effectively, and contribute meaningfully to organizational and societal development.",
+      "The Faculty of Management and Social Sciences at Lincoln University is committed to preparing graduates with the knowledge, skills, and values required to lead, innovate, and positively influence organizations and society. The Faculty emphasizes a blend of theory, practical training, and research, ensuring that students develop both academic competence and professional readiness.",
+      "The Faculty offers four degree programs: Bachelor of Business Administration (Hons), Bachelor of Business Administration in Accounting, Bachelor of Arts in Mass Communication (Honours) etc.  These programs are designed to produce graduates who are capable of addressing complex economic, business, social, and human development challenges at local, national, and global levels.",
     ],
     programmes: [
       {
-        title: "B.Sc. Accounting",
+        title: "Bachelor of Business Administration in Accounting",
+        slug: "bachelor-business-administration-accounting",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1661511796830-5b3e8d2aada6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "This programme equips students with comprehensive knowledge of accounting principles, financial management, auditing, and taxation.",
+            "It blends theory with practical applications, preparing students to manage financial information, support decision-making, and ensure organizational accountability.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 1,
+                code: "BBA 6013",
+                title: "English 1",
+                credits: 3,
+              },
+              {
+                sn: 2,
+                code: "BBA 6043",
+                title: "Principles of Management",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "BBA 6053",
+                title: "Introduction to Accounting",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "EPP 633",
+                title: "English for Professional Purposes",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "COMP107",
+                title: "Fundamentals of Computer Application",
+                credits: 3,
+              },
+            ],
+            electiveCourses: [],
+            specializationCourses: [],
+            compulsoryCourses: [],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Economics, and two other relevant subjects, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Chartered Accountants",
+            "Auditors",
+            "Tax Consultants",
+            "Financial Analysts",
+            "Corporate Finance Managers",
+          ],
+          programmeAim: [
+            "The programme aims to produce accounting professionals with strong analytical, ethical, and technical skills who can contribute to effective financial management and economic development.",
+          ],
+        },
       },
       {
-        title: "B.Sc. Business Administration",
+        title: "Bachelor of Business Administration (Hons)",
+        slug: "bachelor-business-administration-hons",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1661511796830-5b3e8d2aada6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "The BBA programme provides a solid foundation in management, marketing, finance, operations, and leadership.",
+            "It equips students with problem-solving and decision-making skills needed to excel in diverse business environments.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 2,
+                code: "BBA 6023",
+                title: "Business Communication",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "BBA 6033",
+                title: "Public Speaking",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "BBA 6043",
+                title: "Principles of Management",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "BBA 6053",
+                title: "Introduction to Accounting",
+                credits: 3,
+              },
+              {
+                sn: 6,
+                code: "BBA 6063",
+                title: "Fundamental of Computer Principles & Programming",
+                credits: 3,
+              },
+            ],
+            electiveCourses: [],
+            specializationCourses: [],
+            compulsoryCourses: [],
+            freeModules: [
+              {
+                sn: 1,
+                code: "ENG 111",
+                title: "Business English",
+                credits: 3,
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Economics, and two other relevant subjects, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Business Managers",
+            "Marketing Executives",
+            "Entrepreneurs",
+            "Human Resource Managers",
+            "Management Consultants",
+          ],
+          programmeAim: [
+            "The programme aims to develop business leaders with strategic thinking, innovative approaches, and managerial skills who can drive organizational growth and sustainability.",
+          ],
+        },
       },
       {
-        title: "B.Sc. Mass Communication",
+        title: "Bachelor of Arts in Mass Communication (Hons)",
+        slug: "bachelor-arts-mass-communication-hons",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1661511796830-5b3e8d2aada6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "The Mass Communication programme trains students to excel in journalism, broadcasting, public relations, advertising, and digital media.",
+            "It emphasizes strong communication skills, media ethics, and practical experience in content creation and dissemination.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 1,
+                code: "BMC 1113",
+                title: "Principles of Communication",
+                credits: 3,
+              },
+              {
+                sn: 2,
+                code: "BBA 1153",
+                title: "Fundamental Computer Principles",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "BMC 1123",
+                title: "Public Speaking",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "BMC 1133",
+                title: "Development of Mass Communication Industry",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "BMC 3113",
+                title: "Public Writing I",
+                credits: 3,
+              },
+              {
+                sn: 6,
+                code: "BMC 3163",
+                title: "Public Writing II",
+                credits: 3,
+              },
+              {
+                sn: 8,
+                code: "BMC 1243",
+                title: "Editing & Principles of Layout and Design",
+                credits: 3,
+              },
+            ],
+            electiveCourses: [],
+            specializationCourses: [],
+            compulsoryCourses: [],
+            freeModules: [
+              {
+                sn: 7,
+                code: "BMU 153",
+                title: "English",
+                credits: 3,
+              },
+            ],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Literature-in-English, Government/History, and two other relevant subjects, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Journalists",
+            "Broadcasters",
+            "Public Relations Officers",
+            "Advertising Executives",
+            "Media Consultants",
+          ],
+          programmeAim: [
+            "The programme aims to prepare graduates with critical thinking, creativity, and professional skills to shape public opinion, manage information, and influence media landscapes positively.",
+          ],
+        },
       },
       {
-        title: "B.Sc. Psychology",
+        title: "Bachelor of Management (Oil and Gas Management)",
+        slug: "bachelor-management-oil-gas",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1661511796830-5b3e8d2aada6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+        details: {
+          overview: [
+            "This programme focuses on the management of resources, operations, and policies in the oil and gas industry.",
+            "Students gain expertise in energy economics, project management, health and safety, and sustainable practices.",
+          ],
+          subjectHighlights: {
+            coreCourses: [
+              {
+                sn: 6,
+                code: "BOGM 1133",
+                title: "Introduction to Energy Management",
+                credits: 3,
+              },
+            ],
+            electiveCourses: [],
+            specializationCourses: [
+              {
+                sn: 7,
+                code: "BBA 1122",
+                title: "Business Communication",
+                credits: 2,
+              },
+              {
+                sn: 8,
+                code: "BBA 6063",
+                title: "Fundamental of Computer Principles & Programming",
+                credits: 2,
+              },
+            ],
+            compulsoryCourses: [
+              {
+                sn: 1,
+                code: "BBA 1113",
+                title: "Business English I",
+                credits: 3,
+              },
+              {
+                sn: 2,
+                code: "MPU 3123",
+                title: "Ethnic Relations",
+                credits: 3,
+              },
+              {
+                sn: 3,
+                code: "MPU 3173",
+                title: "Malaysian Studies",
+                credits: 3,
+              },
+              {
+                sn: 4,
+                code: "MPU 3113",
+                title: "Islamic Civilization and Asian Civilization (TITAS)",
+                credits: 3,
+              },
+              {
+                sn: 5,
+                code: "MPU 3163",
+                title: "Malay Communication 3",
+                credits: 3,
+              },
+            ],
+            freeModules: [],
+          },
+          entryRequirements: [
+            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Economics, and two other science or social science subjects, obtained in not more than two sittings.",
+          ],
+          careerOpportunities: [
+            "Oil and Gas Project Managers",
+            "Petroleum Economists",
+            "Energy Consultants",
+            "Health and Safety Managers",
+            "Operations Managers in the Energy Sector",
+          ],
+          programmeAim: [
+            "The programme aims to produce graduates with managerial and technical expertise to lead operations, optimize resources, and drive sustainable practices in the oil and gas industry.",
+          ],
+        },
       },
     ],
+
     dean: {
       image: "https://randomuser.me/api/portraits/men/34.jpg",
       name: "Prof. David Okoro",

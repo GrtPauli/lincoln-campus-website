@@ -20,7 +20,7 @@ import FacultyDetails from "./pages/faculties-and-programmes/FacultyDetails";
 // Contact Pages
 import Contact from "./pages/Contact";
 import ExaminationsAndRegulations from "./pages/ExaminationsAndRegulations";
-import ManagementPage from "./pages/collaborators/Management";
+import ManagementPage from "./pages/Management";
 
 import PracticalSkillApplication from "./pages/practical-skill-application/PracticalSkillApplication";
 import ScrollToTop from "./components/common/ScrollToTop";
@@ -34,7 +34,10 @@ import PolicyAndObjectives from "./pages/PolicyAndObjectives";
 // Header Import
 import Header from "./components/common/Header"; // Corrected path
 import FeesStructure from "./pages/admission/FeesStructure";
-import CollaboratorsPage from "./pages/collaborators/CollaboratorsPage";
+import ProgrammeDetails from "./pages/faculties-and-programmes/ProgrammeDetails";
+import AdmissionProcess from "./pages/admission/AdmissionProcess";
+import CollaboratorsPage from "./pages/CollaboratorsPage";
+
 function App() {
   return (
     <Router>
@@ -48,27 +51,52 @@ function App() {
 
           {/* Welcome to LUC Pages */}
           <Route path="/about-us" element={<About />} />
-          <Route path="/facilities-and-services" element={<FacilitiesAndServices />} />
-          <Route path="/recognitions-and-accreditations" element={<RecognitionsAndAccreditation />} />
-          <Route path="/examinations-and-regulations" element={<ExaminationsAndRegulations />} />
+          <Route
+            path="/facilities-and-services"
+            element={<FacilitiesAndServices />}
+          />
+          <Route
+            path="/recognitions-and-accreditations"
+            element={<RecognitionsAndAccreditation />}
+          />
+          <Route
+            path="/examinations-and-regulations"
+            element={<ExaminationsAndRegulations />}
+          />
 
           <Route path="/posts/events" element={<AllEvents />} />
           <Route path="/posts/news" element={<News />} />
 
           {/* Research and Development Pages */}
-          <Route path="/research-and-conferences/introduction" element={<Introduction />} />
-          <Route path="/research-and-conferences/research-project" element={<ResearchProject />} />
+          <Route
+            path="/research-and-conferences/introduction"
+            element={<Introduction />}
+          />
+          <Route
+            path="/research-and-conferences/research-project"
+            element={<ResearchProject />}
+          />
 
           {/* Faculties and Programmes Pages */}
-          <Route path="/faculties-and-programmes/:slug" element={<FacultyDetails />} />
+          <Route
+            path="/faculties-and-programmes/:slug"
+            element={<FacultyDetails />}
+          />
+          <Route
+            path="/faculties-and-programmes/:facultySlug/programmes/:programmeSlug"
+            element={<ProgrammeDetails />}
+          />
 
-          <Route path="/policy-and-objectives" element={<PolicyAndObjectives />} />
+          <Route
+            path="/policy-and-objectives"
+            element={<PolicyAndObjectives />}
+          />
           <Route path="/enquiry" element={<ProgrammesEnquiry />} />
           <Route path="/eligibility" element={<ProgrammeEligibility />} />
           <Route path="/faculties" element={<Faculties />} />
 
           <Route
-            path="/collaborators/management"
+            path="/management"
             element={<ManagementPage />}
           />
 
@@ -76,10 +104,14 @@ function App() {
             path="/admission/fees-structure"
             element={<FeesStructure />}
           />
+          <Route
+            path="/admission/admission-process"
+            element={<AdmissionProcess />}
+          />
 
           <Route path="/psa" element={<PracticalSkillApplication />} />
           <Route
-            path="/collaborators/foreign"
+            path="/collaborators"
             element={<CollaboratorsPage />}
           />
           <Route path="*" element={<NotFoundPage />} />

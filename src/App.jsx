@@ -34,7 +34,7 @@ import PolicyAndObjectives from "./pages/PolicyAndObjectives";
 // Header Import
 import Header from "./components/common/Header"; // Corrected path
 import FeesStructure from "./pages/admission/FeesStructure";
-
+import CollaboratorsPage from "./pages/collaborators/CollaboratorsPage";
 function App() {
   return (
     <Router>
@@ -78,7 +78,10 @@ function App() {
           />
 
           <Route path="/psa" element={<PracticalSkillApplication />} />
-
+          <Route
+            path="/collaborators/foreign"
+            element={<CollaboratorsPage />}
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

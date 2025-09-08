@@ -12,6 +12,14 @@ import MainLayout from "../layouts/MainLayout";
 import { HomeService, GeneralService, AboutUsService } from "../services";
 import { AppLoader } from "../components/common/Loader";
 
+
+import SkillCard from "../components/practicalskills/PracticalSkillsSlider";
+import PracticalSkillsSlider from "../components/practicalskills/PracticalSkillsSlider";
+
+
+
+
+
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
@@ -81,8 +89,13 @@ export default function HomePage() {
         <News news={data?.news?.data} />
         <Videos videos={data?.videos?.data} />
         <Achievements />
-        <SchoolsSection />
+       <PracticalSkillsSlider/>
+      
         <RecognitionsAndAccreditation />
+
+       
+        
+        
       </div>
     </MainLayout>
   );

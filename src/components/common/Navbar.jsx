@@ -25,7 +25,7 @@ const MENU_LINKS = [
       {
         key: "policy-and-objectives",
         label: "Policy & Objectives",
-        to: "/policy-and-objectives", // Added this line
+        to: "/policy-and-objectives",
       },
       {
         key: "recognitions-and-accreditations",
@@ -40,6 +40,7 @@ const MENU_LINKS = [
       {
         key: "collaborators",
         label: "Collaborators",
+        to: "/collaborators",
       },
       {
         key: "posts",
@@ -68,11 +69,19 @@ const MENU_LINKS = [
     label: "Admission",
     isParent: true,
     children: [
-      { key: "admission-process", label: "Admission Process", to: '/admission/admission-process' },
+      {
+        key: "admission-process",
+        label: "Admission Process",
+        to: "/admission/admission-process",
+      },
       { key: "nigerian-student", label: "Nigerian Student" },
       { key: "international-student", label: "International Student" },
       { key: "scholarship", label: "Scholarship" },
-      { key: "fees-structure", label: "Fees Structure", to: "/admission/fees-structure" },
+      {
+        key: "fees-structure",
+        label: "Fees Structure",
+        to: "/admission/fees-structure",
+      },
       {
         key: "apply-now",
         label: (

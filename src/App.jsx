@@ -36,6 +36,7 @@ import Header from "./components/common/Header"; // Corrected path
 import FeesStructure from "./pages/admission/FeesStructure";
 import ProgrammeDetails from "./pages/faculties-and-programmes/ProgrammeDetails";
 import AdmissionProcess from "./pages/admission/AdmissionProcess";
+import CollaboratorsPage from "./pages/CollaboratorsPage";
 
 function App() {
   return (
@@ -109,7 +110,10 @@ function App() {
           />
 
           <Route path="/psa" element={<PracticalSkillApplication />} />
-
+          <Route
+            path="/collaborators"
+            element={<CollaboratorsPage />}
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

@@ -33,6 +33,16 @@ export default function Header() {
                 FAQs
               </Link>
             </li>
+            <li>
+              <Link to="/psa" className="hover:underline">
+                Practical Skill Application
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact-us" className="hover:underline">
+                Contact Us
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

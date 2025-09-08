@@ -20,7 +20,7 @@ import FacultyDetails from "./pages/faculties-and-programmes/FacultyDetails";
 // Contact Pages
 import Contact from "./pages/Contact";
 import ExaminationsAndRegulations from "./pages/ExaminationsAndRegulations";
-import ManagementPage from "./pages/collaborators/Management";
+import ManagementPage from "./pages/Management";
 
 import PracticalSkillApplication from "./pages/practical-skill-application/PracticalSkillApplication";
 import ScrollToTop from "./components/common/ScrollToTop";
@@ -34,6 +34,7 @@ import PolicyAndObjectives from "./pages/PolicyAndObjectives";
 // Header Import
 import Header from "./components/common/Header"; // Corrected path
 import FeesStructure from "./pages/admission/FeesStructure";
+import AdmissionProcess from "./pages/admission/AdmissionProcess";
 
 function App() {
   return (
@@ -68,13 +69,17 @@ function App() {
           <Route path="/faculties" element={<Faculties />} />
 
           <Route
-            path="/collaborators/management"
+            path="/management"
             element={<ManagementPage />}
           />
 
           <Route
             path="/admission/fees-structure"
             element={<FeesStructure />}
+          />
+          <Route
+            path="/admission/admission-process"
+            element={<AdmissionProcess />}
           />
 
           <Route path="/psa" element={<PracticalSkillApplication />} />

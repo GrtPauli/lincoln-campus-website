@@ -18,8 +18,13 @@ const MENU_LINKS = [
         to: "/about-us",
       },
       {
+        key: "management",
+        label: "Management",
+        to: "/management",
+      },
+      {
         key: "policy-and-objectives",
-        label: "Policy and Objectives",
+        label: "Policy & Objectives",
         to: "/policy-and-objectives", // Added this line
       },
       {
@@ -35,17 +40,10 @@ const MENU_LINKS = [
       {
         key: "collaborators",
         label: "Collaborators",
-        children: [
-          {
-            key: "management",
-            label: "Management",
-            to: "/collaborators/management",
-          },
-        ],
       },
       {
         key: "posts",
-        label: "Posts",
+        label: "Events & News",
         children: [
           { key: "events", label: "Events", to: "/posts/events" },
           { key: "news", label: "News", to: "/posts/news" },
@@ -55,7 +53,7 @@ const MENU_LINKS = [
   },
   {
     key: "faculties-and-programmes",
-    label: "Faculties",
+    label: "Faculties & Programmes",
     isParent: true,
     children: [
       ...FACULTIES.map((item) => ({
@@ -70,9 +68,9 @@ const MENU_LINKS = [
     label: "Admission",
     isParent: true,
     children: [
+      { key: "admission-process", label: "Admission Process", to: '/admission/admission-process' },
       { key: "nigerian-student", label: "Nigerian Student" },
       { key: "international-student", label: "International Student" },
-      { key: "admission-intakes", label: "Admission Intakes" },
       { key: "scholarship", label: "Scholarship" },
       { key: "fees-structure", label: "Fees Structure", to: "/admission/fees-structure" },
       {
@@ -99,8 +97,8 @@ const MENU_LINKS = [
     label: "Campuses",
     isParent: true,
     children: [
-      { key: "nsuk", label: "Lincoln University Malaysia (NSUK Campus)" },
       { key: "gombe", label: "Lincoln University Malaysia (Gombe Campus)" },
+      { key: "nsuk", label: "Lincoln University Malaysia (NSUK Campus)" },
     ],
   },
   {
@@ -146,13 +144,6 @@ const MENU_LINKS = [
       { key: "journal-published", label: "Journal Published" },
     ],
   },
-  {
-    key: "psa",
-    label: "Practical Skill Application",
-    to: "/psa",
-    isParent: true,
-  },
-  { key: "contact-us", label: "Contact Us", isParent: true, to: "/contact-us" },
 ];
 
 const { SubMenu, Item } = Menu;
@@ -196,7 +187,7 @@ export default function Navbar() {
     );
 
   return (
-    <div className="fixed top-0 w-full z-50">
+    <div className="fixed top-0 w-full z-50 font-medium">
       <Header />
       <ConfigProvider
         theme={{

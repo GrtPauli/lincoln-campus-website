@@ -5,7 +5,7 @@ import StyledUnderline from "../common/ui/StyledUnderline";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-12">
+    <div className="min-h-screen bg-gray-50 p-12 max-sm:p-5">
       {/* Hero Section */}
 
       <div className="container mx-auto px-4 py-6">

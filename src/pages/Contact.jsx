@@ -22,7 +22,7 @@ export default function Contact() {
         </p>
 
         <ContactMapSection />
-        <ContactAccordion />
+        {/* <ContactAccordion /> */}
       </div>
     </MainLayout>
   );

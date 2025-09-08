@@ -10,7 +10,7 @@ function PolicyAndObjectives() {
         backgroundImage="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
       />
 
-      <div className="container mx-auto p-10">
+      <div className="container mx-auto p-14 max-sm:p-5">
         {/* Quality Policy Section */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold mb-4">Quality Policy</h2>

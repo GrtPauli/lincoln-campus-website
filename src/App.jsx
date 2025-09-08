@@ -110,6 +110,8 @@ function App() {
           />
 
           <Route path="/psa" element={<PracticalSkillApplication />} />
+          <Route path="/psa/:slug" element={<PracticalSkillApplication />} />
+
           <Route
             path="/collaborators"
             element={<CollaboratorsPage />}

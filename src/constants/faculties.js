@@ -61,7 +61,7 @@ export const FACULTIES = [
         title: "Bachelor of Nursing Sciences (Hons)",
         slug: "bachelor-of-nursing-sciences-hons",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1675807264889-081a7c76af86?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fG51cnNpbmd8ZW58MHx8MHx8fDA%3D",
         details: {
           overview: [
             "The Bachelor of Nursing Science programme prepares students to become professional nurses with strong clinical, leadership, and research skills.",
@@ -133,7 +133,7 @@ export const FACULTIES = [
         title: "Bachelor of Science in Community Health Science",
         slug: "bsc-community-health-science",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1664475559006-b854dc6289a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q29tbXVuaXR5JTIwSGVhbHRofGVufDB8fDB8fHww",
         details: {
           overview: [
             "This programme trains students to address health challenges at the community and population levels. It emphasizes preventive healthcare, health promotion, and disease control strategies, equipping graduates with the knowledge and skills to improve health outcomes in diverse communities.",
@@ -233,7 +233,7 @@ export const FACULTIES = [
         title: "Bachelor of Science in Public Health",
         slug: "bsc-public-health",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://unsplash.com/photos/vt7iAyiwpf0/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8Q29tbXVuaXR5JTIwSGVhbHRofGVufDB8fHx8MTc1NzM0NDYwNXww&force=true",
         details: {
           overview: [
             "The Public Health programme is designed to prepare professionals who can analyze, design, and implement effective health policies and interventions. Students gain skills in epidemiology, biostatistics, environmental health, and health policy, with a focus on solving public health challenges.",
@@ -319,7 +319,7 @@ export const FACULTIES = [
         title: "Bachelor of Science in Environmental Health Safety",
         slug: "bsc-environmental-health-safety",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1661478287528-6e271b60a265?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8RW52aXJvbm1lbnRhbCUyMEhlYWx0aCUyMFNhZmV0eXxlbnwwfHwwfHx8MA%3D%3D",
         details: {
           overview: [
             "This programme focuses on safeguarding human health by identifying, assessing, and managing environmental risks. Students gain expertise in occupational health, waste management, pollution control, and safety regulations, preparing them for careers in both public and private sectors.",
@@ -402,7 +402,7 @@ export const FACULTIES = [
         title: "Bachelor of Science in Health Information Management",
         slug: "bsc-health-information-management",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://plus.unsplash.com/premium_photo-1681966669979-a333ba0912ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8SGVhbHRoJTIwSW5mb3JtYXRpb24lMjBNYW5hZ2VtZW50fGVufDB8fDB8fHww",
         details: {
           overview: [
             "This programme integrates healthcare with information technology, preparing students to manage medical records, health data, and hospital information systems. It equips graduates with the skills to ensure accurate, secure, and efficient handling of health information.",
@@ -497,7 +497,7 @@ export const FACULTIES = [
         title: "Bachelor of Medical Imaging (Hons)",
         slug: "bachelor-of-medical-imaging-hons",
         image:
-          "https://www.lincoln.edu.my/wp-content/uploads/2025/01/Doctor-of-Medicine.webp",
+          "https://images.unsplash.com/photo-1666214280250-41f16ba24a26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TWVkaWNhbCUyMEltYWdpbmd8ZW58MHx8MHx8fDA%3D",
         details: {
           overview: [
             "This programme trains students in diagnostic imaging techniques such as X-ray, ultrasound, CT, and MRI. It equips them with both technical and clinical skills to work alongside physicians in diagnosing and monitoring medical conditions.",
@@ -667,7 +667,7 @@ export const FACULTIES = [
         title: "B.Sc. Microbiology",
         slug: "bsc-microbiology",
         image:
-          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://images.unsplash.com/photo-1580795478724-5b048f1c5b03?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TWljcm9iaW9sb2d5fGVufDB8fDB8fHww",
         details: {
           overview: [
             "The Microbiology programme equips students with knowledge of microorganisms and their impact on human health, industry, agriculture, and the environment. Students gain both theoretical and practical laboratory skills to address real-world challenges in healthcare, biotechnology, and food safety.",
@@ -755,7 +755,7 @@ export const FACULTIES = [
         title: "Bachelor of Science (Hons) Biochemistry",
         slug: "bsc-hons-biochemistry",
         image:
-          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://plus.unsplash.com/premium_photo-1661578947517-e292bf6cea5e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QmlvY2hlbWlzdHJ5fGVufDB8fDB8fHww",
         details: {
           overview: [
             "The Biochemistry programme provides students with an in-depth understanding of the chemical and molecular processes of living organisms.",
@@ -845,7 +845,7 @@ export const FACULTIES = [
         title: "Bachelor of Biomedical Sciences (Hons)",
         slug: "bachelor-biomedical-sciences-hons",
         image:
-          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://plus.unsplash.com/premium_photo-1661402406484-6c76d2541942?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmlvbWVkaWNhbCUyMFNjaWVuY2VzfGVufDB8fDB8fHww",
         details: {
           overview: [
             "This programme trains students to understand the biological basis of human health and disease.",
@@ -936,7 +936,7 @@ export const FACULTIES = [
         title: "Bachelor of Information Technology (Hons)",
         slug: "bachelor-information-technology-hons",
         image:
-          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SW5mb3JtYXRpb24lMjBUZWNobm9sb2d5fGVufDB8fDB8fHww",
         details: {
           overview: [
             "The Information Technology programme provides students with the technical and problem-solving skills to design, manage, and secure information systems.",
@@ -1000,7 +1000,7 @@ export const FACULTIES = [
           "Bachelor of Computer Science (Hons) (Networking Technology and Cybersecurity)",
         slug: "bachelor-computer-science-hons-networking-technology-cybersecurity",
         image:
-          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://plus.unsplash.com/premium_photo-1723780836569-d87c39f835ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGNvbXB1dGVyJTIwc2NpZW5jZSUyMGFuZCUyMGVuZ2luZWVyaW5nfGVufDB8fDB8fHww",
         details: {
           overview: [
             "This programme focuses on the principles of computer science with specialization in networking and cybersecurity.",
@@ -1062,7 +1062,7 @@ export const FACULTIES = [
         title: "Bachelor of Computer Science (Hons) (Artificial Intelligence)",
         slug: "bachelor-computer-science-hons-artificial-intelligence",
         image:
-          "https://plus.unsplash.com/premium_photo-1690297853326-e127726588ac?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://plus.unsplash.com/premium_photo-1682464708085-95b4486e2c32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXJ0aWZpY2lhbCUyMGludGVsbGlnZW5jZSUyMGJyYWlufGVufDB8fDB8fHww",
         details: {
           overview: [
             "The Artificial Intelligence programme emphasizes computational intelligence, machine learning, robotics, and data-driven technologies.",
@@ -1248,7 +1248,7 @@ export const FACULTIES = [
         title: "Bachelor of Business Administration (Hons)",
         slug: "bachelor-business-administration-hons",
         image:
-          "https://plus.unsplash.com/premium_photo-1661511796830-5b3e8d2aada6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://plus.unsplash.com/premium_photo-1661544358872-023326f293fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QnVzaW5lc3MlMjBBZG1pbmlzdHJhdGlvbnxlbnwwfHwwfHx8MA%3D%3D",
         details: {
           overview: [
             "The BBA programme provides a solid foundation in management, marketing, finance, operations, and leadership.",
@@ -1318,7 +1318,7 @@ export const FACULTIES = [
         title: "Bachelor of Arts in Mass Communication (Hons)",
         slug: "bachelor-arts-mass-communication-hons",
         image:
-          "https://plus.unsplash.com/premium_photo-1661511796830-5b3e8d2aada6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://plus.unsplash.com/premium_photo-1691223714409-b0cb1629f0f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8TWFzcyUyMENvbW11bmljYXRpb258ZW58MHx8MHx8fDA%3D",
         details: {
           overview: [
             "The Mass Communication programme trains students to excel in journalism, broadcasting, public relations, advertising, and digital media.",
@@ -1400,7 +1400,7 @@ export const FACULTIES = [
         title: "Bachelor of Management (Oil and Gas Management)",
         slug: "bachelor-management-oil-gas",
         image:
-          "https://plus.unsplash.com/premium_photo-1661511796830-5b3e8d2aada6?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+          "https://plus.unsplash.com/premium_photo-1664299488927-4352e3d2a71e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8T2lsJTIwYW5kJTIwR2FzJTIwTWFuYWdlbWVudHxlbnwwfHwwfHx8MA%3D%3D",
         details: {
           overview: [
             "This programme focuses on the management of resources, operations, and policies in the oil and gas industry.",

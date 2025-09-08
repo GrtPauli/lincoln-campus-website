@@ -4,57 +4,63 @@ export default function Campuses() {
   return (
     <div className="w-full p-12">
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-secondary rounded-xl shadow-sm overflow-hidden">
-          <div className="h-56 bg-primary/10 relative">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25605.251622725515!2d101.598409!3d3.104921!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4c198eafa133%3A0x6fd7916de21e7871!2sLincoln%20University%20College!5e1!3m2!1sen!2sng!4v1755785990474!5m2!1sen!2sng"
-              className="w-full h-full"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <div className="absolute top-4 right-4 bg-primary text-secondary px-3 py-1 rounded-full text-sm font-semibold">
-              Main Campus
+        <div className="bg-secondary rounded-xl shadow-sm overflow-hidden flex flex-col justify-between">
+          <div>
+            <div className="h-56 bg-primary/10 relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2014900.8735095311!2d8.065144615083694!3d9.477969748488947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10ffb65412ce6e99%3A0xb391f6076bb01bbe!2sGombe%20State%20University%20of%20Science%20and%20Technology%2C%20Kumo!5e0!3m2!1sen!2sng!4v1757313264369!5m2!1sen!2sng"
+                className="w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+
+              <div className="absolute top-4 right-4 bg-primary text-secondary px-3 py-1 rounded-full text-sm font-semibold">
+                Gombe Campus
+              </div>
+            </div>
+            <div className="p-6">
+              <h2 className="text-xl font-semibold text-text mb-4">
+                Lincoln University Malaysia (Gombe Campus)
+              </h2>
+              <p className="text-text/60 mb-4">
+                Lincoln University Malaysia, Kumo Gombe State.
+              </p>
             </div>
           </div>
-          <div className="p-6">
-            <h2 className="text-xl font-semibold text-text mb-4">
-              Lincoln University College
-            </h2>
-            <p className="text-text/60 mb-4">
-              No. 2, Jalan Stadium, Section 13, 40100 Shah Alam, Selangor,
-              Malaysia.
-            </p>
-            <p className="text-text/60">Phone: +603 5519 6500</p>
-            <p className="text-text/60">Fax: +603 5519 5188</p>
-          </div>
+
+          <p className="text-text/60 m-6 mt-0">Phone: +2348038341496</p>
         </div>
 
-        <div className="bg-secondary rounded-xl shadow-sm overflow-hidden">
-          <div className="h-56 bg-primary/10 relative">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15931.00468284801!2d101.6229!3d3.07263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4d393be0977b%3A0x5a7f17eab0ff5d0a!2sLincoln%20University%20College%20(Petaling%20Jaya%20Campus)!5e0!3m2!1sen!2smy!4v1755786064716!5m2!1sen!2smy"
-              className="w-full h-full"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-            <div className="absolute top-4 right-4 bg-primary text-secondary px-3 py-1 rounded-full text-sm font-semibold">
-              Stadium Campus
+        <div className="bg-secondary rounded-xl shadow-sm overflow-hidden flex flex-col justify-between">
+          <div>
+            <div className="h-56 bg-primary/10 relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.3963690013693!2d7.904029074314221!3d8.842638691879728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1051e55b602c2e83%3A0xac4fafd2fa0882ca!2sLincon%20University%20Administrative%20Block!5e0!3m2!1sen!2sng!4v1757313127849!5m2!1sen!2sng"
+                className="w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+
+              <div className="absolute top-4 right-4 bg-primary text-secondary px-3 py-1 rounded-full text-sm font-semibold">
+                NSUK Campus
+              </div>
+            </div>
+            <div className="p-6">
+              <h2 className="text-xl font-semibold text-text mb-4">
+                Lincoln University Malaysia (NSUK Campus)
+              </h2>
+              <p className="text-text/60 mb-4">
+                Lincoln University Malaysia admin block, Nassarawa State
+                University, Keffi.
+              </p>
             </div>
           </div>
-          <div className="p-6">
-            <h2 className="text-xl font-semibold text-text mb-4">
-              Lincoln University College
-            </h2>
-            <p className="text-text/60 mb-4">
-              No. 2, Jalan SS 6/12, 47301 Petaling Jaya, Selangor, Malaysia.
-            </p>
-            <p className="text-text/60">Phone: +603 7806 3478</p>
-            <p className="text-text/60">Fax: +603 7806 3479</p>
-          </div>
+
+          <p className="text-text/60 m-6 mt-0">Phone: +2348038341496</p>
         </div>
       </div>
     </div>

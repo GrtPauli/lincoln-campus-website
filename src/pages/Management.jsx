@@ -1,7 +1,7 @@
 import React from "react";
-import MainLayout from "../../layouts/MainLayout";
-import Hero from "../../components/common/ui/Hero";
-import ManagementContent from "../../components/collaborators/management";
+import MainLayout from "../layouts/MainLayout";
+import Hero from "../components/common/ui/Hero";
+import ManagementContent from "../components/collaborators/management";
 
 export default function ManagementPage() {
   return (

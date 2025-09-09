@@ -41,7 +41,7 @@ export default function PracticalSkillsSlider() {
     <section className="w-full p-12">
       <div className="mb-8 inline-block">
         <h2 className="text-2xl md:text-3xl font-bold text-text">
-          Explore Our Practical Skills
+          Practical Skills Application (PSA)
         </h2>
         <StyledUnderline />
       </div>
@@ -58,7 +58,10 @@ export default function PracticalSkillsSlider() {
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {FACULTIES.map((faculty) => (
-              <div key={faculty.slug} className="flex-shrink-0 w-full flex flex-col gap-4">
+              <div
+                key={faculty.slug}
+                className="flex-shrink-0 w-full flex flex-col gap-4"
+              >
                 <h3 className="text-xl font-semibold mb-4">{faculty.title}</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                   {faculty.programmes.map((programme) => (
@@ -97,7 +100,12 @@ export default function PracticalSkillsSlider() {
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
         <button
@@ -111,7 +119,12 @@ export default function PracticalSkillsSlider() {
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
 
@@ -122,7 +135,9 @@ export default function PracticalSkillsSlider() {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-2 h-2 rounded-full transition-colors ${
-                currentIndex === index ? "bg-primary" : "bg-border hover:bg-gray-400"
+                currentIndex === index
+                  ? "bg-primary"
+                  : "bg-border hover:bg-gray-400"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

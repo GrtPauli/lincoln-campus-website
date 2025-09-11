@@ -3,7 +3,7 @@ import Accordion from "../common/ui/Accordion";
 import MessageFromViceChancellorLUNigeriaImg from "../../assets/Message From Vice-Chancellor LU Nigeria.jpg";
 import MessageFromChairmanAndPresidentLUCMalaysiaImg from "../../assets/PROF.DR_.AMIYA_.jpg";
 import MessageFromChancellorLUCMalaysiaImg from "../../assets/Deputy-Vice-Chancellor-1-212x300-1.jpg";
-import MessageFromProChancellorLUCMalaysiaImg from "../../assets/Pro-Chancellor.png";
+import MessageFromProChancellorLUCMalaysiaImg from "../../assets/Pro-Chancellor.jpeg";
 import ProfessorOfInternationalEducationImg from "../../assets/Prof.-Keith-Straughan.png";
 
 export default function ManagementContent() {
@@ -196,36 +196,25 @@ export default function ManagementContent() {
               </div>
             </div>
             <p className="leading-loose">
-              Lincoln University College (LUC) is a vibrant and diverse academic
-              center focused on teaching and learning and helps to realize
-              innovative knowledge. LUC brings together world-renowned faculty
-              and students from all over the nation and the world. The dynamic
-              culture and pioneering academic programs of Lincoln University
-              College prepare the industrious students for the 21st century
-              careers. The assurance of this university college to teach
-              excellence improves the academic know-how of the students. Our
-              alumni, faculty, students, and staff share a passion for this
-              institution that is unparalleled. Intense participation in
-              extra-curriculum promotes collaboration and solidarity. There is a
-              unique level of personal interaction between the student and the
-              Lecturer which facilitate the generation of novel awareness to
-              seek new academic prospects, and to learn skills that can turn
-              dreams into realities. At LUC, we set very high goals, and our
-              activities have a worldwide impact.
+              Welcome to Lincoln University College, Nigeria – Where Dreams Take
+              Flight
               <br />
-              <br /> Our programs, services, and quality-of-life facilities are
-              intended to make best use of your potential and help to accomplish
-              the aspirations of life. It is our hope that we can help to
-              address the challenges faced by the students and provide them with
-              possible strategies. In addition to the accessible coursework the
-              faculty members aimed at preparing the students with scholarly
-              foundation demanded by today's - and tomorrows - professional
-              careers, including opportunities for cultural amelioration.
               <br />
-              <br /> In Lincoln we counts more who graduated than who comes in.
-              Our aim is to spread the system of education among each and every
-              individual of the younger generation without any discrimination so
-              as to make this world a better place to live in.
+              At Lincoln University College, we believe in the power of
+              education to transform lives and communities. Rooted in excellence
+              and guided by innovation, we are committed to nurturing leaders,
+              thinkers, and changemakers of tomorrow.
+              <br />
+              <br /> Whether you’re a student ready to begin your academic
+              journey, a staff member shaping minds, or a visitor exploring
+              opportunities — you are part of a community driven by purpose,
+              passion, and progress.
+              <br />
+              Discover world-class programs designed to meet global standards,
+              delivered with a local touch. Together, let’s build a brighter
+              future — one mind at a time.
+              <br />
+              Lincoln University College – Inspiring Excellence, Empowering .
             </p>
           </div>
         </div>

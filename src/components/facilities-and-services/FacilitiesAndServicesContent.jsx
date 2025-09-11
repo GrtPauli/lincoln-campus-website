@@ -55,13 +55,6 @@ const facilities = [
 export default function FacilitiesAndServicesContent() {
   return (
     <div className='w-full p-12 py-14 text-text text-md'>
-      <p className='mb-3'>
-        The Lincoln University College mission drives our focus on quality education for individual development and it’s vital foundation.
-      </p>
-      <p className='mb-8'>
-        Lincoln University College (LUC), located at Petaling Jaya, Malaysia was established in the year 2002 as Lincoln College (LC) and later upgraded to Lincoln University College in the year 2011.
-      </p>
-
       <div className='mb-4 inline-block text-2xl'>
         <h1>Facilities & Services</h1>
         <StyledUnderline />

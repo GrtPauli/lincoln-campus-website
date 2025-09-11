@@ -40,7 +40,7 @@ const MENU_LINKS = [
       {
         key: "collaborators",
         label: "Collaborators",
-        to: "/collaborators",
+        to: "#",
       },
       {
         key: "posts",
@@ -74,9 +74,9 @@ const MENU_LINKS = [
         label: "Admission Process",
         to: "/admission/admission-process",
       },
-      { key: "nigerian-student", label: "Nigerian Student" },
-      { key: "international-student", label: "International Student" },
-      { key: "scholarship", label: "Scholarship" },
+      // { key: "nigerian-student", label: "Nigerian Student" },
+      // { key: "international-student", label: "International Student" },
+      // { key: "scholarship", label: "Scholarship" },
       {
         key: "fees-structure",
         label: "Fees Structure",

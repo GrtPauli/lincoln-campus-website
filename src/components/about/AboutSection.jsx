@@ -13,7 +13,7 @@ const AboutUs = () => {
         <section className="mb-8">
           <div className="inline-block mb-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center md:text-left">
-              About Lincoln University College
+              About Lincoln University
             </h2>
             <StyledUnderline />
           </div>

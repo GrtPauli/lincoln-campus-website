@@ -86,16 +86,12 @@ export default function HomePage() {
         <Programmes />
         <SchoolsSection />
         <Events events={data?.events?.data} />
+        <PracticalSkillsSlider />
         <News news={data?.news?.data} />
         <Videos videos={data?.videos?.data} />
         <Achievements />
-       <PracticalSkillsSlider/>
-      
-        <RecognitionsAndAccreditation />
 
-       
-        
-        
+        <RecognitionsAndAccreditation />
       </div>
     </MainLayout>
   );

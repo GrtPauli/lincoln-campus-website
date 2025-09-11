@@ -22,7 +22,7 @@ export default function Campuses() {
             </div>
             <div className="p-6">
               <h2 className="text-xl font-semibold text-text mb-4">
-                Lincoln University Malaysia (Gombe Campus)
+                Lincoln University Gombe
               </h2>
               <p className="text-text/60 mb-4">
                 Lincoln University Malaysia, Kumo Gombe State.

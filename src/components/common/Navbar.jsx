@@ -40,7 +40,7 @@ const MENU_LINKS = [
       {
         key: "collaborators",
         label: "Collaborators",
-        to: "#",
+        to: "/collaborators",
       },
       {
         key: "posts",

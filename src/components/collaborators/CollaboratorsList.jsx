@@ -1,5 +1,5 @@
 import React from "react";
-
+import StyledUnderline from "../common/ui/StyledUnderline";
 
 const collaboratorLogos = [
   {
@@ -122,16 +122,18 @@ const collaboratorLogos = [
     src: "/src/assets/Y-Max-Logo.jpg",
     alt: "Y-Max College",
   },
- 
-
 ];
 
 export default function CollaboratorsList() {
   return (
-    <div className="max-w-[90%] mx-auto py-10 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-left mb-12 text-gray-800">
-        Foreign Collaborators
-      </h1>
+    <div className="max-w-[95%] mx-auto py-10 px-4 sm:px-6 lg:px-8">
+      <div className="inline-block mb-6">
+        <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center md:text-left">
+          Foreign Collaborators
+        </h2>
+        <StyledUnderline />
+      </div>
+
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
         {collaboratorLogos.map((logo) => (
           <div

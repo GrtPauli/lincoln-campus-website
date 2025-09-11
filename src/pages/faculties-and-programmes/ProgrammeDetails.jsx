@@ -83,11 +83,11 @@ export default function ProgrammeDetails() {
             <div>
               <div className="mb-14 flex gap-1 items-center justify-between">
                 {tags.map((tag) => (
-                  <div key={tag.id} className="bg-primary flex items-center gap-4 justify-center p-6 w-[22%]">
+                  <div key={tag.id} className="bg-primary flex items-center gap-4 px-5 py-3 w-[22%]">
                     <div className="text-secondary">{tag.icon}</div>
                     <div className="flex flex-col text-secondary">
-                      <h1 className="text-2xl">{tag.title}</h1>
-                      <p className="text-xl">{tag.subtag}</p>
+                      <h1 className="text-sm font-bold">{tag.title}</h1>
+                      <p className="text-sm">{tag.subtag}</p>
                     </div>
                   </div>
                 ))}

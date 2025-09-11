@@ -11,13 +11,15 @@ export default function PracticalSkillDetails() {
   const [searchTerm, setSearchTerm] = useState("");
 
   // Find programme metadata from FACULTIES
-  const programmeData = FACULTIES.flatMap(f => f.programmes).find(p => p.slug === slug);
+  const programmeData = FACULTIES.flatMap((f) => f.programmes).find(
+    (p) => p.slug === slug
+  );
 
-  // Filter projects by programmeSlug
-  const programmeProjects = PROJECTS.filter(p => p.programmeSlug === slug);
+  // Filter projects by programmeSlug for the programme detail view
+  const programmeProjects = PROJECTS.filter((p) => p.programmeSlug === slug);
 
   const filteredProjects = programmeProjects.filter(
-    student =>
+    (student) =>
       student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       student.psaTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
       student.supervisor.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -25,29 +27,100 @@ export default function PracticalSkillDetails() {
   );
 
   if (!programmeData) {
+    const countsByProgramme = PROJECTS.reduce((acc, p) => {
+      const key = p.programmeSlug;
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {});
+
+    const groupedFaculties = FACULTIES.map((fac) => {
+      const programmes = (fac.programmes || []).map((prog) => ({
+        ...prog,
+        projectCount: countsByProgramme[prog.slug] || 0,
+      }));
+      const facultyProjectCount = programmes.reduce(
+        (sum, prog) => sum + (prog.projectCount || 0),
+        0
+      );
+      return { ...fac, programmes, facultyProjectCount };
+    });
+
     return (
       <MainLayout>
-        <div className="p-12 text-center">
-          <h2 className="text-3xl font-bold text-text mb-4">Programme Not Found</h2>
-          <p className="text-text/80 mb-6">
-            The programme you are looking for does not exist.
-          </p>
-          <Link
-            to="/"
-            className="px-6 py-3 bg-primary text-secondary rounded-sm hover:bg-primary/90 transition-colors duration-200"
-          >
-            Back
-          </Link>
+        <Hero
+          title={"Practical Skills Application (PSA)"}
+          backgroundImage={
+            "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&auto=format&fit=crop&q=60"
+          }
+        />
+
+        <div className="p-12">
+          {/* <div className="mb-9 inline-block">
+            <h2 className="text-2xl">
+              Projects
+            </h2>
+            <StyledUnderline />
+          </div> */}
+
+          {groupedFaculties.map((faculty) => (
+            <section key={faculty.slug} className="mb-20">
+              <div className="flex items-center justify-between mb-4">
+                <div className="inline-block mb-6">
+                  <h3 className="text-2xl font-semibold  text-text">
+                    {faculty.title}
+                  </h3>
+                  <StyledUnderline />
+                </div>
+
+                <div className="text-sm text-gray-600">
+                  {faculty.facultyProjectCount} project
+                  {faculty.facultyProjectCount !== 1 ? "s" : ""}
+                </div>
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {faculty.programmes.map((prog) => (
+                  <div
+                    key={prog.slug}
+                    className="bg-primary rounded-sm shadow hover:scale-105 transition-all duration-300 p-6 flex flex-col"
+                  >
+ 
+
+                    <div className="flex-1">
+                      <h4 className="text-lg font-semibold text-secondary mb-2">
+                        {prog.title}
+                      </h4>
+                      <p className="text-sm text-secondary mb-4">
+                        {prog.projectCount} project
+                        {prog.projectCount !== 1 ? "s" : ""}
+                      </p>
+                    </div>
+
+                    <Link
+                      to={`/psa/${prog.slug}`}
+                      className="mt-auto inline-block text-secondary rounded-sm  font-medium hover:bg-primary/90 transition-colors"
+                    >
+                      View Projects →
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </MainLayout>
     );
   }
 
+  // ---------- Normal programme detail view ----------
   return (
     <MainLayout>
       <Hero
         title={programmeData.title}
-        backgroundImage={programmeData.image || "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&auto=format&fit=crop&q=60"}
+        backgroundImage={
+          programmeData.image ||
+          "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&auto=format&fit=crop&q=60"
+        }
       />
 
       <div className="p-12 pb-16">
@@ -56,7 +129,10 @@ export default function PracticalSkillDetails() {
             <h2 className="text-xl">Programme Overview</h2>
             <StyledUnderline />
           </div>
-          <p>{programmeData.description || "This programme focuses on hands-on practical skills for students to excel in real-world challenges."}</p>
+          <p>
+            {programmeData.description ||
+              "This programme focuses on hands-on practical skills for students to excel in real-world challenges."}
+          </p>
         </div>
 
         <div className="mb-8">
@@ -87,22 +163,40 @@ export default function PracticalSkillDetails() {
                 <table className="min-w-full">
                   <thead>
                     <tr className="bg-primary text-secondary">
-                      <th className="py-4 px-6 text-left font-semibold">Student Name</th>
-                      <th className="py-4 px-6 text-left font-semibold">Project Title</th>
-                      <th className="py-4 px-6 text-left font-semibold">Report</th>
-                      <th className="py-4 px-6 text-left font-semibold">Demo</th>
-                      <th className="py-4 px-6 text-left font-semibold">Supervisor</th>
-                      <th className="py-4 px-6 text-left font-semibold">Year</th>
+                      <th className="py-4 px-6 text-left font-semibold">
+                        Student Name
+                      </th>
+                      <th className="py-4 px-6 text-left font-semibold">
+                        Project Title
+                      </th>
+                      <th className="py-4 px-6 text-left font-semibold">
+                        Report
+                      </th>
+                      <th className="py-4 px-6 text-left font-semibold">
+                        Demo
+                      </th>
+                      <th className="py-4 px-6 text-left font-semibold">
+                        Supervisor
+                      </th>
+                      <th className="py-4 px-6 text-left font-semibold">
+                        Year
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredProjects.map((student, index) => (
                       <tr
                         key={student.id}
-                        className={`${index % 2 === 0 ? "bg-border/50" : "bg-secondary"} hover:bg-primary/10 transition-colors duration-200`}
+                        className={`${
+                          index % 2 === 0 ? "bg-border/50" : "bg-secondary"
+                        } hover:bg-primary/10 transition-colors duration-200`}
                       >
-                        <td className="py-4 px-6 font-medium text-text">{student.name}</td>
-                        <td className="py-4 px-6 text-text">{student.psaTitle}</td>
+                        <td className="py-4 px-6 font-medium text-text">
+                          {student.name}
+                        </td>
+                        <td className="py-4 px-6 text-text">
+                          {student.psaTitle}
+                        </td>
                         <td className="py-4 px-6">
                           {student.report && (
                             <a
@@ -127,7 +221,9 @@ export default function PracticalSkillDetails() {
                             </a>
                           )}
                         </td>
-                        <td className="py-4 px-6 text-text">{student.supervisor}</td>
+                        <td className="py-4 px-6 text-text">
+                          {student.supervisor}
+                        </td>
                         <td className="py-4 px-6">
                           <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
                             {student.year}
@@ -141,9 +237,12 @@ export default function PracticalSkillDetails() {
             </div>
           ) : (
             <div className="text-center py-16 bg-secondary rounded-2xl shadow-sm">
-              <h3 className="text-xl font-semibold text-text mb-2">No Results Found</h3>
+              <h3 className="text-xl font-semibold text-text mb-2">
+                No Results Found
+              </h3>
               <p className="text-text/80">
-                Try adjusting your search terms or clear the search to see all projects.
+                Try adjusting your search terms or clear the search to see all
+                projects.
               </p>
               {searchTerm && (
                 <button
@@ -157,9 +256,12 @@ export default function PracticalSkillDetails() {
           )
         ) : (
           <div className="text-center py-16 bg-secondary rounded-2xl shadow-sm">
-            <h3 className="text-xl font-semibold text-text mb-2">No Projects Yet</h3>
+            <h3 className="text-xl font-semibold text-text mb-2">
+              No Projects Yet
+            </h3>
             <p className="text-text/80">
-              Student projects for this programme will appear here once they're available.
+              Student projects for this programme will appear here once they're
+              available.
             </p>
           </div>
         )}

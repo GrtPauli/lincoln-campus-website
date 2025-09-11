@@ -1,68 +1,151 @@
 import React from "react";
-import Accordion from "../common/ui/Accordion";
-import MainLayout from "../../layouts/MainLayout";
 
-const foreignCollaborators = [
+
+const collaboratorLogos = [
   {
-    title: "Lincoln University College Malaysia",
-    content: (
-      <div className="space-y-3 text-sm text-text">
-        <div className="flex gap-5">
-          <img
-            src="https://via.placeholder.com/300x200?text=Collaboration+Image"
-            className="h-[200px] w-auto object-cover rounded-xl"
-            alt="Lincoln University College Malaysia"
-          />
-          <div>
-            <p className="font-semibold text-2xl mb-2">Dr. Amiya Bhaumik</p>
-            <p className="">CEO & Founder, LUC Malaysia</p>
-          </div>
-        </div>
-        <p className="leading-loose">
-          Our primary foreign partner is Lincoln University College, Malaysia.
-          This collaboration is the cornerstone of our academic and
-          administrative framework, ensuring our programs meet international
-          standards and offer a global perspective to our students. Through this
-          partnership, we share knowledge, resources, and research opportunities
-          that benefit our entire university community.
-        </p>
-      </div>
-    ),
+    id: 1,
+    src: "/src/assets/EXCELLANZ.jpg",
+    alt: "Excellanz Education",
   },
   {
-    title: "University of Kumo",
-    content: (
-      <div className="space-y-3 text-sm text-text">
-        <p className="leading-loose">
-          We have an academic partnership with the University of Kumo, focusing
-          on joint research projects and student exchange programs in various
-          fields. This collaboration strengthens our ties with local and
-          regional institutions, providing students with valuable exposure to
-          diverse academic environments.
-        </p>
-      </div>
-    ),
+    id: 2,
+    src: "/src/assets/ism.jpg",
+    alt: "ISM",
   },
   {
-    title: "London School of Economics and Political Science",
-    content: (
-      <div className="space-y-3 text-sm text-text">
-        <p className="leading-loose">
-          In an ongoing collaboration, we are working with the London School of
-          Economics on a series of seminars and workshops focused on global
-          economic trends and policy development. This partnership offers our
-          students unique insights from world-renowned experts.
-        </p>
-      </div>
-    ),
+    id: 3,
+    src: "/src/assets/SIIHM_Logo.jpg",
+    alt: "SIHHM",
   },
+  {
+    id: 4,
+    src: "/src/assets/timeslogo.jpg",
+    alt: "Times Education",
+  },
+  {
+    id: 5,
+    src: "/src/assets/Trinity_International_College2.jpg",
+    alt: "YEC Learning Center",
+  },
+  {
+    id: 6,
+    src: "/src/assets/txwes.jpg",
+    alt: "Texas Wesleyan University",
+  },
+  {
+    id: 7,
+    src: "/src/assets/ubt.jpg",
+    alt: "Universal Business and Technology Campus",
+  },
+  {
+    id: 8,
+    src: "/src/assets/ucr.jpg",
+    alt: "UC Riverside",
+  },
+  {
+    id: 9,
+    src: "/src/assets/udc.jpg",
+    alt: "UDC Education",
+  },
+  {
+    id: 10,
+    src: "/src/assets/unimus.jpg",
+    alt: "UNIMUS",
+  },
+  {
+    id: 11,
+    src: "/src/assets/usm.jpg",
+    alt: "Universiti Sains Malaysia",
+  },
+  {
+    id: 12,
+    src: "/src/assets/usm-indonesia.jpg",
+    alt: "USM Indonesia",
+  },
+  {
+    id: 13,
+    src: "/src/assets/vanlang.jpg",
+    alt: "Van Lang University",
+  },
+  {
+    id: 14,
+    src: "/src/assets/VAU-logo3x106062020.jpg",
+    alt: "Vivekananda American University",
+  },
+  {
+    id: 15,
+    src: "/src/assets/victoria_college.jpg",
+    alt: "Victoria College",
+  },
+  {
+    id: 16,
+    src: "/src/assets/visayas-state-university.jpg",
+    alt: "Visayas State University",
+  },
+  {
+    id: 17,
+    src: "/src/assets/VSM.jpg",
+    alt: "VSM+U",
+  },
+  {
+    id: 18,
+    src: "/src/assets/WBSU.jpg",
+    alt: "West Bengal State Council",
+  },
+  {
+    id: 19,
+    src: "/src/assets/Western-Mega-College.jpg",
+    alt: "WUMC Omega College",
+  },
+  {
+    id: 20,
+    src: "/src/assets/studylink.jpg",
+    alt: "Study Link",
+  },
+  {
+    id: 21,
+    src: "/src/assets/winstone.jpg",
+    alt: "Winston School of Culinary",
+  },
+  {
+    id: 22,
+    src: "/src/assets/xi.jpg",
+    alt: "Xi Lian Guang Bo",
+  },
+  {
+    id: 23,
+    src: "/src/assets/xin.jpg",
+    alt: "Xin Yucheng Business School",
+  },
+  {
+    id: 24,
+    src: "/src/assets/Y-Max-Logo.jpg",
+    alt: "Y-Max College",
+  },
+ 
+
 ];
 
 export default function CollaboratorsList() {
   return (
-    <div className="max-w-[80%] mx-auto py-10">
-      <h1 className="text-4xl font-bold mb-8">Foreign Collaborators</h1>
-      <Accordion data={foreignCollaborators} />
+    <div className="max-w-[90%] mx-auto py-10 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-bold text-left mb-12 text-gray-800">
+        Foreign Collaborators
+      </h1>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center">
+        {collaboratorLogos.map((logo) => (
+          <div
+            key={logo.id}
+            className="flex items-center justify-center p-4 h-32 w-full bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105"
+          >
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="max-h-full max-w-full object-contain"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

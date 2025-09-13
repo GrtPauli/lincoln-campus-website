@@ -102,13 +102,9 @@ const MENU_LINKS = [
     ],
   },
   {
-    key: "campuses",
-    label: "Campuses",
-    isParent: true,
-    children: [
-      { key: "gombe", label: "Lincoln University Malaysia (Gombe Campus)" },
-      { key: "nsuk", label: "Lincoln University Malaysia (NSUK Campus)" },
-    ],
+    key: "practical-skill-application",
+    label: "Practical Skill Application",
+    to: "/psa",
   },
   {
     key: "student-corner",

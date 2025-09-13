@@ -113,7 +113,11 @@ export default function Footer() {
           <ul className="space-y-4">
             <li className="flex items-start">
               <span className="text-red-600 mr-2 mt-1">&#x2022;</span>
-              <p>Kolej Universitiy Lincoln, No. 12, 14, 16 & 18, Jalan SS 6/12, 47301 Petaling Jaya, Selangor</p>
+              <p>Lincoln University Malaysia, Kumo Gombe State</p>
+            </li>
+            <li className="flex items-start">
+              <span className="text-red-600 mr-2 mt-1">&#x2022;</span>
+              <p>Lincoln University Malaysia admin block, Nassarawa State University, Keffi</p>
             </li>
             <li className="flex items-center">
               <span className="text-red-600 mr-2">&#x2022;</span>

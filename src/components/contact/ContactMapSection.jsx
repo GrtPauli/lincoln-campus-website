@@ -4,6 +4,7 @@ export default function Campuses() {
   return (
     <div className="w-full p-12">
       <div className="grid md:grid-cols-2 gap-8">
+        {/* Gombe Campus */}
         <div className="bg-secondary rounded-xl shadow-sm overflow-hidden flex flex-col justify-between">
           <div>
             <div className="h-56 bg-primary/10 relative">
@@ -13,7 +14,7 @@ export default function Campuses() {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
 
               <div className="absolute top-4 right-4 bg-primary text-secondary px-3 py-1 rounded-full text-sm font-semibold">
@@ -30,9 +31,15 @@ export default function Campuses() {
             </div>
           </div>
 
-          <p className="text-text/60 m-6 mt-0">Phone: +2348038341496</p>
+          <div className="text-text/60 m-6 mt-0 space-y-1">
+            <p>Phone: +2348038341496</p>
+            <p>Hotline: +603-7806 3478</p>
+            <p>Malaysia Toll Free: +1300 880 111</p>
+            <p>Email: info@lincoln.edu.my</p>
+          </div>
         </div>
 
+        {/* NSUK Campus */}
         <div className="bg-secondary rounded-xl shadow-sm overflow-hidden flex flex-col justify-between">
           <div>
             <div className="h-56 bg-primary/10 relative">
@@ -42,7 +49,7 @@ export default function Campuses() {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
 
               <div className="absolute top-4 right-4 bg-primary text-secondary px-3 py-1 rounded-full text-sm font-semibold">
@@ -60,7 +67,12 @@ export default function Campuses() {
             </div>
           </div>
 
-          <p className="text-text/60 m-6 mt-0">Phone: +2348038341496</p>
+          <div className="text-text/60 m-6 mt-0 space-y-1">
+            <p>Phone: +2348038341496</p>
+            <p>Hotline: +603-7806 3478</p>
+            <p>Malaysia Toll Free: +1300 880 111</p>
+            <p>Email: info@lincoln.edu.my</p>
+          </div>
         </div>
       </div>
     </div>

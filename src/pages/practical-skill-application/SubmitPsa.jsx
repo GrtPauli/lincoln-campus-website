@@ -104,16 +104,22 @@ export default function SubmitPsa() {
             </div>
 
             <div>
-              <label className="block mb-2 font-semibold text-text">Submission Year</label>
-              <input
-                type="number"
-                name="year"
-                value={formData.year}
-                readOnly
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
-                           bg-gray-100 cursor-not-allowed"
-              />
-            </div>
+  <label className="block mb-2 font-semibold text-text">Submission Year</label>
+  <input
+    type="date"
+    name="year"
+    value={formData.year}
+    onChange={(e) =>
+      setFormData((prev) => ({
+        ...prev,
+        year: new Date(e.target.value).getFullYear(),
+      }))
+    }
+    className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
+               focus:ring-primary focus:border-primary focus:outline-none transition-all"
+  />
+</div>
+
 
             <div>
               <label className="block mb-2 font-semibold text-text">Semester</label>

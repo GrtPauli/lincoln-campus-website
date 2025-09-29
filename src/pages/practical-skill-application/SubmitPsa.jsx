@@ -1,19 +1,67 @@
-
-import React, { useState } from "react";
+// src/pages/psa/SubmitPsa.jsx
+import React, { useState, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MainLayout from "../../layouts/MainLayout";
 import Hero from "../../components/common/ui/Hero";
 import StyledUnderline from "../../components/common/ui/StyledUnderline";
-import { FiUploadCloud, FiLink, FiCheckCircle, FiImage } from "react-icons/fi";
+import { FiUploadCloud, FiLink, FiCheckCircle, FiImage, FiBookOpen } from "react-icons/fi";
+
+// =========================================================================
+// !!! IMPORTANT !!!
+// MOCK DATA REPLACED with user-provided data and manually generated slugs.
+// =========================================================================
+
+const FACULTIES_DATA = [
+    {
+        title: "MEDICINE AND ALLIED HEALTH SCIENCES",
+        slug: "medicine-and-allied-health-sciences",
+        programmes: [
+            { title: "Medicine", slug: "medicine" },
+            { title: "Nursing", slug: "nursing" },
+            { title: "Community Health", slug: "community-health" },
+            { title: "Public Health", slug: "public-health" },
+            { title: "Environmental Health Safety", slug: "environmental-health-safety" },
+            { title: "Health Information Management", slug: "health-information-management" },
+            { title: "Medical Imaging", slug: "medical-imaging" },
+        ],
+    },
+    {
+        title: "FACULTY OF SCIENCES AND COMPUTING",
+        slug: "faculty-of-sciences-and-computing",
+        programmes: [
+            { title: "Microbiology", slug: "microbiology" },
+            { title: "Biochemistry", slug: "biochemistry" },
+            { title: "Biomedical Sciences", slug: "biomedical-sciences" },
+            { title: "Information Technology", slug: "information-technology" },
+            { title: "Computer Science (Networking Technology and Cybersecurity)", slug: "computer-science-networking-technology-and-cybersecurity" },
+            { title: "Computer Science (Artificial Intelligence)", slug: "computer-science-artificial-intelligence" },
+        ],
+    },
+    {
+        title: "FACULTY OF MANAGEMENT AND SOCIAL SCIENCES",
+        slug: "faculty-of-management-and-social-sciences",
+        programmes: [
+            { title: "Business Administration in Accounting", slug: "business-administration-in-accounting" },
+            { title: "Business Administration", slug: "business-administration" },
+            { title: "Mass Communication", slug: "mass-communication" },
+            { title: "Management (Oil and Gas Management)", slug: "management-oil-and-gas-management" },
+        ],
+    },
+];
+
+// =========================================================================
 
 export default function SubmitPsa() {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     psaTitle: "",
     supervisor: "",
     year: new Date().getFullYear(),
     semester: "1",
+    selectedFaculty: "",
+    selectedDepartment: "",
     report: null,
     demo: "",
     screenshots: [],
@@ -21,7 +69,6 @@ export default function SubmitPsa() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  //  Handle input changes
   const handleChange = (e) => {
     const { name, value, files } = e.target;
 
@@ -29,18 +76,27 @@ export default function SubmitPsa() {
       setFormData((prev) => ({ ...prev, report: files[0] }));
     } else if (name === "screenshots") {
       setFormData((prev) => ({ ...prev, screenshots: Array.from(files) }));
+    } else if (name === "selectedFaculty") {
+      // Reset department when faculty changes
+      setFormData((prev) => ({ ...prev, [name]: value, selectedDepartment: "" }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
-  // Handle form submission
+  const availableDepartments = useMemo(() => {
+    const faculty = FACULTIES_DATA.find(f => f.slug === formData.selectedFaculty);
+    return faculty ? faculty.programmes : [];
+  }, [formData.selectedFaculty]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    console.log("Form submitted with final data:", formData);
+    
+    // Simulate API call
     setTimeout(() => {
-      console.log("Form submitted:", formData);
       setIsSubmitting(false);
       alert("PSA Project submitted successfully! Redirecting...");
       navigate("/psa");
@@ -73,7 +129,7 @@ export default function SubmitPsa() {
           className="bg-secondary p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100 space-y-8"
           encType="multipart/form-data"
         >
-          {/*  Student Info */}
+          {/* Student Info (Name & Supervisor) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block mb-2 font-semibold text-text">Student Name</label>
@@ -84,8 +140,7 @@ export default function SubmitPsa() {
                 onChange={handleChange}
                 required
                 placeholder="Your Full Name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
-                           focus:ring-primary focus:border-primary focus:outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary focus:outline-none transition-all"
               />
             </div>
 
@@ -98,28 +153,74 @@ export default function SubmitPsa() {
                 onChange={handleChange}
                 required
                 placeholder="Supervisor Name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
-                           focus:ring-primary focus:border-primary focus:outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary focus:outline-none transition-all"
               />
             </div>
+          </div>
 
+          {/* Faculty & Department Selectors */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-200">
+            {/* Faculty Select */}
             <div>
-  <label className="block mb-2 font-semibold text-text">Submission Year</label>
-  <input
-    type="date"
-    name="year"
-    value={formData.year}
-    onChange={(e) =>
-      setFormData((prev) => ({
-        ...prev,
-        year: new Date(e.target.value).getFullYear(),
-      }))
-    }
-    className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
-               focus:ring-primary focus:border-primary focus:outline-none transition-all"
-  />
-</div>
+              <label className="block mb-2 font-semibold text-text">
+                <FiBookOpen className="inline-block mr-2 text-primary" size={20} />
+                Faculty <span className="text-red-500">*</span>
+              </label>
+              <select
+                name="selectedFaculty"
+                value={formData.selectedFaculty}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all"
+              >
+                <option value="" disabled>Select a Faculty</option>
+                {FACULTIES_DATA.map((faculty) => (
+                  <option key={faculty.slug} value={faculty.slug}>
+                    {faculty.title}
+                  </option>
+                ))}
+              </select>
+            </div>
 
+            {/* Department Select (Dependent) */}
+            <div>
+              <label className="block mb-2 font-semibold text-text">
+                Department/Program <span className="text-red-500">*</span>
+              </label>
+              <select
+                name="selectedDepartment"
+                value={formData.selectedDepartment}
+                onChange={handleChange}
+                required
+                disabled={!formData.selectedFaculty || availableDepartments.length === 0}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all disabled:bg-gray-100 disabled:text-gray-500"
+              >
+                <option value="" disabled>
+                  {formData.selectedFaculty ? 'Select a Program' : 'Select a Faculty first'}
+                </option>
+                {availableDepartments.map((program) => (
+                  <option key={program.slug} value={program.slug}>
+                    {program.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* Year & Semester */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block mb-2 font-semibold text-text">Submission Year</label>
+              <input
+                type="number"
+                name="year"
+                value={formData.year}
+                onChange={handleChange}
+                required
+                readOnly
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-gray-100 cursor-not-allowed focus:ring-primary focus:border-primary focus:outline-none transition-all"
+              />
+            </div>
 
             <div>
               <label className="block mb-2 font-semibold text-text">Semester</label>
@@ -128,10 +229,9 @@ export default function SubmitPsa() {
                 value={formData.semester}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
-                           bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all"
               >
-                {Array.from({ length: 10 }, (_, i) => (
+                {Array.from({ length: 2 }, (_, i) => (
                   <option key={i + 1} value={i + 1}>
                     Semester {i + 1}
                   </option>
@@ -140,7 +240,7 @@ export default function SubmitPsa() {
             </div>
           </div>
 
-          {/*  Project Title */}
+          {/* Project Title */}
           <div>
             <label className="block mb-2 font-semibold text-text">Project Title</label>
             <input
@@ -150,46 +250,87 @@ export default function SubmitPsa() {
               onChange={handleChange}
               required
               placeholder="e.g., Development of an AI-Powered Grading System"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
-                         focus:ring-primary focus:border-primary focus:outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary focus:outline-none transition-all"
             />
           </div>
 
-          {/*  Report Upload */}
-          <div className="pt-4 border-t border-gray-200">
-            <label className="block mb-3 font-semibold text-text">
-              <FiUploadCloud className="inline-block mr-2 text-primary" size={20} />
-              Upload Final Report (PDF) <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="file"
-              name="report"
-              accept="application/pdf"
-              onChange={handleChange}
-              required
-              className="hidden"
-              id="report-upload"
-            />
-            <label
-              htmlFor="report-upload"
-              className={`block px-4 py-3 border-2 border-dashed rounded-lg text-center cursor-pointer ${
-                formData.report
-                  ? "border-primary bg-primary/10 text-primary"
-                  : "border-gray-300 hover:border-primary/50 text-gray-500"
-              }`}
-            >
-              {formData.report ? (
-                <span className="font-medium flex items-center justify-center">
-                  <FiCheckCircle className="mr-2" size={20} />
-                  File Selected: {formData.report.name}
-                </span>
-              ) : (
-                "Click to select file (Max 10MB, PDF only)"
+          {/* File Uploads Section */}
+          <div className="space-y-6 pt-4 border-t border-gray-200">
+            {/* Report Upload */}
+            <div>
+              <label className="block mb-3 font-semibold text-text">
+                <FiUploadCloud className="inline-block mr-2 text-primary" size={20} />
+                Upload Final Report (PDF) <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="file"
+                name="report"
+                accept="application/pdf"
+                onChange={handleChange}
+                required
+                className="hidden"
+                id="report-upload"
+              />
+              <label
+                htmlFor="report-upload"
+                className={`block px-4 py-3 border-2 border-dashed rounded-lg text-center cursor-pointer transition-all ${
+                  formData.report
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-gray-300 hover:border-primary/50 text-gray-500"
+                }`}
+              >
+                {formData.report ? (
+                  <span className="font-medium flex items-center justify-center">
+                    <FiCheckCircle className="mr-2" size={20} />
+                    File Selected: **{formData.report.name}**
+                  </span>
+                ) : (
+                  "Click to select file (Max 10MB, PDF only)"
+                )}
+              </label>
+            </div>
+          
+            {/* Screenshots Upload */}
+            <div>
+              <label className="block mb-2 font-semibold text-text">
+                <FiImage className="inline-block mr-2 text-primary" size={20} />
+                Project Screenshots (Optional, multiple)
+              </label>
+              <input
+                type="file"
+                name="screenshots"
+                accept="image/*"
+                multiple
+                onChange={handleChange}
+                className="hidden"
+                id="screenshot-upload"
+              />
+              <label
+                htmlFor="screenshot-upload"
+                className="block px-4 py-3 border-2 border-dashed rounded-lg text-center cursor-pointer text-gray-500 hover:border-primary/50"
+              >
+                {formData.screenshots.length > 0
+                  ? `${formData.screenshots.length} file(s) selected`
+                  : "Click to upload screenshots (JPG, PNG, etc.)"}
+              </label>
+
+              {/* Preview Thumbnails */}
+              {formData.screenshots.length > 0 && (
+                <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {formData.screenshots.map((file, index) => (
+                    <img
+                      key={index}
+                      src={URL.createObjectURL(file)}
+                      alt={`screenshot-${index}`}
+                      className="h-24 w-full object-cover rounded-lg shadow"
+                    />
+                  ))}
+                </div>
               )}
-            </label>
+            </div>
           </div>
 
-          {/*  Demo URL (Optional) */}
+          {/* Demo URL */}
           <div>
             <label className="block mb-2 font-semibold text-text">
               <FiLink className="inline-block mr-2 text-primary" size={20} />
@@ -201,57 +342,15 @@ export default function SubmitPsa() {
               value={formData.demo}
               onChange={handleChange}
               placeholder="https://github.com/your-project or deployed-app.com"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
-                         focus:ring-primary focus:border-primary"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary"
             />
           </div>
 
-          {/*  Screenshots Upload */}
-          <div>
-            <label className="block mb-2 font-semibold text-text">
-              <FiImage className="inline-block mr-2 text-primary" size={20} />
-              Project Screenshots (Optional, multiple)
-            </label>
-            <input
-              type="file"
-              name="screenshots"
-              accept="image/*"
-              multiple
-              onChange={handleChange}
-              className="hidden"
-              id="screenshot-upload"
-            />
-            <label
-              htmlFor="screenshot-upload"
-              className="block px-4 py-3 border-2 border-dashed rounded-lg text-center cursor-pointer 
-                         text-gray-500 hover:border-primary/50"
-            >
-              {formData.screenshots.length > 0
-                ? `${formData.screenshots.length} file(s) selected`
-                : "Click to upload screenshots (JPG, PNG, etc.)"}
-            </label>
-
-            {/* Preview Thumbnails */}
-            {formData.screenshots.length > 0 && (
-              <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {formData.screenshots.map((file, index) => (
-                  <img
-                    key={index}
-                    src={URL.createObjectURL(file)}
-                    alt={`screenshot-${index}`}
-                    className="h-24 w-full object-cover rounded-lg shadow"
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/*  Actions */}
+          {/* Actions */}
           <div className="flex items-center justify-end pt-4 border-t border-gray-200">
             <Link
               to="/psa"
-              className="px-8 py-3 bg-gray-200 text-text font-semibold rounded-lg shadow-md 
-                         hover:bg-gray-300 transition-colors mr-4"
+              className="px-8 py-3 bg-gray-200 text-text font-semibold rounded-lg shadow-md hover:bg-gray-300 transition-colors mr-4"
             >
               Cancel
             </Link>

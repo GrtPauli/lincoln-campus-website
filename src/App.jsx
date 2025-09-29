@@ -37,6 +37,7 @@ import FeesStructure from "./pages/admission/FeesStructure";
 import ProgrammeDetails from "./pages/faculties-and-programmes/ProgrammeDetails";
 import AdmissionProcess from "./pages/admission/AdmissionProcess";
 import CollaboratorsPage from "./pages/CollaboratorsPage";
+import SubmitPsa from "./pages/practical-skill-application/SubmitPsa";
 
 function App() {
   return (
@@ -111,6 +112,7 @@ function App() {
 
           <Route path="/psa" element={<PracticalSkillApplication />} />
           <Route path="/psa/:slug" element={<PracticalSkillApplication />} />
+          <Route path="/submit-psa" element={<SubmitPsa />} />
 
           <Route
             path="/collaborators"

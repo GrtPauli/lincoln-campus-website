@@ -65,6 +65,11 @@ export default function Header() {
                 Contact Us
               </Link>
             </li>
+            <li className="px-2">
+              <Link to="/submit-psa" className="hover:underline">
+                Submit PSA
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

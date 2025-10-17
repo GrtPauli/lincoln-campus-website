@@ -1,58 +1,80 @@
-// src/pages/psa/SubmitPsa.jsx
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MainLayout from "../../layouts/MainLayout";
 import Hero from "../../components/common/ui/Hero";
 import StyledUnderline from "../../components/common/ui/StyledUnderline";
-import { FiUploadCloud, FiLink, FiCheckCircle, FiImage, FiBookOpen } from "react-icons/fi";
-
-// =========================================================================
-// !!! IMPORTANT !!!
-// MOCK DATA REPLACED with user-provided data and manually generated slugs.
-// =========================================================================
+import {
+  FiUploadCloud,
+  FiLink,
+  FiCheckCircle,
+  FiImage,
+  FiBookOpen,
+} from "react-icons/fi";
+import { PSAService } from "../../services/Psa";
 
 const FACULTIES_DATA = [
-    {
-        title: "MEDICINE AND ALLIED HEALTH SCIENCES",
-        slug: "medicine-and-allied-health-sciences",
-        programmes: [
-            { title: "Medicine", slug: "medicine" },
-            { title: "Nursing", slug: "nursing" },
-            { title: "Community Health", slug: "community-health" },
-            { title: "Public Health", slug: "public-health" },
-            { title: "Environmental Health Safety", slug: "environmental-health-safety" },
-            { title: "Health Information Management", slug: "health-information-management" },
-            { title: "Medical Imaging", slug: "medical-imaging" },
-        ],
-    },
-    {
-        title: "FACULTY OF SCIENCES AND COMPUTING",
-        slug: "faculty-of-sciences-and-computing",
-        programmes: [
-            { title: "Microbiology", slug: "microbiology" },
-            { title: "Biochemistry", slug: "biochemistry" },
-            { title: "Biomedical Sciences", slug: "biomedical-sciences" },
-            { title: "Information Technology", slug: "information-technology" },
-            { title: "Computer Science (Networking Technology and Cybersecurity)", slug: "computer-science-networking-technology-and-cybersecurity" },
-            { title: "Computer Science (Artificial Intelligence)", slug: "computer-science-artificial-intelligence" },
-        ],
-    },
-    {
-        title: "FACULTY OF MANAGEMENT AND SOCIAL SCIENCES",
-        slug: "faculty-of-management-and-social-sciences",
-        programmes: [
-            { title: "Business Administration in Accounting", slug: "business-administration-in-accounting" },
-            { title: "Business Administration", slug: "business-administration" },
-            { title: "Mass Communication", slug: "mass-communication" },
-            { title: "Management (Oil and Gas Management)", slug: "management-oil-and-gas-management" },
-        ],
-    },
+  {
+    title: "MEDICINE AND ALLIED HEALTH SCIENCES",
+    slug: "medicine-and-allied-health-sciences",
+    programmes: [
+      { title: "Medicine", slug: "medicine" },
+      { title: "Nursing", slug: "nursing" },
+      { title: "Community Health", slug: "community-health" },
+      { title: "Public Health", slug: "public-health" },
+      {
+        title: "Environmental Health Safety",
+        slug: "environmental-health-safety",
+      },
+      {
+        title: "Health Information Management",
+        slug: "health-information-management",
+      },
+      { title: "Medical Imaging", slug: "medical-imaging" },
+    ],
+  },
+  {
+    title: "FACULTY OF SCIENCES AND COMPUTING",
+    slug: "faculty-of-sciences-and-computing",
+    programmes: [
+      { title: "Microbiology", slug: "microbiology" },
+      { title: "Biochemistry", slug: "biochemistry" },
+      { title: "Biomedical Sciences", slug: "biomedical-sciences" },
+      { title: "Information Technology", slug: "information-technology" },
+      {
+        title: "Computer Science (Networking Technology and Cybersecurity)",
+        slug: "computer-science-networking-technology-and-cybersecurity",
+      },
+      {
+        title: "Computer Science (Artificial Intelligence)",
+        slug: "computer-science-artificial-intelligence",
+      },
+    ],
+  },
+  {
+    title: "FACULTY OF MANAGEMENT AND SOCIAL SCIENCES",
+    slug: "faculty-of-management-and-social-sciences",
+    programmes: [
+      {
+        title: "Business Administration in Accounting",
+        slug: "business-administration-in-accounting",
+      },
+      { title: "Business Administration", slug: "business-administration" },
+      { title: "Mass Communication", slug: "mass-communication" },
+      {
+        title: "Management (Oil and Gas Management)",
+        slug: "management-oil-and-gas-management",
+      },
+    ],
+  },
 ];
 
 // =========================================================================
 
 export default function SubmitPsa() {
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const errorRef = useRef(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -67,7 +89,18 @@ export default function SubmitPsa() {
     screenshots: [],
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // Scroll to error when submitError changes
+  useEffect(() => {
+    if (submitError) {
+      // Scroll to the top of the page where the error message is
+      // window.scrollTo({
+      //   top: 0,
+      //   behavior: "smooth",
+      // });
+
+      errorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [submitError]);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -77,30 +110,84 @@ export default function SubmitPsa() {
     } else if (name === "screenshots") {
       setFormData((prev) => ({ ...prev, screenshots: Array.from(files) }));
     } else if (name === "selectedFaculty") {
-      // Reset department when faculty changes
-      setFormData((prev) => ({ ...prev, [name]: value, selectedDepartment: "" }));
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+        selectedDepartment: "",
+      }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
+
+    // Clear error when user makes changes
+    if (submitError) setSubmitError("");
   };
 
   const availableDepartments = useMemo(() => {
-    const faculty = FACULTIES_DATA.find(f => f.slug === formData.selectedFaculty);
+    const faculty = FACULTIES_DATA.find(
+      (f) => f.slug === formData.selectedFaculty
+    );
     return faculty ? faculty.programmes : [];
   }, [formData.selectedFaculty]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError("");
 
-    console.log("Form submitted with final data:", formData);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Create FormData object for file upload
+      const submissionData = new FormData();
+
+      // Append text fields
+      submissionData.append("name", formData.name);
+      submissionData.append("psaTitle", formData.psaTitle);
+      submissionData.append("supervisor", formData.supervisor);
+      submissionData.append("year", formData.year.toString());
+      submissionData.append("semester", formData.semester);
+      submissionData.append("faculty", formData.selectedFaculty);
+      submissionData.append("department", formData.selectedDepartment);
+      submissionData.append("demo", formData.demo);
+
+      // Append report file
+      if (formData.report) {
+        submissionData.append("report", formData.report);
+      }
+
+      // Append screenshot files
+      formData.screenshots.forEach((screenshot) => {
+        submissionData.append("screenshots", screenshot);
+      });
+
+      console.log("Submitting PSA data...");
+
+      // Call your service
+      const result = await PSAService.submitPSA(submissionData);
+
+      console.log("Submission successful:", result);
+
+      // Show success message and redirect
       alert("PSA Project submitted successfully! Redirecting...");
       navigate("/psa");
-    }, 1500);
+    } catch (error) {
+      console.error("Submission failed:", error);
+      setSubmitError(
+        error.message || "Failed to submit project. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const isFormValid = () => {
+    return (
+      formData.name &&
+      formData.psaTitle &&
+      formData.supervisor &&
+      formData.selectedFaculty &&
+      formData.selectedDepartment &&
+      formData.report
+    );
   };
 
   return (
@@ -114,16 +201,30 @@ export default function SubmitPsa() {
       <div className="p-4 sm:p-12 max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-text">Practical Skills Application</h2>
-          <StyledUnderline />
+          <div className="inline-block">
+            <h2 className="text-3xl font-bold text-text">
+              Practical Skills Application
+            </h2>
+            <StyledUnderline />
+          </div>
           <h3 className="text-xl font-semibold text-text mt-2">Report Form</h3>
           <p className="text-text/70 text-lg max-w-2xl mx-auto mt-3">
-            Please provide accurate details for your Practical Skills Application project and upload
-            the final report.
+            Please provide accurate details for your Practical Skills
+            Application project and upload the final report.
           </p>
         </div>
 
-        {/* Form */}
+        {/* Error Message with ref for potential focus */}
+        {submitError && (
+          <div
+            ref={errorRef}
+            className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+          >
+            <strong>Error: </strong>
+            {submitError}
+          </div>
+        )}
+
         <form
           onSubmit={handleSubmit}
           className="bg-secondary p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100 space-y-8"
@@ -132,7 +233,9 @@ export default function SubmitPsa() {
           {/* Student Info (Name & Supervisor) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block mb-2 font-semibold text-text">Student Name</label>
+              <label className="block mb-2 font-semibold text-text">
+                Student Name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -145,7 +248,9 @@ export default function SubmitPsa() {
             </div>
 
             <div>
-              <label className="block mb-2 font-semibold text-text">Supervisor Name</label>
+              <label className="block mb-2 font-semibold text-text">
+                Supervisor Name
+              </label>
               <input
                 type="text"
                 name="supervisor"
@@ -163,7 +268,10 @@ export default function SubmitPsa() {
             {/* Faculty Select */}
             <div>
               <label className="block mb-2 font-semibold text-text">
-                <FiBookOpen className="inline-block mr-2 text-primary" size={20} />
+                <FiBookOpen
+                  className="inline-block mr-2 text-primary"
+                  size={20}
+                />
                 Faculty <span className="text-red-500">*</span>
               </label>
               <select
@@ -173,7 +281,9 @@ export default function SubmitPsa() {
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all"
               >
-                <option value="" disabled>Select a Faculty</option>
+                <option value="" disabled>
+                  Select a Faculty
+                </option>
                 {FACULTIES_DATA.map((faculty) => (
                   <option key={faculty.slug} value={faculty.slug}>
                     {faculty.title}
@@ -192,11 +302,15 @@ export default function SubmitPsa() {
                 value={formData.selectedDepartment}
                 onChange={handleChange}
                 required
-                disabled={!formData.selectedFaculty || availableDepartments.length === 0}
+                disabled={
+                  !formData.selectedFaculty || availableDepartments.length === 0
+                }
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all disabled:bg-gray-100 disabled:text-gray-500"
               >
                 <option value="" disabled>
-                  {formData.selectedFaculty ? 'Select a Program' : 'Select a Faculty first'}
+                  {formData.selectedFaculty
+                    ? "Select a Program"
+                    : "Select a Faculty first"}
                 </option>
                 {availableDepartments.map((program) => (
                   <option key={program.slug} value={program.slug}>
@@ -210,7 +324,9 @@ export default function SubmitPsa() {
           {/* Year & Semester */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block mb-2 font-semibold text-text">Submission Year</label>
+              <label className="block mb-2 font-semibold text-text">
+                Submission Year
+              </label>
               <input
                 type="number"
                 name="year"
@@ -223,7 +339,9 @@ export default function SubmitPsa() {
             </div>
 
             <div>
-              <label className="block mb-2 font-semibold text-text">Semester</label>
+              <label className="block mb-2 font-semibold text-text">
+                Semester
+              </label>
               <select
                 name="semester"
                 value={formData.semester}
@@ -231,7 +349,7 @@ export default function SubmitPsa() {
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all"
               >
-                {Array.from({ length: 2 }, (_, i) => (
+                {Array.from({ length: 10 }, (_, i) => (
                   <option key={i + 1} value={i + 1}>
                     Semester {i + 1}
                   </option>
@@ -242,7 +360,9 @@ export default function SubmitPsa() {
 
           {/* Project Title */}
           <div>
-            <label className="block mb-2 font-semibold text-text">Project Title</label>
+            <label className="block mb-2 font-semibold text-text">
+              Project Title
+            </label>
             <input
               type="text"
               name="psaTitle"
@@ -259,8 +379,12 @@ export default function SubmitPsa() {
             {/* Report Upload */}
             <div>
               <label className="block mb-3 font-semibold text-text">
-                <FiUploadCloud className="inline-block mr-2 text-primary" size={20} />
-                Upload Final Report (PDF) <span className="text-red-500">*</span>
+                <FiUploadCloud
+                  className="inline-block mr-2 text-primary"
+                  size={20}
+                />
+                Upload Final Report (PDF){" "}
+                <span className="text-red-500">*</span>
               </label>
               <input
                 type="file"
@@ -289,7 +413,7 @@ export default function SubmitPsa() {
                 )}
               </label>
             </div>
-          
+
             {/* Screenshots Upload */}
             <div>
               <label className="block mb-2 font-semibold text-text">
@@ -356,9 +480,9 @@ export default function SubmitPsa() {
             </Link>
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !isFormValid()}
               className={`px-8 py-3 text-secondary font-bold rounded-lg shadow-xl transition-all ${
-                isSubmitting
+                isSubmitting || !isFormValid()
                   ? "bg-primary/70 cursor-not-allowed"
                   : "bg-primary hover:bg-primary/90 transform hover:scale-[1.02]"
               }`}

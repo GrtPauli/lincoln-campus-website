@@ -68,8 +68,6 @@ const FACULTIES_DATA = [
   },
 ];
 
-// =========================================================================
-
 export default function SubmitPsa() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -93,11 +91,6 @@ export default function SubmitPsa() {
   useEffect(() => {
     if (submitError) {
       // Scroll to the top of the page where the error message is
-      // window.scrollTo({
-      //   top: 0,
-      //   behavior: "smooth",
-      // });
-
       errorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [submitError]);
@@ -135,6 +128,13 @@ export default function SubmitPsa() {
     setIsSubmitting(true);
     setSubmitError("");
 
+    const facultyObj = FACULTIES_DATA.find(
+      (f) => f.slug === formData.selectedFaculty
+    );
+    const departmentObj = facultyObj?.programmes.find(
+      (p) => p.slug === formData.selectedDepartment
+    );
+
     try {
       // Create FormData object for file upload
       const submissionData = new FormData();
@@ -143,10 +143,16 @@ export default function SubmitPsa() {
       submissionData.append("name", formData.name);
       submissionData.append("psaTitle", formData.psaTitle);
       submissionData.append("supervisor", formData.supervisor);
-      submissionData.append("year", formData.year.toString());
-      submissionData.append("semester", formData.semester);
-      submissionData.append("faculty", formData.selectedFaculty);
-      submissionData.append("department", formData.selectedDepartment);
+      submissionData.append("year", parseInt(formData.year));
+      submissionData.append("semester", parseInt(formData.semester));
+      submissionData.append(
+        "faculty",
+        facultyObj?.title || formData.selectedFaculty
+      );
+      submissionData.append(
+        "department",
+        departmentObj?.title || formData.selectedDepartment
+      );
       submissionData.append("demo", formData.demo);
 
       // Append report file
@@ -156,10 +162,16 @@ export default function SubmitPsa() {
 
       // Append screenshot files
       formData.screenshots.forEach((screenshot) => {
-        submissionData.append("screenshots", screenshot);
+        submissionData.append("screenshots[]", screenshot);
       });
 
       console.log("Submitting PSA data...");
+      console.log("FormData contents:");
+      console.log("FormData contents:");
+      console.log("FormData contents:");
+      for (let [key, value] of submissionData.entries()) {
+        console.log(`${key}:`, value);
+      }
 
       // Call your service
       const result = await PSAService.submitPSA(submissionData);
@@ -169,6 +181,7 @@ export default function SubmitPsa() {
       // Show success message and redirect
       alert("PSA Project submitted successfully! Redirecting...");
       navigate("/psa");
+      console.log([...submissionData.entries()]);
     } catch (error) {
       console.error("Submission failed:", error);
       setSubmitError(

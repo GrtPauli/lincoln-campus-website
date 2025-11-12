@@ -56,6 +56,44 @@ export const FACULTIES = [
           programmeAim:
             "The MBBS/MD programme aims to equip students with the knowledge, skills, and ethical values required to practice medicine at the highest professional level. It seeks to develop doctors who are lifelong learners, innovators, and leaders in healthcare delivery and research.",
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 3000000,
+            feePerSemester: 1500000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 3000000,
+            feePerSemester: 1500000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 3000000,
+            feePerSemester: 1500000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 3500000,
+            feePerSemester: 1750000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 3500000,
+            feePerSemester: 1750000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 6,
+            totalTuitionPerYear: 3500000,
+            feePerSemester: 1750000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Nursing Sciences (Hons)",
@@ -128,6 +166,38 @@ export const FACULTIES = [
           programmeAim:
             "The programme aims to develop competent and compassionate nurses who provide safe, ethical, and evidence-based care, while also contributing to healthcare leadership, education, and policy development.",
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 800000,
+            feePerSemester: 400000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 800000,
+            feePerSemester: 400000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 800000,
+            feePerSemester: 400000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 800000,
+            feePerSemester: 400000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 800000,
+            feePerSemester: 400000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Science in Community Health Science",
@@ -228,6 +298,38 @@ export const FACULTIES = [
             "The programme aims to produce graduates who are capable of improving community health through preventive and promotive interventions, research, and effective healthcare delivery.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Science in Public Health",
@@ -314,6 +416,38 @@ export const FACULTIES = [
             "The programme aims to prepare graduates who can design and implement evidence-based public health solutions, reduce health inequalities, and promote healthier societies.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 300000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 300000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 300000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 300000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 300000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Science in Environmental Health Safety",
@@ -397,6 +531,38 @@ export const FACULTIES = [
             "The programme aims to produce professionals who ensure safe, sustainable, and healthy environments for individuals and communities.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Science in Health Information Management",
@@ -492,6 +658,38 @@ export const FACULTIES = [
             "The programme aims to prepare graduates who can apply ICT and data management tools in healthcare delivery, ensuring accuracy, security, and accessibility of health information.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 225000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 225000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 225000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 225000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 225000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Medical Imaging (Hons)",
@@ -568,6 +766,38 @@ export const FACULTIES = [
             "The programme aims to produce competent imaging professionals who combine technical expertise with patient-centered care, contributing to accurate diagnosis and effective healthcare delivery.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 700000,
+            feePerSemester: 350000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 700000,
+            feePerSemester: 350000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 700000,
+            feePerSemester: 350000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 700000,
+            feePerSemester: 350000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 700000,
+            feePerSemester: 350000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
     ],
 
@@ -750,6 +980,38 @@ export const FACULTIES = [
             "The programme aims to produce professionals with strong laboratory and analytical skills who can apply microbiological knowledge to improve health, industry, and environmental sustainability.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Science (Hons) Biochemistry",
@@ -840,6 +1102,38 @@ export const FACULTIES = [
             "The programme aims to prepare graduates with scientific knowledge and research capabilities to contribute to medical, pharmaceutical, agricultural, and industrial innovations.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 400000,
+            feePerSemester: 200000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Biomedical Sciences (Hons)",
@@ -931,6 +1225,38 @@ export const FACULTIES = [
             "The programme aims to produce graduates with the knowledge and skills to apply biomedical science in improving healthcare, diagnostics, and medical research.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+          {
+            year: 5,
+            totalTuitionPerYear: 500000,
+            feePerSemester: 250000,
+            numberOfSemesters: 2,
+          },
+        ],
       },
       {
         title: "Bachelor of Information Technology (Hons)",
@@ -994,6 +1320,32 @@ export const FACULTIES = [
             "The programme aims to develop professionals who can leverage IT to solve organizational challenges, drive innovation, and support digital transformation across industries.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 200000,
+            numberOfSemesters: 3,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 200000,
+            numberOfSemesters: 3,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 200000,
+            numberOfSemesters: 3,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 200000,
+            numberOfSemesters: 3,
+          },
+        ],
       },
       {
         title:
@@ -1057,70 +1409,32 @@ export const FACULTIES = [
             "The programme aims to produce graduates with strong technical and analytical skills to secure digital infrastructure and protect organizational data in an increasingly connected world.",
           ],
         },
-      },
-      {
-        title: "Bachelor of Computer Science (Hons) (Artificial Intelligence)",
-        slug: "bachelor-computer-science-hons-artificial-intelligence",
-        image:
-          "https://plus.unsplash.com/premium_photo-1682464708085-95b4486e2c32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXJ0aWZpY2lhbCUyMGludGVsbGlnZW5jZSUyMGJyYWlufGVufDB8fDB8fHww",
-        details: {
-          overview: [
-            "The Artificial Intelligence programme emphasizes computational intelligence, machine learning, robotics, and data-driven technologies.",
-            "Students gain practical skills to design AI-powered systems that solve complex real-world problems.",
-          ],
-          subjectHighlights: {
-            coreCourses: [
-              {
-                sn: 2,
-                code: "BCSAI 6013",
-                title: "Principles of Programming",
-                credits: 3,
-              },
-              {
-                sn: 3,
-                code: "BCSAI 6024",
-                title: "Discrete Mathematics and Probability",
-                credits: 4,
-              },
-              {
-                sn: 4,
-                code: "BCSAI 6043",
-                title: "Computer Architecture and Organisation",
-                credits: 3,
-              },
-            ],
-            electiveCourses: [
-              {
-                sn: 1,
-                code: "BCSAI 6033",
-                title: "English",
-                credits: 3,
-              },
-            ],
-            specializationCourses: [],
-            compulsoryCourses: [
-              {
-                sn: 5,
-                code: "MPU 3163",
-                title: "Malay Communication",
-                credits: 3,
-              },
-            ],
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 200000,
+            numberOfSemesters: 3,
           },
-          entryRequirements: [
-            "Five (5) credits passes at SSCE (WAEC/NECO) or equivalent, including English Language, Mathematics, Physics, and two other science-related subjects, obtained in not more than two sittings.",
-          ],
-          careerOpportunities: [
-            "AI Engineers",
-            "Data Scientists",
-            "Machine Learning Specialists",
-            "Robotics Engineers",
-            "AI Research Scientists",
-          ],
-          programmeAim: [
-            "The programme aims to develop innovative computer scientists with expertise in AI who can advance automation, intelligent systems, and data-driven solutions across industries.",
-          ],
-        },
+          {
+            year: 2,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 200000,
+            numberOfSemesters: 3,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 200000,
+            numberOfSemesters: 3,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 600000,
+            feePerSemester: 200000,
+            numberOfSemesters: 3,
+          },
+        ],
       },
     ],
     dean: {
@@ -1243,6 +1557,32 @@ export const FACULTIES = [
             "The programme aims to produce accounting professionals with strong analytical, ethical, and technical skills who can contribute to effective financial management and economic development.",
           ],
         },
+        fees: [
+          {
+            year: 1,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 150000,
+            numberOfSemesters: 3,
+          },
+          {
+            year: 2,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 150000,
+            numberOfSemesters: 3,
+          },
+          {
+            year: 3,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 150000,
+            numberOfSemesters: 3,
+          },
+          {
+            year: 4,
+            totalTuitionPerYear: 450000,
+            feePerSemester: 150000,
+            numberOfSemesters: 3,
+          },
+        ],
       },
       {
         title: "Bachelor of Business Administration (Hons)",
@@ -1313,6 +1653,32 @@ export const FACULTIES = [
             "The programme aims to develop business leaders with strategic thinking, innovative approaches, and managerial skills who can drive organizational growth and sustainability.",
           ],
         },
+        fees: [
+  {
+    year: 1,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 2,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 3,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 4,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+],
       },
       {
         title: "Bachelor of Arts in Mass Communication (Hons)",
@@ -1395,6 +1761,32 @@ export const FACULTIES = [
             "The programme aims to prepare graduates with critical thinking, creativity, and professional skills to shape public opinion, manage information, and influence media landscapes positively.",
           ],
         },
+        fees: [
+  {
+    year: 1,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 2,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 3,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 4,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+],
       },
       {
         title: "Bachelor of Management (Oil and Gas Management)",
@@ -1478,6 +1870,32 @@ export const FACULTIES = [
             "The programme aims to produce graduates with managerial and technical expertise to lead operations, optimize resources, and drive sustainable practices in the oil and gas industry.",
           ],
         },
+       fees: [
+  {
+    year: 1,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 2,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 3,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+  {
+    year: 4,
+    totalTuitionPerYear: 450000,
+    feePerSemester: 150000,
+    numberOfSemesters: 3,
+  },
+],
       },
     ],
 

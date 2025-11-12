@@ -207,7 +207,7 @@ export default function Navbar() {
           <div className="flex max-[1250px]:hidden items- gap-5 px-5">
             <Link to="/" className="my-2">
               <img
-                src="/src/assets/lincolnlogo.png"
+                src="https://www.lincoln.edu.my/wp-content/uploads/2025/01/logo.webp"
                 alt="Lincoln University College Logo"
                 className="w-36"
               />
@@ -222,7 +222,7 @@ export default function Navbar() {
           <div className="hidden max-[1250px]:flex items-center justify-between px-3 py-3">
             <Link href="/" className="">
               <img
-                src="/src/assets/lincolnlogo.png"
+                src="https://www.lincoln.edu.my/wp-content/uploads/2025/01/logo.webp"
                 alt="Lincoln University College Logo"
                 className="w-28"
               />

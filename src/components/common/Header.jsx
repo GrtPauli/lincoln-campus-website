@@ -19,7 +19,7 @@ export default function Header() {
             </li>
             <li className="px-2">
               <a
-                href="https://lls.lincoln.edu.ng/login"
+                href="https://portal.lincoln.edu.ng/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"

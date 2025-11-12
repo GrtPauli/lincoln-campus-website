@@ -15,10 +15,7 @@ import { AppLoader } from "../components/common/Loader";
 
 import SkillCard from "../components/practicalskills/PracticalSkillsSlider";
 import PracticalSkillsSlider from "../components/practicalskills/PracticalSkillsSlider";
-
-
-
-
+import FacilitiesAndServicesVideos from "../components/facilities-and-services/FacilitiesAndServicesVideos";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -89,6 +86,7 @@ export default function HomePage() {
         <PracticalSkillsSlider />
         <News news={data?.news?.data} />
         <Videos videos={data?.videos?.data} />
+        <FacilitiesAndServicesVideos />
         <Achievements />
 
         <RecognitionsAndAccreditation />

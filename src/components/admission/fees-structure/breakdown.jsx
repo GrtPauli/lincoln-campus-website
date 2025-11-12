@@ -2,8 +2,12 @@ import React from "react";
 import { Table } from "antd";
 import Accordion from "../../common/ui/Accordion";
 import StyledUnderline from "../../common/ui/StyledUnderline";
+import { FACULTIES } from "../../../constants/faculties";
 
 export default function FeesBreakdown() {
+  const formatCurrency = (value) =>
+    value != null ? value.toLocaleString(undefined, { maximumFractionDigits: 0 }) : "-";
+
   const columns = [
     {
       title: "YEAR",
@@ -14,11 +18,13 @@ export default function FeesBreakdown() {
       title: "TUITION FEE",
       dataIndex: "tuitionFee",
       key: "tuitionFee",
+      render: (val) => formatCurrency(val),
     },
     {
       title: "FEE PER SEMESTER",
       dataIndex: "feePerSemester",
       key: "feePerSemester",
+      render: (val) => formatCurrency(val),
     },
     {
       title: "NUMBER OF SEMESTERS",
@@ -27,349 +33,19 @@ export default function FeesBreakdown() {
     },
   ];
 
-  const faculties = [
-    {
-      name: "FACULTY OF MEDICINE AND ALLIED HEALTH SCIENCES",
-      programs: [
-        {
-          title: "1. Doctor of Medicine(MD) (MBBS)",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 3000000,
-              feePerSemester: 1500000,
-              numSemesters: 2,
-            },
-            {
-              year: 2,
-              tuitionFee: 3000000,
-              feePerSemester: 1500000,
-              numSemesters: 2,
-            },
-            {
-              year: 3,
-              tuitionFee: 3000000,
-              feePerSemester: 1500000,
-              numSemesters: 2,
-            },
-            {
-              year: 4,
-              tuitionFee: 3500000,
-              feePerSemester: 1750000,
-              numSemesters: 2,
-            },
-            {
-              year: 5,
-              tuitionFee: 3500000,
-              feePerSemester: 1750000,
-              numSemesters: 2,
-            },
-            {
-              year: 6,
-              tuitionFee: 3500000,
-              feePerSemester: 1750000,
-              numSemesters: 2,
-            },
-          ],
-        },
-        {
-          title: "2. B.N.Sc. NURSING",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 800000,
-              feePerSemester: 400000,
-              numSemesters: 2,
-            },
-            {
-              year: 2,
-              tuitionFee: 800000,
-              feePerSemester: 400000,
-              numSemesters: 2,
-            },
-            {
-              year: 3,
-              tuitionFee: 800000,
-              feePerSemester: 400000,
-              numSemesters: 2,
-            },
-            {
-              year: 4,
-              tuitionFee: 800000,
-              feePerSemester: 400000,
-              numSemesters: 2,
-            },
-            {
-              year: 5,
-              tuitionFee: 800000,
-              feePerSemester: 400000,
-              numSemesters: 2,
-            },
-          ],
-        },
-        {
-          title: "3. Community Health Science",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 500000,
-              feePerSemester: 250000,
-              numSemesters: 2,
-            },
-            {
-              year: 2,
-              tuitionFee: 500000,
-              feePerSemester: 250000,
-              numSemesters: 2,
-            },
-            {
-              year: 3,
-              tuitionFee: 500000,
-              feePerSemester: 250000,
-              numSemesters: 2,
-            },
-            {
-              year: 4,
-              tuitionFee: 500000,
-              feePerSemester: 250000,
-              numSemesters: 2,
-            },
-            {
-              year: 5,
-              tuitionFee: 500000,
-              feePerSemester: 250000,
-              numSemesters: 2,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "FACULTY OF SCIENCES AND COMPUTING",
-      programs: [
-        {
-          title: "1. B.Sc. Microbiology",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-            {
-              year: 2,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-            {
-              year: 3,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-            {
-              year: 4,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-            {
-              year: 5,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-          ],
-        },
-        {
-          title: "2. B.Sc Biochemistry",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-            {
-              year: 2,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-            {
-              year: 3,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-            {
-              year: 4,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-            {
-              year: 5,
-              tuitionFee: 400000,
-              feePerSemester: 200000,
-              numSemesters: 2,
-            },
-          ],
-        },
-        {
-          title: "3. B.Sc. information technology",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 600000,
-              feePerSemester: 200000,
-              numSemesters: 3,
-            },
-            {
-              year: 2,
-              tuitionFee: 600000,
-              feePerSemester: 200000,
-              numSemesters: 3,
-            },
-            {
-              year: 3,
-              tuitionFee: 600000,
-              feePerSemester: 200000,
-              numSemesters: 3,
-            },
-            {
-              year: 4,
-              tuitionFee: 600000,
-              feePerSemester: 200000,
-              numSemesters: 3,
-            },
-          ],
-        },
-        {
-          title: "4. B.Sc. Cyber Security",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 600000,
-              feePerSemester: 200000,
-              numSemesters: 3,
-            },
-            {
-              year: 2,
-              tuitionFee: 600000,
-              feePerSemester: 200000,
-              numSemesters: 3,
-            },
-            {
-              year: 3,
-              tuitionFee: 600000,
-              feePerSemester: 200000,
-              numSemesters: 3,
-            },
-            {
-              year: 4,
-              tuitionFee: 600000,
-              feePerSemester: 200000,
-              numSemesters: 3,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "FACULTY OF MANAGEMENT AND SOCIAL SCIENCES",
-      programs: [
-        {
-          title: "1. B.Sc. Accounting",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 2,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 3,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 4,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-          ],
-        },
-        {
-          title: "2. B.Sc. Business Administration",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 2,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 3,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 4,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-          ],
-        },
-        {
-          title: "3. B.Sc. Mass Communication",
-          data: [
-            {
-              year: 1,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 2,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 3,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-            {
-              year: 4,
-              tuitionFee: 450000,
-              feePerSemester: 150000,
-              numSemesters: 3,
-            },
-          ],
-        },
-      ],
-    },
-  ];
+  // Transform FACULTIES structure to the shape expected by this component
+  const faculties = FACULTIES.map((f) => ({
+    name: f.title,
+    programs: (f.programmes || []).map((p) => ({
+      title: p.title,
+      data: (p.fees || []).map((fee) => ({
+        year: fee.year,
+        tuitionFee: fee.totalTuitionPerYear,
+        feePerSemester: fee.feePerSemester,
+        numSemesters: fee.numberOfSemesters,
+      })),
+    })),
+  }));
 
   return (
     <div className="mx-auto py-10 px-20">

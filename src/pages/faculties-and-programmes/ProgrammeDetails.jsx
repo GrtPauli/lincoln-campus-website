@@ -1,4 +1,3 @@
-// src/pages/ProgrammeDetails.jsx
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import MainLayout from "../../layouts/MainLayout";
@@ -41,6 +40,7 @@ export default function ProgrammeDetails() {
     entryRequirements: false,
     careerOpportunities: false,
     programmeAim: false,
+    feesStructure: false,
   });
 
   // Find the faculty
@@ -367,6 +367,81 @@ export default function ProgrammeDetails() {
                           ) : (
                             <p className="text-text">{details.programmeAim}</p>
                           )}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Fees Structure Accordion */}
+                  {programme?.fees?.length > 0 && (
+                    <div className="border rounded-lg overflow-hidden">
+                      <button
+                        className="w-full p-4 text-left cursor-pointer transition-colors duration-300"
+                        onClick={() => toggleSection("feesStructure")}
+                      >
+                        <div className="flex justify-between items-center">
+                          <h3 className="text-xl font-semibold text-text">
+                            Fees Structure
+                          </h3>
+                          <svg
+                            className={`w-5 h-5 transform transition-transform duration-200 ${
+                              openSections.feesStructure ? "rotate-180" : ""
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </div>
+                      </button>
+
+                      {openSections.feesStructure && (
+                        <div className="p-4 bg-white border-t">
+                          <div className="overflow-x-auto">
+                            <table className="min-w-full border-collapse border border-gray-200">
+                              <thead>
+                                <tr className="bg-gray-100">
+                                  <th className="border border-gray-300 px-4 py-2 text-left font-medium text-text">
+                                    Year
+                                  </th>
+                                  <th className="border border-gray-300 px-4 py-2 text-left font-medium text-text">
+                                    Fee Per Semester
+                                  </th>
+                                  <th className="border border-gray-300 px-4 py-2 text-left font-medium text-text">
+                                    Number of Semesters
+                                  </th>
+                                  <th className="border border-gray-300 px-4 py-2 text-left font-medium text-text">
+                                    Total Tuition Per Year
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {programme.fees.map((fee) => (
+                                  <tr key={fee.year} className="hover:bg-gray-50">
+                                    <td className="border border-gray-300 px-4 py-2 font-medium text-text">
+                                      Year {fee.year}
+                                    </td>
+                                    <td className="border border-gray-300 px-4 py-2 text-text">
+                                      ₦{fee.feePerSemester.toLocaleString()}
+                                    </td>
+                                    <td className="border border-gray-300 px-4 py-2 text-text">
+                                      {fee.numberOfSemesters}
+                                    </td>
+                                    <td className="border border-gray-300 px-4 py-2 font-medium text-primary">
+                                      ₦{fee.totalTuitionPerYear.toLocaleString()}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       )}
                     </div>

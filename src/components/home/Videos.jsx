@@ -1,5 +1,6 @@
 import React from "react";
 import StyledUnderline from "../common/ui/StyledUnderline";
+import FacilitiesAndServicesVideos from "./../facilities-and-services/FacilitiesAndServicesVideos";
 
 export default function Videos({ videos }) {
   return (

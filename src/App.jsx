@@ -52,13 +52,19 @@ function App() {
 
           {/* Welcome to LUC Pages */}
           <Route path="/about-us" element={<About />} />
+          
+          <Route path="/management" element={<ManagementPage />} />
           <Route
-            path="/facilities-and-services"
-            element={<FacilitiesAndServices />}
+            path="/policy-and-objectives"
+            element={<PolicyAndObjectives />}
           />
           <Route
             path="/recognitions-and-accreditations"
             element={<RecognitionsAndAccreditation />}
+          />
+          <Route
+            path="/facilities-and-services"
+            element={<FacilitiesAndServices />}
           />
           <Route
             path="/examinations-and-regulations"
@@ -88,23 +94,12 @@ function App() {
             element={<ProgrammeDetails />}
           />
 
-          <Route
-            path="/policy-and-objectives"
-            element={<PolicyAndObjectives />}
-          />
+          
           <Route path="/enquiry" element={<ProgrammesEnquiry />} />
           <Route path="/eligibility" element={<ProgrammeEligibility />} />
           <Route path="/faculties" element={<Faculties />} />
 
-          <Route
-            path="/management"
-            element={<ManagementPage />}
-          />
-
-          <Route
-            path="/admission/fees-structure"
-            element={<FeesStructure />}
-          />
+          <Route path="/admission/fees-structure" element={<FeesStructure />} />
           <Route
             path="/admission/admission-process"
             element={<AdmissionProcess />}
@@ -114,10 +109,7 @@ function App() {
           <Route path="/psa/:slug" element={<PracticalSkillApplication />} />
           <Route path="/submit-psa" element={<SubmitPsa />} />
 
-          <Route
-            path="/collaborators"
-            element={<CollaboratorsPage />}
-          />
+          <Route path="/collaborators" element={<CollaboratorsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

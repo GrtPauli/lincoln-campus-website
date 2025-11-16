@@ -12,9 +12,7 @@ export default function PracticalSkillsSlider() {
 
   // Shuffle projects and limit to 6
   const shuffledProjects = useRef(
-    [...PROJECTS]
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 6)
+    [...PROJECTS].sort(() => Math.random() - 0.5).slice(0, 6)
   ).current;
 
   // Create slides with 3 projects each
@@ -44,17 +42,20 @@ export default function PracticalSkillsSlider() {
 
   useEffect(() => {
     if (isPaused || !isVisible || slides.length <= 1) return;
-    
+
     const timer = setTimeout(() => {
       setCurrentIndex((prev) => (prev >= slides.length - 1 ? 0 : prev + 1));
     }, 4000);
-    
+
     return () => clearTimeout(timer);
   }, [isPaused, isVisible, slides.length, currentIndex]);
 
-  const goToSlide = useCallback((index) => {
-    setCurrentIndex(Math.min(index, slides.length - 1));
-  }, [slides.length]);
+  const goToSlide = useCallback(
+    (index) => {
+      setCurrentIndex(Math.min(index, slides.length - 1));
+    },
+    [slides.length]
+  );
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev >= slides.length - 1 ? 0 : prev + 1));
@@ -66,15 +67,15 @@ export default function PracticalSkillsSlider() {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'ArrowLeft') {
+      if (e.key === "ArrowLeft") {
         prevSlide();
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === "ArrowRight") {
         nextSlide();
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [nextSlide, prevSlide]);
 
   return (
@@ -95,13 +96,19 @@ export default function PracticalSkillsSlider() {
           onBlur={() => setIsPaused(false)}
         >
           <div
-            className="flex px-6 py-2 transition-transform duration-500 ease-out"
+            className="flex px-2 sm:px-4 md:px-6 py-2 transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {slides.map((slideProjects, idx) => (
               <div
                 key={idx}
-                className="flex-shrink-0 w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-2"
+                className=" flex-shrink-0 w-full 
+  grid 
+  grid-cols-1 
+  gap-4 
+  px-1 
+  sm:px-2 
+  md:grid-cols-3 md:gap-6"
                 aria-hidden={currentIndex !== idx}
               >
                 {slideProjects.map((project) => (
@@ -115,13 +122,16 @@ export default function PracticalSkillsSlider() {
                       </h3>
                       <div className="space-y-2 mb-4 text-sm">
                         <p className="text-text">
-                          <strong className="text-text">Student:</strong> {project.name}
+                          <strong className="text-text">Student:</strong>{" "}
+                          {project.name}
                         </p>
                         <p className="text-text">
-                          <strong className="text-text">Supervisor:</strong> {project.supervisor}
+                          <strong className="text-text">Supervisor:</strong>{" "}
+                          {project.supervisor}
                         </p>
                         <p className="text-text">
-                          <strong className="text-text">Year:</strong> {project.year}
+                          <strong className="text-text">Year:</strong>{" "}
+                          {project.year}
                         </p>
                       </div>
                       <div className="mt-auto pt-4">
@@ -149,8 +159,17 @@ export default function PracticalSkillsSlider() {
               className="absolute left-2 top-1/2 -translate-y-1/2 bg-secondary shadow-lg rounded-full p-3 hover:bg-gray-50 transition-all duration-200 z-10 focus:outline-none focus:ring-2 focus:ring-primary/50"
               aria-label="Previous projects"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 text-gray-700"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
               </svg>
             </button>
             <button
@@ -158,8 +177,17 @@ export default function PracticalSkillsSlider() {
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-secondary shadow-lg rounded-full p-3 hover:bg-gray-50 transition-all duration-200 z-10 focus:outline-none focus:ring-2 focus:ring-primary/50"
               aria-label="Next projects"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 text-gray-700"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                />
               </svg>
             </button>
           </>
@@ -192,8 +220,17 @@ export default function PracticalSkillsSlider() {
           className="inline-flex items-center px-6 py-3 bg-primary/95 text-secondary font-medium rounded-lg shadow-md hover:bg-primary transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
         >
           View More Projects
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 ml-2"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
           </svg>
         </Link>
       </div>

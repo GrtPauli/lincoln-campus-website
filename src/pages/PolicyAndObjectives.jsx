@@ -1,6 +1,7 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import Hero from "../components/common/ui/Hero";
+import StyledUnderline from "../components/common/ui/StyledUnderline";
 
 function PolicyAndObjectives() {
   return (
@@ -13,8 +14,10 @@ function PolicyAndObjectives() {
       <div className="container mx-auto p-14 max-sm:p-5">
         {/* Quality Policy Section */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Quality Policy</h2>
-          <hr className="border-t-2 border-red-600 mb-4" />
+          <div className="inline-block mb-8">
+            <h2 className="text-2xl font-bold mb-4">Quality Policy</h2>
+            <StyledUnderline />
+          </div>
           <p className="text-gray-700">
             At Lincoln, quality education is at the core of our mission. We are
             dedicated to providing accessible, relevant, and practical learning
@@ -30,8 +33,10 @@ function PolicyAndObjectives() {
 
         {/* Objectives Section */}
         <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Our Objectives</h2>
-          <hr className="border-t-2 border-red-600 mb-4" />
+          <div className="inline-block mb-8">
+            <h2 className="text-2xl font-bold mb-4">Our Objectives</h2>
+            <StyledUnderline />
+          </div>
           <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold">Accessible Education:</h3>

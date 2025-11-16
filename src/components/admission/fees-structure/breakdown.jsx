@@ -48,7 +48,7 @@ export default function FeesBreakdown() {
   }));
 
   return (
-    <div className="mx-auto py-10 px-20">
+    <div className="mx-auto py-10 px-2 md:px-20">
       <div className="flex flex-col items-center justify-center mb-10">
         <div className="inline">
           <h1 className="text-3xl font-bold">
@@ -59,7 +59,7 @@ export default function FeesBreakdown() {
       </div>
 
       {faculties.map((faculty, facultyIndex) => (
-        <div key={facultyIndex} className="mb-8">
+        <div key={facultyIndex} className="mb-20">
           <div className="inline-block mb-5">
             <h2 className="text-xl font-bold text-gray-800">{faculty.name}</h2>
           </div>

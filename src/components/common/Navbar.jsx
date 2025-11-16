@@ -191,6 +191,31 @@ export default function Navbar() {
       )
     );
 
+  const renderDrawerMenu = (items) =>
+    items.map((item) => {
+      if (item.children) {
+        return {
+          key: item.key,
+          label: <span className="text-base font-medium">{item.label}</span>,
+          children: renderDrawerMenu(item.children),
+        };
+      }
+      return {
+        key: item.key,
+        label: item.to ? (
+          <Link
+            to={item.to}
+            onClick={() => setOpen(false)}
+            className="block py-1 text-gray-600 hover:text-primary"
+          >
+            {item.label}
+          </Link>
+        ) : (
+          <span className="block py-1 text-gray-600">{item.label}</span>
+        ),
+      };
+    });
+
   return (
     <div className="fixed top-0 w-full z-50 font-medium">
       <Header />
@@ -218,9 +243,9 @@ export default function Navbar() {
             </Menu>
           </div>
 
-          {/* Mobile Toggle */}
-          <div className="hidden max-[1250px]:flex items-center justify-between px-3 py-3">
-            <Link href="/" className="">
+          {/* Mobile Header */}
+          <div className="hidden max-[1250px]:flex items-center justify-between px-4 py-3 bg-white shadow-md">
+            <Link to="/" className="">
               <img
                 src="https://www.lincoln.edu.my/wp-content/uploads/2025/01/logo.webp"
                 alt="Lincoln University College Logo"
@@ -229,21 +254,43 @@ export default function Navbar() {
             </Link>
             <Button
               type="text"
-              icon={<MenuOutlined />}
+              icon={<MenuOutlined style={{ fontSize: 22 }} />}
               onClick={() => setOpen(true)}
             />
           </div>
 
           {/* Mobile Drawer */}
           <Drawer
-            title="Menu"
-            placement="right"
-            onClose={() => setOpen(false)}
+            placement="left"
+            closable={false}
             open={open}
+            onClose={() => setOpen(false)}
+            width="80%"
+            bodyStyle={{ padding: 0, backgroundColor: "#fff" }}
           >
-            <Menu mode="inline" className="border-none">
-              {renderMenuItems(MENU_LINKS, "inline")}
-            </Menu>
+            <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+              <Link to="/" onClick={() => setOpen(false)}>
+                <img
+                  src="https://www.lincoln.edu.my/wp-content/uploads/2025/01/logo.webp"
+                  alt="Lincoln University College Logo"
+                  className="w-28"
+                />
+              </Link>
+              <Button
+                type="text"
+                onClick={() => setOpen(false)}
+                className="text-gray-500 hover:text-primary"
+              >
+                ✕
+              </Button>
+            </div>
+
+            <div className="px-2 py-3">
+              <Menu
+                mode="inline"  items={renderDrawerMenu(MENU_LINKS)}
+              />
+              
+            </div>
           </Drawer>
         </nav>
       </ConfigProvider>

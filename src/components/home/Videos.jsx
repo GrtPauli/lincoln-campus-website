@@ -4,8 +4,8 @@ import FacilitiesAndServicesVideos from "./../facilities-and-services/Facilities
 
 export default function Videos({ videos }) {
   return (
-    <section className="w-full p-12 py-14">
-      <div className="mb-8 inline-block">
+    <section className="w-full p-12">
+      <div className="mb-1 inline-block">
         <h2 className="text-2xl md:text-3xl font-bold text-text">Videos</h2>
         <StyledUnderline />
       </div>
@@ -21,15 +21,6 @@ export default function Videos({ videos }) {
           />
         ))}
       </div>
-
-      {/* <div className="flex justify-center items-center mt-10 gap-4">
-        <button className="px-4 py-2 rounded-xl border border-border text-text hover:bg-border transition cursor-pointer">
-          Previous
-        </button>
-        <button className="px-4 py-2 rounded-xl bg-primary/90 text-white font-medium hover:bg-primary transition cursor-pointer">
-          Next
-        </button>
-      </div> */}
     </section>
   );
 }

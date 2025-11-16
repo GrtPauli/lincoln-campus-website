@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FACULTIES } from "../../constants/faculties";
+import { Link } from "react-router-dom";
 
 export default function ProgrammesEnquiry() {
   const [formData, setFormData] = useState({
@@ -33,19 +34,19 @@ export default function ProgrammesEnquiry() {
 
   const countries = ["Malaysia", "Nigeria", "India", "China", "Others"];
 
-  const selectedFaculty = FACULTIES.find(
-    (f) => f.slug === formData.faculty
-  );
+  const selectedFaculty = FACULTIES.find((f) => f.slug === formData.faculty);
 
   return (
     <div className="py-10 md:py-20 px-4">
       <div className="w-full max-w-3xl mx-auto bg-secondary rounded-xl">
         <div className="py-4 flex justify-center">
-          <img
-            src="https://www.online.lincoln.edu.my/App_Themes/logo/logo_college.png"
-            alt="Lincoln University College"
-            className="h-16 md:h-20 object-contain"
-          />
+          <Link to="/" className="inline-block">
+            <img
+              src="https://www.online.lincoln.edu.my/App_Themes/logo/logo_college.png"
+              alt="Lincoln University College"
+              className="h-16 md:h-20 object-contain"
+            />
+          </Link>
         </div>
 
         <div className="px-4 py-6">

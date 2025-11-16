@@ -4,7 +4,12 @@ import MainLayout from "../../layouts/MainLayout";
 import Hero from "../../components/common/ui/Hero";
 import { FACULTIES } from "../../constants/faculties";
 import StyledUnderline from "../../components/common/ui/StyledUnderline";
-import {ClockCircleOutlined, CalendarOutlined, LaptopOutlined, FolderOutlined} from "@ant-design/icons"
+import {
+  ClockCircleOutlined,
+  CalendarOutlined,
+  LaptopOutlined,
+  FolderOutlined,
+} from "@ant-design/icons";
 
 export default function ProgrammeDetails() {
   const tags = [
@@ -12,25 +17,26 @@ export default function ProgrammeDetails() {
       id: 1,
       title: "Duration",
       subtag: "Full-time: 3 Years",
-      icon: <ClockCircleOutlined style={{ fontSize: 40  }} />,
+      // use className for responsive sizing instead of fixed inline style
+      icon: <ClockCircleOutlined className="text-3xl md:text-4xl" />,
     },
     {
       id: 2,
       title: "Intake",
       subtag: "November",
-      icon: <CalendarOutlined  style={{ fontSize: 40 }} />,
+      icon: <CalendarOutlined className="text-3xl md:text-4xl" />,
     },
     {
       id: 3,
       title: "Brochure",
       subtag: "Download",
-      icon: <FolderOutlined style={{ fontSize: 40 }} />,
+      icon: <FolderOutlined className="text-3xl md:text-4xl" />,
     },
     {
       id: 4,
       title: "Online",
       subtag: "Application",
-      icon: <LaptopOutlined style={{ fontSize: 40 }} />,
+      icon: <LaptopOutlined className="text-3xl md:text-4xl" />,
     },
   ];
 
@@ -81,10 +87,16 @@ export default function ProgrammeDetails() {
             <p className="text-text">Programme details coming soon...</p>
           ) : (
             <div>
-              <div className="mb-14 flex gap-1 items-center justify-between">
+              {/* Responsive tags: stack on mobile, 2 columns on small, 4 on large */}
+              <div className="mb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {tags.map((tag) => (
-                  <div key={tag.id} className="bg-primary flex items-center gap-4 px-5 py-3 w-[22%]">
-                    <div className="text-secondary">{tag.icon}</div>
+                  <div
+                    key={tag.id}
+                    className="bg-primary flex items-center gap-4 px-4 py-3 rounded-md"
+                  >
+                    <div className="text-secondary flex-shrink-0">
+                      {tag.icon}
+                    </div>
                     <div className="flex flex-col text-secondary">
                       <h1 className="text-sm font-bold">{tag.title}</h1>
                       <p className="text-sm">{tag.subtag}</p>
@@ -111,59 +123,6 @@ export default function ProgrammeDetails() {
                 )}
 
                 <div className="space-y-4">
-                  {/* Subject Highlights Accordion
-                  {details?.subjectHighlights?.coreCourses?.length > 0 && (
-                    <div className="border rounded-lg overflow-hidden">
-                      <button
-                        className="w-full p-4 text-left cursor-pointer transition-colors duration-300"
-                        onClick={() => toggleSection('subjectHighlights')}
-                      >
-                        <div className="flex justify-between items-center">
-                          <h3 className="text-xl font-semibold text-text">Subject Highlights</h3>
-                          <svg 
-                            className={`w-5 h-5 transform transition-transform duration-200 ${openSections.subjectHighlights ? 'rotate-180' : ''}`}
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24" 
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </div>
-                      </button>
-                      
-                      {openSections.subjectHighlights && (
-                        <div className="p-4 bg-white border-t">
-                          <h4 className="text-lg font-medium mb-3 text-primary">Core Courses</h4>
-                          <div className="overflow-x-auto">
-                            <table className="min-w-full border-collapse border border-gray-200">
-                              <thead>
-                                <tr className="bg-gray-100">
-                                  <th className="border border-gray-300 px-4 py-2 text-left font-medium text-text">S.No.</th>
-                                  <th className="border border-gray-300 px-4 py-2 text-left font-medium text-text">Course Code</th>
-                                  <th className="border border-gray-300 px-4 py-2 text-left font-medium text-text">Course Title</th>
-                                  <th className="border border-gray-300 px-4 py-2 text-left font-medium text-text">Credits</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {details.subjectHighlights.coreCourses.map(
-                                  (course) => (
-                                    <tr key={course.sn} className="hover:bg-gray-50">
-                                      <td className="border border-gray-300 px-4 py-2 text-text">{course.sn}</td>
-                                      <td className="border border-gray-300 px-4 py-2 font-mono text-text">{course.code}</td>
-                                      <td className="border border-gray-300 px-4 py-2 text-text">{course.title}</td>
-                                      <td className="border border-gray-300 px-4 py-2 text-text">{course.credits}</td>
-                                    </tr>
-                                  )
-                                )}
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  )} */}
-
                   {/* Subject Highlights Accordion */}
                   {details?.subjectHighlights && (
                     <div className="border rounded-lg overflow-hidden">
@@ -353,6 +312,22 @@ export default function ProgrammeDetails() {
                           <h3 className="text-xl font-semibold text-text">
                             Programme Aim
                           </h3>
+                          <svg
+                            className={`w-5 h-5 transform transition-transform duration-200 ${
+                              openSections.feesStructure ? "rotate-180" : ""
+                            }`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
                         </div>
                       </button>
 
@@ -424,7 +399,10 @@ export default function ProgrammeDetails() {
                               </thead>
                               <tbody>
                                 {programme.fees.map((fee) => (
-                                  <tr key={fee.year} className="hover:bg-gray-50">
+                                  <tr
+                                    key={fee.year}
+                                    className="hover:bg-gray-50"
+                                  >
                                     <td className="border border-gray-300 px-4 py-2 font-medium text-text">
                                       Year {fee.year}
                                     </td>
@@ -435,7 +413,8 @@ export default function ProgrammeDetails() {
                                       {fee.numberOfSemesters}
                                     </td>
                                     <td className="border border-gray-300 px-4 py-2 font-medium text-primary">
-                                      ₦{fee.totalTuitionPerYear.toLocaleString()}
+                                      ₦
+                                      {fee.totalTuitionPerYear.toLocaleString()}
                                     </td>
                                   </tr>
                                 ))}

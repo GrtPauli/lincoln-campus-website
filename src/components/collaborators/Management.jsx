@@ -13,7 +13,7 @@ export default function ManagementContent() {
       content: (
         <div className="space-y-3 text-sm text-text">
           <div className="space-y-3 text-sm text-text">
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
               <img
                 src={MessageFromChairmanAndPresidentLUCMalaysiaImg}
                 className="h-[150px] w-auto object-cover rounded-xl"
@@ -71,7 +71,7 @@ export default function ManagementContent() {
       content: (
         <div className="space-y-3 text-sm text-text">
           <div className="space-y-3 text-sm text-text">
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
               {/* <img
                 src={MessageFromChairmanAndPresidentLUCMalaysiaImg}
                 className="h-[150px] w-auto object-cover rounded-xl"
@@ -128,7 +128,7 @@ export default function ManagementContent() {
       content: (
         <div className="space-y-3 text-sm text-text">
           <div className="space-y-3 text-sm text-text">
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
               <img
                 src={MessageFromChancellorLUCMalaysiaImg}
                 className="h-[150px] w-auto object-cover rounded-xl"
@@ -182,7 +182,7 @@ export default function ManagementContent() {
       content: (
         <div className="space-y-3 text-sm text-text">
           <div className="space-y-3 text-sm text-text">
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
               <img
                 src={MessageFromProChancellorLUCMalaysiaImg}
                 className="h-[150px] w-auto object-cover rounded-xl"
@@ -225,7 +225,7 @@ export default function ManagementContent() {
       content: (
         <div className="space-y-3 text-sm text-text">
           <div className="space-y-3 text-sm text-text">
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
               <img
                 src={MessageFromViceChancellorLUNigeriaImg}
                 className="h-[200px] w-auto object-cover rounded-xl"
@@ -277,7 +277,7 @@ export default function ManagementContent() {
       content: (
         <div className="space-y-3 text-sm text-text">
           <div className="space-y-3 text-sm text-text">
-            <div className="flex gap-5">
+            <div className="flex flex-col sm:flex-row gap-5">
               <img
                 src={ProfessorOfInternationalEducationImg}
                 className="h-[200px] w-auto object-cover rounded-xl"

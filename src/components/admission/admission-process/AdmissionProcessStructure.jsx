@@ -75,7 +75,7 @@ export default function AdmissionProcessStructure() {
   return (
     <div className="p-12 max-sm:p-5">
       <div className="inline-block mb-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center md:text-left">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center md:text-left">
           Lincoln University Application Procedure
         </h2>
         <StyledUnderline />
@@ -97,7 +97,7 @@ export default function AdmissionProcessStructure() {
         <br />
         <span className="font-semibold">Student Portal (LLS):</span>
         <a
-          href="https://lls.lincoln.edu.ng"
+          href="https://lls.lincoln.edu.ng/login"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-600 underline ml-1"

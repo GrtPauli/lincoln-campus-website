@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import MainLayout from "../../layouts/MainLayout";
 import Hero from "../../components/common/ui/Hero";
 import StyledUnderline from "../../components/common/ui/StyledUnderline";
@@ -70,18 +70,26 @@ const FACULTIES_DATA = [
 
 export default function SubmitPsa() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  const nameFromURL = queryParams.get("name") || "";
+  const supervisorFromURL = queryParams.get("supervisor") || "";
+  const facultyFromURL = queryParams.get("faculty") || "";
+  const departmentFromURL = queryParams.get("department") || "";
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const errorRef = useRef(null);
 
   const [formData, setFormData] = useState({
-    name: "",
+    name: nameFromURL,
     psaTitle: "",
-    supervisor: "",
+    supervisor: supervisorFromURL,
     year: new Date().getFullYear(),
     semester: "1",
-    selectedFaculty: "",
-    selectedDepartment: "",
+    selectedFaculty: facultyFromURL,
+    selectedDepartment: departmentFromURL,
     report: null,
     demo: "",
     screenshots: [],
@@ -90,7 +98,6 @@ export default function SubmitPsa() {
   // Scroll to error when submitError changes
   useEffect(() => {
     if (submitError) {
-      // Scroll to the top of the page where the error message is
       errorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }, [submitError]);
@@ -112,7 +119,6 @@ export default function SubmitPsa() {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
 
-    // Clear error when user makes changes
     if (submitError) setSubmitError("");
   };
 
@@ -136,10 +142,7 @@ export default function SubmitPsa() {
     );
 
     try {
-      // Create FormData object for file upload
       const submissionData = new FormData();
-
-      // Append text fields
       submissionData.append("name", formData.name);
       submissionData.append("psaTitle", formData.psaTitle);
       submissionData.append("supervisor", formData.supervisor);
@@ -155,33 +158,17 @@ export default function SubmitPsa() {
       );
       submissionData.append("demo", formData.demo);
 
-      // Append report file
       if (formData.report) {
         submissionData.append("report", formData.report);
       }
 
-      // Append screenshot files
       formData.screenshots.forEach((screenshot) => {
         submissionData.append("screenshots[]", screenshot);
       });
 
-      console.log("Submitting PSA data...");
-      console.log("FormData contents:");
-      console.log("FormData contents:");
-      console.log("FormData contents:");
-      for (let [key, value] of submissionData.entries()) {
-        console.log(`${key}:`, value);
-      }
-
-      // Call your service
       const result = await PSAService.submitPSA(submissionData);
-
-      console.log("Submission successful:", result);
-
-      // Show success message and redirect
       alert("PSA Project submitted successfully! Redirecting...");
       navigate("/psa");
-      console.log([...submissionData.entries()]);
     } catch (error) {
       console.error("Submission failed:", error);
       setSubmitError(
@@ -205,14 +192,12 @@ export default function SubmitPsa() {
 
   return (
     <MainLayout>
-      {/* Hero Banner */}
       <Hero
         title="Submit Your PSA Project"
         backgroundImage="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60"
       />
 
       <div className="p-4 sm:p-12 max-w-4xl mx-auto">
-        {/* Header */}
         <div className="mb-10 text-center">
           <div className="inline-block">
             <h2 className="text-3xl font-bold text-text">
@@ -227,7 +212,6 @@ export default function SubmitPsa() {
           </p>
         </div>
 
-        {/* Error Message with ref for potential focus */}
         {submitError && (
           <div
             ref={errorRef}
@@ -243,7 +227,7 @@ export default function SubmitPsa() {
           className="bg-secondary p-8 md:p-12 rounded-xl shadow-2xl border border-gray-100 space-y-8"
           encType="multipart/form-data"
         >
-          {/* Student Info (Name & Supervisor) */}
+          {/* Student Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block mb-2 font-semibold text-text">
@@ -255,8 +239,13 @@ export default function SubmitPsa() {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                readOnly={!!nameFromURL}
                 placeholder="Your Full Name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary focus:outline-none transition-all"
+                className={`w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm ${
+                  nameFromURL
+                    ? "bg-gray-100 cursor-not-allowed"
+                    : "focus:ring-primary focus:border-primary"
+                }`}
               />
             </div>
 
@@ -270,15 +259,19 @@ export default function SubmitPsa() {
                 value={formData.supervisor}
                 onChange={handleChange}
                 required
+                readOnly={!!supervisorFromURL}
                 placeholder="Supervisor Name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary focus:outline-none transition-all"
+                className={`w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm ${
+                  supervisorFromURL
+                    ? "bg-gray-100 cursor-not-allowed"
+                    : "focus:ring-primary focus:border-primary"
+                }`}
               />
             </div>
           </div>
 
-          {/* Faculty & Department Selectors */}
+          {/* Faculty & Department */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-200">
-            {/* Faculty Select */}
             <div>
               <label className="block mb-2 font-semibold text-text">
                 <FiBookOpen
@@ -292,7 +285,12 @@ export default function SubmitPsa() {
                 value={formData.selectedFaculty}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all"
+                disabled={!!facultyFromURL}
+                className={`w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm ${
+                  facultyFromURL
+                    ? "bg-gray-100 cursor-not-allowed"
+                    : "bg-white focus:ring-primary focus:border-primary"
+                }`}
               >
                 <option value="" disabled>
                   Select a Faculty
@@ -305,7 +303,6 @@ export default function SubmitPsa() {
               </select>
             </div>
 
-            {/* Department Select (Dependent) */}
             <div>
               <label className="block mb-2 font-semibold text-text">
                 Department/Program <span className="text-red-500">*</span>
@@ -316,9 +313,15 @@ export default function SubmitPsa() {
                 onChange={handleChange}
                 required
                 disabled={
-                  !formData.selectedFaculty || availableDepartments.length === 0
+                  !!departmentFromURL ||
+                  !formData.selectedFaculty ||
+                  availableDepartments.length === 0
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all disabled:bg-gray-100 disabled:text-gray-500"
+                className={`w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm ${
+                  departmentFromURL
+                    ? "bg-gray-100 cursor-not-allowed"
+                    : "bg-white focus:ring-primary focus:border-primary"
+                }`}
               >
                 <option value="" disabled>
                   {formData.selectedFaculty
@@ -344,10 +347,8 @@ export default function SubmitPsa() {
                 type="number"
                 name="year"
                 value={formData.year}
-                onChange={handleChange}
-                required
                 readOnly
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-gray-100 cursor-not-allowed focus:ring-primary focus:border-primary focus:outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-gray-100 cursor-not-allowed"
               />
             </div>
 
@@ -360,7 +361,7 @@ export default function SubmitPsa() {
                 value={formData.semester}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary focus:outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white focus:ring-primary focus:border-primary"
               >
                 {Array.from({ length: 10 }, (_, i) => (
                   <option key={i + 1} value={i + 1}>
@@ -383,20 +384,19 @@ export default function SubmitPsa() {
               onChange={handleChange}
               required
               placeholder="e.g., Development of an AI-Powered Grading System"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary focus:outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary"
             />
           </div>
 
-          {/* File Uploads Section */}
+          {/* File Uploads */}
           <div className="space-y-6 pt-4 border-t border-gray-200">
-            {/* Report Upload */}
             <div>
               <label className="block mb-3 font-semibold text-text">
                 <FiUploadCloud
                   className="inline-block mr-2 text-primary"
                   size={20}
                 />
-                Upload Final Report (PDF){" "}
+                Upload Final Report (PDF)
                 <span className="text-red-500">*</span>
               </label>
               <input
@@ -419,7 +419,7 @@ export default function SubmitPsa() {
                 {formData.report ? (
                   <span className="font-medium flex items-center justify-center">
                     <FiCheckCircle className="mr-2" size={20} />
-                    File Selected: **{formData.report.name}**
+                    File Selected: <strong>{formData.report.name}</strong>
                   </span>
                 ) : (
                   "Click to select file (Max 10MB, PDF only)"
@@ -427,7 +427,6 @@ export default function SubmitPsa() {
               </label>
             </div>
 
-            {/* Screenshots Upload */}
             <div>
               <label className="block mb-2 font-semibold text-text">
                 <FiImage className="inline-block mr-2 text-primary" size={20} />
@@ -451,7 +450,6 @@ export default function SubmitPsa() {
                   : "Click to upload screenshots (JPG, PNG, etc.)"}
               </label>
 
-              {/* Preview Thumbnails */}
               {formData.screenshots.length > 0 && (
                 <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {formData.screenshots.map((file, index) => (
@@ -508,3 +506,8 @@ export default function SubmitPsa() {
     </MainLayout>
   );
 }
+
+
+// test:
+
+// http://localhost:5173/submit-psa?name=Daniel%20Jesuloba&supervisor=Prof%20Tunde&faculty=faculty-of-sciences-and-computing&department=computer-science-artificial-intelligence

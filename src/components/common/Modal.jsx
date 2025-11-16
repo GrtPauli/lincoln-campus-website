@@ -1,5 +1,5 @@
 import React from "react";
-import { ConfigProvider, Modal } from 'antd'
+import { ConfigProvider, Modal } from "antd";
 
 export const AppModal = ({
   open,
@@ -16,26 +16,28 @@ export const AppModal = ({
     <ConfigProvider
       theme={{
         token: {
-          fontFamily: '',
+          fontFamily: "",
         },
       }}
     >
       <Modal
-        // zIndex={9999}
         {...props}
         open={open}
         centered={centered}
         width={width}
-        // title={title}
         onCancel={onDismiss}
         footer={null}
-        wrapClassName={wrapClassName ? wrapClassName : 'p-5'}
+        wrapClassName={`luc-modal-wrap ${wrapClassName || ""}`}
+        className="luc-modal"
       >
-        <div className="bg-dark-prussian-blue w-full px-0 py-4 text-light-white ">
-          <h1 className="font-black text-xl -mt-4">{title}</h1>
-        </div>
-        <div className={`p-2 ${className}`}>{children}</div>
+        {title && (
+          <div className="bg-dark-prussian-blue w-full px-0 py-4 text-light-white">
+            <h1 className="font-black text-xl -mt-4">{title}</h1>
+          </div>
+        )}
+
+        <div className={`p-3 ${className || ""}`}>{children}</div>
       </Modal>
     </ConfigProvider>
-  )
-}
+  );
+};

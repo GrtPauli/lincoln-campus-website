@@ -88,7 +88,6 @@ export default function HomePage() {
         <Videos videos={data?.videos?.data} />
         <FacilitiesAndServicesVideos />
         <Achievements />
-
         <RecognitionsAndAccreditation />
       </div>
     </MainLayout>

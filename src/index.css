@@ -13,3 +13,26 @@
 html {
     font-family: "Montserrat", sans-serif;
 }
+
+.custom-app-modal .ant-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-app-modal .ant-modal-content {
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .custom-app-modal .ant-modal {
+    width: 95% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .custom-app-modal .ant-modal-content {
+    width: 100% !important;
+    border-radius: 12px;
+  }
+}

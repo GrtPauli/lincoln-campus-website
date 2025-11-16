@@ -5,19 +5,19 @@ import StyledUnderline from "../common/ui/StyledUnderline";
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-12 max-sm:p-5">
+    <div className="min-h-screen bg-gray-50 p-12 max-sm:p-5 text-text">
       {/* Hero Section */}
 
       <div className="container mx-auto px-4 py-6">
         {/* About Lincoln University College Section */}
         <section className="mb-8">
           <div className="inline-block mb-6">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center md:text-left">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4  md:text-left">
               About Lincoln University
             </h2>
             <StyledUnderline />
           </div>
-          <p className="text-gray-600 leading-relaxed text-center md:text-left">
+          <p className="text-text">
             Lincoln University is a private institution approved by the Federal
             Ministry of Education and accredited by the National Universities
             Commission (NUC), Nigeria. Lincoln University is dedicated to
@@ -41,12 +41,12 @@ const AboutUs = () => {
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="w-full md:w-1/2">
               <div className="inline-block mb-6">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl font-bold mb-4">
                   Vision
                 </h2>
                 <StyledUnderline />
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="leading-relaxed">
                 Lincoln University envisions becoming a distinguished
                 institution that sets the benchmark for quality education,
                 producing graduates with the capacity to innovate and profoundly
@@ -61,7 +61,7 @@ const AboutUs = () => {
               <img
                 src={VisionImage}
                 alt="Vision"
-                className="h-auto object-cover rounded-lg w-80 md:w-96"
+                className="h-auto object-cover hidden md:flex rounded-lg w-80 md:w-96"
               />
             </div>
           </div>
@@ -74,7 +74,7 @@ const AboutUs = () => {
               <img
                 src={MissionImage}
                 alt="Mission"
-                className="h-auto object-cover rounded-lg w-80 md:w-96"
+                className="h-auto object-cover  hidden md:flex rounded-lg w-80 md:w-96"
               />
             </div>
             <div className="w-full md:w-1/2">
@@ -84,7 +84,7 @@ const AboutUs = () => {
                 </h2>
                 <StyledUnderline />
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="leading-relaxed">
                 At Lincoln University, our mission is to democratize quality
                 education, ensuring it is accessible to everyone, regardless of
                 limitations. We aim to evolve into a global institution with a

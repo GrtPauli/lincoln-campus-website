@@ -26,7 +26,8 @@ export const EventItemCard = ({ img, title, onReadMore, post_date }) => {
 
       <div className="p-4 flex flex-col justify-between flex-grow">
         <h3 className="text-base font-semibold text-text mb-3">
-          {title || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at itaque distinctio!"}
+          {title ||
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis at itaque distinctio!"}
         </h3>
 
         <div className="flex justify-end mt-2">
@@ -73,6 +74,10 @@ export default function Events({ events }) {
 
       <AppModal
         open={modal.open}
+        centered
+        style={{ padding: 0 }}
+        bodyStyle={{ padding: 0 }}
+        className="custom-app-modal"
         onDismiss={() => setModal({ open: false })}
         width={600}
         destroyOnClose

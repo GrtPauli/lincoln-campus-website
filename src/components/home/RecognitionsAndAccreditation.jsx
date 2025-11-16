@@ -110,7 +110,7 @@ export default function RecognitionsAndAccreditation() {
   return (
     <section className="w-full p-12">
       <div className="mb-8 inline-block">
-        <h2 className="text-2xl md:text-3xl font-bold text-text">
+        <h2 className="text-xl md:text-3xl font-bold text-text">
           Recognitions & Accreditation
         </h2>
         <StyledUnderline />

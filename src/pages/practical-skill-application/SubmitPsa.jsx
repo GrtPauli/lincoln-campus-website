@@ -167,6 +167,7 @@ export default function SubmitPsa() {
       });
 
       const result = await PSAService.submitPSA(submissionData);
+      console.log(result)
       alert("PSA Project submitted successfully! Redirecting...");
       navigate("/psa");
     } catch (error) {
